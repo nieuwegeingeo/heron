@@ -27,7 +27,7 @@ Heron.PDOK.urls = {
     NGEINGEOSERVER: Heron.ngein.urls.NGEIN + '/geoserver/wms',
     NGEINMAPPROXY: Heron.ngein.urls.NGEIN + '/mapproxy/service',
     PDOKTMS: Heron.ngein.urls.PDOK + '/tms/',
-	PDOKWMTS: Heron.ngein.urls.PDOK + '/tiles/service/wmts/'
+    PDOKWMTS: Heron.ngein.urls.PDOK + '/tiles/service/wmts/'
 };
 
 // Define the layers.
@@ -93,66 +93,66 @@ Heron.ngein.layermap = {
             {'isBaseLayer': true, singleTile: false,
              visibility: false
              }),
-			 
-	/*----------------
-	 * BGT lijngericht
-	 ----------------- */
-	bgtlijn: new OpenLayers.Layer.WMTS(
-		{
-			name: 'BGT (lijngericht)',
-			url: Heron.PDOK.urls.PDOKWMTS,
-			layer: 'bgtlijngericht',
-			style: 'default',
-			matrixSet: 'EPSG:28992:16',
-			matrixIds: ['EPSG:28992:16:0','EPSG:28992:16:1','EPSG:28992:16:2','EPSG:28992:16:3','EPSG:28992:16:4','EPSG:28992:16:5','EPSG:28992:16:6',
-				'EPSG:28992:16:7','EPSG:28992:16:8','EPSG:28992:16:9','EPSG:28992:16:10','EPSG:28992:16:11','EPSG:28992:16:12','EPSG:28992:16:13',
-				'EPSG:28992:16:14','EPSG:28992:16:15','EPSG:28992:16:16','EPSG:28992:16:17','EPSG:28992:16:18','EPSG:28992:16:19','EPSG:28992:16:20'],
-			format: 'image/png8',
-			visibility: false,
-			isBaseLayer: false,
-			attribution: 'Kadaster'
-		}
-	),
-	
-	/*----------------
-	 * BGT standaard
-	 ----------------- */
-	bgtstandaard: new OpenLayers.Layer.WMTS(
-		{
-			name: 'BGT (standaard)',
-			url: Heron.PDOK.urls.PDOKWMTS,
-			layer: 'bgtstandaard',
-			style: 'default',
-			matrixSet: 'EPSG:28992:16',
-			matrixIds: ['EPSG:28992:16:0','EPSG:28992:16:1','EPSG:28992:16:2','EPSG:28992:16:3','EPSG:28992:16:4','EPSG:28992:16:5','EPSG:28992:16:6',
-				'EPSG:28992:16:7','EPSG:28992:16:8','EPSG:28992:16:9','EPSG:28992:16:10','EPSG:28992:16:11','EPSG:28992:16:12','EPSG:28992:16:13',
-				'EPSG:28992:16:14','EPSG:28992:16:15','EPSG:28992:16:16','EPSG:28992:16:17','EPSG:28992:16:18','EPSG:28992:16:19','EPSG:28992:16:20'],
-			format: 'image/png8',
-			visibility: false,
-			isBaseLayer: false,
-			attribution: 'Kadaster'
-		}
-	),
-	
-	/*----------------
-	 * BGT achtergrond
-	 ----------------- */
-	bgtachtergrond: new OpenLayers.Layer.WMTS(
-		{
-			name: 'BGT (achtergrond)',
-			url: Heron.PDOK.urls.PDOKWMTS,
-			layer: 'bgtstandaard',
-			style: 'default',
-			matrixSet: 'EPSG:28992:16',
-			matrixIds: ['EPSG:28992:16:0','EPSG:28992:16:1','EPSG:28992:16:2','EPSG:28992:16:3','EPSG:28992:16:4','EPSG:28992:16:5','EPSG:28992:16:6',
-				'EPSG:28992:16:7','EPSG:28992:16:8','EPSG:28992:16:9','EPSG:28992:16:10','EPSG:28992:16:11','EPSG:28992:16:12','EPSG:28992:16:13',
-				'EPSG:28992:16:14','EPSG:28992:16:15','EPSG:28992:16:16','EPSG:28992:16:17','EPSG:28992:16:18','EPSG:28992:16:19','EPSG:28992:16:20'],
-			format: 'image/png8',
-			visibility: false,
-			isBaseLayer: false,
-			attribution: 'Kadaster'
-		}
-	),		 
+             
+    /*----------------
+     * BGT lijngericht
+     ----------------- */
+    bgtlijn: new OpenLayers.Layer.WMTS(
+        {
+            name: 'BGT (lijngericht)',
+            url: Heron.PDOK.urls.PDOKWMTS,
+            layer: 'bgtlijngericht',
+            style: 'default',
+            matrixSet: 'EPSG:28992:16',
+            matrixIds: ['EPSG:28992:16:0','EPSG:28992:16:1','EPSG:28992:16:2','EPSG:28992:16:3','EPSG:28992:16:4','EPSG:28992:16:5','EPSG:28992:16:6',
+                'EPSG:28992:16:7','EPSG:28992:16:8','EPSG:28992:16:9','EPSG:28992:16:10','EPSG:28992:16:11','EPSG:28992:16:12','EPSG:28992:16:13',
+                'EPSG:28992:16:14','EPSG:28992:16:15','EPSG:28992:16:16','EPSG:28992:16:17','EPSG:28992:16:18','EPSG:28992:16:19','EPSG:28992:16:20'],
+            format: 'image/png8',
+            visibility: false,
+            isBaseLayer: false,
+            attribution: 'Kadaster'
+        }
+    ),
+    
+    /*----------------
+     * BGT standaard
+     ----------------- */
+    bgtstandaard: new OpenLayers.Layer.WMTS(
+        {
+            name: 'BGT (standaard)',
+            url: Heron.PDOK.urls.PDOKWMTS,
+            layer: 'bgtstandaard',
+            style: 'default',
+            matrixSet: 'EPSG:28992:16',
+            matrixIds: ['EPSG:28992:16:0','EPSG:28992:16:1','EPSG:28992:16:2','EPSG:28992:16:3','EPSG:28992:16:4','EPSG:28992:16:5','EPSG:28992:16:6',
+                'EPSG:28992:16:7','EPSG:28992:16:8','EPSG:28992:16:9','EPSG:28992:16:10','EPSG:28992:16:11','EPSG:28992:16:12','EPSG:28992:16:13',
+                'EPSG:28992:16:14','EPSG:28992:16:15','EPSG:28992:16:16','EPSG:28992:16:17','EPSG:28992:16:18','EPSG:28992:16:19','EPSG:28992:16:20'],
+            format: 'image/png8',
+            visibility: false,
+            isBaseLayer: false,
+            attribution: 'Kadaster'
+        }
+    ),
+    
+    /*----------------
+     * BGT achtergrond
+     ----------------- */
+    bgtachtergrond: new OpenLayers.Layer.WMTS(
+        {
+            name: 'BGT (achtergrond)',
+            url: Heron.PDOK.urls.PDOKWMTS,
+            layer: 'bgtstandaard',
+            style: 'default',
+            matrixSet: 'EPSG:28992:16',
+            matrixIds: ['EPSG:28992:16:0','EPSG:28992:16:1','EPSG:28992:16:2','EPSG:28992:16:3','EPSG:28992:16:4','EPSG:28992:16:5','EPSG:28992:16:6',
+                'EPSG:28992:16:7','EPSG:28992:16:8','EPSG:28992:16:9','EPSG:28992:16:10','EPSG:28992:16:11','EPSG:28992:16:12','EPSG:28992:16:13',
+                'EPSG:28992:16:14','EPSG:28992:16:15','EPSG:28992:16:16','EPSG:28992:16:17','EPSG:28992:16:18','EPSG:28992:16:19','EPSG:28992:16:20'],
+            format: 'image/png8',
+            visibility: false,
+            isBaseLayer: false,
+            attribution: 'Kadaster'
+        }
+    ),       
 
     /* ------------------------------
      * Nieuwegein Kaart
@@ -173,20 +173,20 @@ Heron.ngein.layermap = {
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml", 
        alpha: true, opacity: 0.7,
-	   minScale:5000
+       minScale:5000
       }
     ),
-	
-	/* ------------------------------
-	 * Hoofdgebouwen (bron GBKN)
+    
+    /* ------------------------------
+     * Hoofdgebouwen (bron GBKN)
      * ------------------------------ */
-	hoofdgebouw: new OpenLayers.Layer.WMS("Panden (GBKN)",
-	  Heron.PDOK.urls.NGEINGEOSERVER,
-	  {layers: "nieuwegein:GM_SP_GEOOBJ_HOOFDGEBOUW", format: "image/png", transparent: true},
-	  {isBaseLayer: false, singleTile: true, 
+    hoofdgebouw: new OpenLayers.Layer.WMS("Panden (GBKN)",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {layers: "nieuwegein:GM_SP_GEOOBJ_HOOFDGEBOUW", format: "image/png", transparent: true},
+      {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml", 
        alpha: true, opacity: 0.7,
-	   minScale:5000
+       minScale:5000
       }
     ),
 
@@ -199,7 +199,7 @@ Heron.ngein.layermap = {
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
        //,alpha: true, opacity: 0.7
-	   minScale:10000
+       minScale:10000
       }
     ),
 
@@ -213,7 +213,7 @@ Heron.ngein.layermap = {
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
        //,alpha: true, opacity: 0.7
-	   minScale:5000
+       minScale:5000
       }
     ),
 
@@ -226,7 +226,7 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_DGN_GEM_EIGENDOM", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:15000
+       minScale:15000
       }
     ),
 
@@ -238,7 +238,7 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_DGN_GRONDGEBRUIK", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:15000
+       minScale:15000
       }
     ),
 
@@ -250,7 +250,7 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_DGN_GRONDVERHUUR", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:15000
+       minScale:15000
       }
     ),
 
@@ -274,7 +274,7 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_BAG_GEOOBJK_VBO_PLUS", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: true, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:15000
+       minScale:15000
       }
     ),
 
@@ -286,7 +286,7 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_BAG_STANDPLAATSEN", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: true, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:15000
+       minScale:15000
       }
     ),
 
@@ -298,7 +298,7 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_BAG_LIGPLAATSEN", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: true, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:15000
+       minScale:15000
       }
     ),
 
@@ -310,11 +310,11 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_RIOOL_LEIDING", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:5000
+       minScale:5000
       }
     ),
-	
-	/* ------------------------------
+    
+    /* ------------------------------
      * Peilgebieden
      * ------------------------------ */
     peilgebieden: new OpenLayers.Layer.WMS("Peilbesluit 2014",
@@ -324,8 +324,8 @@ Heron.ngein.layermap = {
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml"
       }
     ),
-	
-	/* ------------------------------
+    
+    /* ------------------------------
      * Persleiding
      * ------------------------------ */
     persleiding: new OpenLayers.Layer.WMS("Persleidingen",
@@ -333,11 +333,11 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_PERSLEIDING", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:5000
+       minScale:5000
       }
     ),
-	
-	/* ---------------------------------------
+    
+    /* ---------------------------------------
      * beheergrens Bestuursregio Utrecht (BRU)
      * --------------------------------------- */
     bru: new OpenLayers.Layer.WMS("Beheergrens BRU",
@@ -356,7 +356,7 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_RIOOL_WATERAA,nieuwegein:GM_SP_RIOOL_WATERH,nieuwegein:GM_SP_RIOOL_WATER", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:5000
+       minScale:5000
       }
     ),
 
@@ -368,20 +368,20 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_GROENBEHEER3", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:5000
-	  }
+       minScale:5000
+      }
     ),
 
-	/* ------------------------------
+    /* ------------------------------
      * Wegbeheer
      * ------------------------------ */
     wegbeheer: new OpenLayers.Layer.WMS("Wegbeheer",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {layers: "nieuwegein:GM_SP_WEGBEHEER2", format: "image/png", transparent: true},
-	  {isBaseLayer: false, singleTile: true, 
+      {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:5000
-	   }
+       minScale:5000
+       }
     ),
     /* ------------------------------
      * Groenbomen
@@ -391,7 +391,7 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_GROENBEHEER_BOMEN", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:5000
+       minScale:5000
       }
     ),*/
 
@@ -414,10 +414,9 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_K_L_GEMEENTE", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:5000
+       minScale:5000
       }
     ),
-
 
     /*
      * PC4
@@ -462,8 +461,8 @@ Heron.ngein.layermap = {
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml"
       }
     ),
-	
-	/* ------------------------------
+    
+    /* ------------------------------
      * Lufo 2015
      * ------------------------------ */
     lufo2015: new OpenLayers.Layer.WMS("Luchtfoto 2015",
@@ -522,51 +521,51 @@ Heron.ngein.layermap = {
 
 //http://heron-mc.org/lib/Heron/jst/widgets/search/FeatureInfoPanel.html
 Heron.options.map.gridcolumns = [ 
-	{  
-		featureType:'GM_SP_WEGBEHEER2', 
-		columns: [ 
-			// LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
-			// ID, NUMMER_WVW, OMSCHRIJVING, BESLUITDATUM
-			{ dataIndex: "STRAATNAAM", header: 'Straatnaam' },
-			{ dataIndex: "WEGVAKONDERDEEL", header: 'Wegvakonderdeel' },
+    {  
+        featureType:'GM_SP_WEGBEHEER2', 
+        columns: [ 
+            // LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
+            // ID, NUMMER_WVW, OMSCHRIJVING, BESLUITDATUM
+            { dataIndex: "STRAATNAAM", header: 'Straatnaam' },
+            { dataIndex: "WEGVAKONDERDEEL", header: 'Wegvakonderdeel' },
             { dataIndex: "WEGFUNCTIE", header: 'Wegfunctie' },
             { dataIndex: "WEGTYPE", header: 'Wegtype' },
             { dataIndex: "VERHARDINGSOORT", header: 'Verhardingssoort' },
             { dataIndex: "ONDERHOUDSPLICHTIGE", header: 'Onderhoudsplichtige' },
             { dataIndex: "HOEVEELHEID", header: 'Oppervlakte' }
-		] 
-	}
-	
+        ] 
+    }
+    
     /*
     ,{  
-		featureType:'GM_SP_DGN_KOMGRENS', 
-		columns: [ 
-			// LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
-			// ID, NUMMER_WVW, OMSCHRIJVING, BESLUITDATUM
-			{ dataIndex: "OMSCHRIJVING", header: 'Omschrijving', width: 120 },
-			{ dataIndex: "BESLUIT_DATUM", header: 'Datum besluit', width: 120 },
-			{ header: "More Info", width: 150,
+        featureType:'GM_SP_DGN_KOMGRENS', 
+        columns: [ 
+            // LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
+            // ID, NUMMER_WVW, OMSCHRIJVING, BESLUITDATUM
+            { dataIndex: "OMSCHRIJVING", header: 'Omschrijving', width: 120 },
+            { dataIndex: "BESLUIT_DATUM", header: 'Datum besluit', width: 120 },
+            { header: "More Info", width: 150,
               renderer: function (value, metaData, record, rowIndex, colIndex, store) {
                   var template = '<a target="_new" href="http://en.wikipedia.org/wiki/{OMSCHRIJVING}">Wikipedia Info</a>';
                   var options = {attrNames: ['OMSCHRIJVING']};
                   return Heron.widgets.GridCellRenderer.substituteAttrValues(template, options, record);
               }
-			},
-			{ header: "More Info", width: 150,
+            },
+            { header: "More Info", width: 150,
               renderer: function (value, metaData, record, rowIndex, colIndex, store) {
                   var template = '<a href="http://localhost/{OMSCHRIJVING}.png" target="foo"><img height=40 src="http://localhost/{OMSCHRIJVING}.png"/></a>';
                   //var template = '<img height=40 src="http://localhost/{OMSCHRIJVING}.png"/>';
                   var options = {attrNames: ['OMSCHRIJVING','OMSCHRIJVING']};
                   return Heron.widgets.GridCellRenderer.substituteAttrValues(template, options, record);
               }
-			}			
-		] 
-	}*/
+            }           
+        ] 
+    }*/
 ]
 
 // Create list of layers
 // LET OP 1: Een laag MOET hier aanwezig zijn om in de viewer te kunnen gebruiken
-// LET OP 2: NET ANDERSOM DAN IN DE VIEWER !!!
+// LET OP 2: NET ANDERSOM DAN IN DE VIEWER !!! Dus onderaan de vlakkenlagen.
 Heron.options.map.layers = [
 
     // The baselayers.
@@ -577,13 +576,13 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.ngein_kaart,
 
     // Theme layers.
-	// vlakdekkend
+    // vlakdekkend
     Heron.ngein.layermap.lufo2011,
-	Heron.ngein.layermap.lufo2012,
+    Heron.ngein.layermap.lufo2012,
     Heron.ngein.layermap.lufo2013,
     Heron.ngein.layermap.lufo2014,
     Heron.ngein.layermap.lufo2015,
-	// polygonen
+    // polygonen
     Heron.ngein.layermap.panden,
     Heron.ngein.layermap.grondpercelen,
     Heron.ngein.layermap.perceeleigenaren,
@@ -594,18 +593,18 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.verblijfsobjecten,
     Heron.ngein.layermap.standplaatsen,
     Heron.ngein.layermap.ligplaatsen,
-	Heron.ngein.layermap.hoofdgebouw,
-	Heron.ngein.layermap.bgtachtergrond,
-	Heron.ngein.layermap.bgtstandaard,
-	Heron.ngein.layermap.bgtlijn,
-	Heron.ngein.layermap.bru,
-	Heron.ngein.layermap.persleiding,
-	Heron.ngein.layermap.peilgebieden,
+    Heron.ngein.layermap.hoofdgebouw,
+    Heron.ngein.layermap.bgtachtergrond,
+    Heron.ngein.layermap.bgtstandaard,
+    Heron.ngein.layermap.bgtlijn,
+    Heron.ngein.layermap.bru,
+    Heron.ngein.layermap.groenbeheer,
+    Heron.ngein.layermap.wegbeheer,
+    Heron.ngein.layermap.persleiding,
+    Heron.ngein.layermap.peilgebieden,
     Heron.ngein.layermap.rioolbeheer,
     Heron.ngein.layermap.waterhuishouding,
-	Heron.ngein.layermap.glasvezel,
-    Heron.ngein.layermap.groenbeheer,
-	Heron.ngein.layermap.wegbeheer,
+    Heron.ngein.layermap.glasvezel,
     //Heron.ngein.layermap.groenbomen,
     Heron.ngein.layermap.florafauna,
     //Heron.ngein.layermap.pc4,
@@ -621,15 +620,11 @@ Heron.options.map.layers = [
 
 /*
 
-
-
 // mapje luchtfotos, net andersom
 // mapje algemeen pc bag etc
 // mapje eigendom (kadaster), grond t/m grondpercelen
 // mapje beheerthema's boswet, kommgrens, florafauna, *beheer,
-
-
-	
+    
 */
 // Hier kun je mapjes aanmaken
 // LET OP 1: en hier is de volgorde WEL precies zoals je het aanmaakt
@@ -651,60 +646,60 @@ var treeTheme = [
                 {
                     text:'Algemeen', expanded: false, children:
                         [
-                            //{nodeType: "gx_layer", layer: Heron.ngein.layermap.pc4.name	},
+                            //{nodeType: "gx_layer", layer: Heron.ngein.layermap.pc4.name   },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.pc6.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.panden.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.hoofdgebouw.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.verblijfsobjecten.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.standplaatsen.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.ligplaatsen.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.bgtlijn.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.bgtstandaard.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.bgtachtergrond.name }
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.panden.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.hoofdgebouw.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.verblijfsobjecten.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.standplaatsen.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.ligplaatsen.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.bgtlijn.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.bgtstandaard.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.bgtachtergrond.name }
                         ]
                 }
-				,
+                ,
                 {
                     text:'Kadaster', expanded: true, children:
                         [
-                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.grondpercelen.name	},
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.perceeleigenaren.name	},
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.gemeentelijkeigendom.name	},
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.grondgebruik.name	},
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.grondpercelen.name   },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.perceeleigenaren.name    },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.gemeentelijkeigendom.name    },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.grondgebruik.name    },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.grondverhuur.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.bru.name }
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.bru.name }
                         ]
                 }
-				,
+                ,
                 {
                     text:'Beheer', expanded: true, children:
                         [
-                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.komgrens.name	},
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.komgrens.name    },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.boswet.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.groenbeheer.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.wegbeheer.name },
-							//{nodeType: "gx_layer", layer: Heron.ngein.layermap.grasvelden.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.rioolbeheer.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.persleiding.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.waterhuishouding.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.glasvezel.name },
-							//{nodeType: "gx_layer", layer: Heron.ngein.layermap.groenbomen.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.peilgebieden.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.florafauna.name }
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.rioolbeheer.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.persleiding.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.waterhuishouding.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.glasvezel.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.groenbeheer.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.wegbeheer.name },
+                            //{nodeType: "gx_layer", layer: Heron.ngein.layermap.grasvelden.name },
+                            //{nodeType: "gx_layer", layer: Heron.ngein.layermap.groenbomen.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.peilgebieden.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.florafauna.name }
                         ]
                 }
-				,
-				{
+                ,
+                {
                     text:"Luchtfoto's", expanded: false, children:
                         [
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.lufo2015.name},
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.lufo2014.name},
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.lufo2014.name},
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.lufo2013.name},
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.lufo2012.name},
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.lufo2011.name}
                         ]
                 }
-				
+                
 
             ]
     }
