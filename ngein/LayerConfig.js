@@ -177,8 +177,22 @@ Heron.ngein.layermap = {
             {'layers': 'basistopo', 'format': 'image/jpeg', transparent: false},
             {'isBaseLayer': true, singleTile: false,
              visibility: true
-             }),
+    }),
 
+    /* ------------------------------
+     * Blanco kaart
+     * ------------------------------ */
+    blanco: new OpenLayers.Layer.Image("Blanco",
+        Ext.BLANK_IMAGE_URL,
+        OpenLayers.Bounds.fromString(Heron.options.map.settings.maxExtent),
+        new OpenLayers.Size(10, 10),
+        { resolutions: Heron.options.map.settings.resolutions, 
+            isBaseLayer: true, 
+            visibility: false, 
+            displayInLayerSwitcher: true, 
+            transitionEffect: 'resize'
+    }),
+        
     /* ------------------------------
      * Panden
      * ------------------------------ */
@@ -602,6 +616,7 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.pdok_brtachtergrondkaart_pastel,
     Heron.ngein.layermap.ngein_luchtfoto,
     Heron.ngein.layermap.ngein_kaart,
+    Heron.ngein.layermap.blanco,
 
     // Theme layers.
     // vlakdekkend
@@ -666,7 +681,8 @@ var treeTheme = [
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.ngein_luchtfoto.name },
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.pdok_brtachtergrondkaart.name },
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.pdok_brtachtergrondkaart_pastel.name },
-                {nodeType: "gx_layer", layer: Heron.ngein.layermap.openbasiskaart_osm.name }
+                {nodeType: "gx_layer", layer: Heron.ngein.layermap.openbasiskaart_osm.name },
+		{nodeType: "gx_layer", layer: Heron.ngein.layermap.blanco.name }
             ]
     },
     {
