@@ -122,7 +122,8 @@ Heron.ngein.layermap = {
             format: 'image/png8',
             visibility: false,
             isBaseLayer: false,
-            attribution: 'Kadaster'
+            attribution: 'Kadaster',
+            minScale:5000
         }
     ),
     
@@ -142,7 +143,8 @@ Heron.ngein.layermap = {
             format: 'image/png8',
             visibility: false,
             isBaseLayer: false,
-            attribution: 'Kadaster'
+            attribution: 'Kadaster',
+            minScale:5000
         }
     ),
     
@@ -162,7 +164,8 @@ Heron.ngein.layermap = {
             format: 'image/png8',
             visibility: false,
             isBaseLayer: false,
-            attribution: 'Kadaster'
+            attribution: 'Kadaster',
+            minScale:5000
         }
     ),       
 
