@@ -203,6 +203,7 @@ Heron.options.map.toolbar = [
     {type: "-"} ,
     {type: "zoomprevious"},
     {type: "zoomnext"},
+    {type: "scale"},    
     {type: "-"},
     // Measure
     // Use "geodesic: true" for non-linear/Mercator projections like Google, Bing etc.
