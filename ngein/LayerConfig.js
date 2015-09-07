@@ -92,7 +92,19 @@ Heron.ngein.layermap = {
             {'layers': 'basisluchtfoto', 'format': 'image/jpeg', transparent: false},
             {'isBaseLayer': true, singleTile: false,
              visibility: false
-             }),
+    }),
+    
+    /* -------------------------------
+     * GBKNI
+     * ------------------------------ */
+    gbkni: new OpenLayers.Layer.WMS("GBKNI",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {layers: "nieuwegein:GM_SP_GBKNI_LIJNEN,nieuwegein:GM_SP_GBKNI_CELLEN,nieuwegein:GM_SP_GBKNI_TEKST", format: "image/png", transparent: true},
+      {isBaseLayer: false, singleTile: true, 
+       visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
+	   minScale:6000
+      }
+    ),
              
     /*----------------
      * BGT lijngericht
@@ -534,7 +546,19 @@ Heron.options.map.gridcolumns = [
             { dataIndex: "ONDERHOUDSPLICHTIGE", header: 'Onderhoudsplichtige' },
             { dataIndex: "HOEVEELHEID", header: 'Oppervlakte' }
         ] 
-    }
+    },
+    {  
+		featureType:'GM_SP_GBKNI_CELLEN', 
+		columns: [ { dataIndex: "IGDS_LEVEL_COMMENT", header: 'Object', width: 160 } ] 
+	},
+    {  
+		featureType:'GM_SP_GBKNI_LIJNEN', 
+		columns: [ { dataIndex: "IGDS_LEVEL_COMMENT", header: 'Object', width: 160 } ] 
+	},
+    {  
+		featureType:'GM_SP_GBKNI_TEKST', 
+		columns: [ { dataIndex: "IGDS_LEVEL_COMMENT", header: 'Object', width: 160 } ] 
+	}
     
     /*
     ,{  
@@ -566,6 +590,7 @@ Heron.options.map.gridcolumns = [
 // Create list of layers
 // LET OP 1: Een laag MOET hier aanwezig zijn om in de viewer te kunnen gebruiken
 // LET OP 2: NET ANDERSOM DAN IN DE VIEWER !!! Dus onderaan de vlakkenlagen.
+// BOVENAAN IS ONDERAAN !!!
 Heron.options.map.layers = [
 
     // The baselayers.
@@ -597,6 +622,7 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.bgtachtergrond,
     Heron.ngein.layermap.bgtstandaard,
     Heron.ngein.layermap.bgtlijn,
+    Heron.ngein.layermap.gbkni,
     Heron.ngein.layermap.bru,
     Heron.ngein.layermap.groenbeheer,
     Heron.ngein.layermap.wegbeheer,
@@ -653,6 +679,7 @@ var treeTheme = [
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.verblijfsobjecten.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.standplaatsen.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.ligplaatsen.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.gbkni.name },                            
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.bgtlijn.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.bgtstandaard.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.bgtachtergrond.name }

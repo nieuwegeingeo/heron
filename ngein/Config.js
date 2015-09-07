@@ -210,6 +210,27 @@ Heron.options.map.toolbar = [
     {type: "measurelength", options: {geodesic: false}},
     {type: "measurearea", options: {geodesic: false}},
     {type: "-"},
+    // tooltips
+    {type: "tooltips", options: {
+        // Pressed cannot be true when anchored is true!
+        pressed: false,
+		getfeatureControl: {
+			hover: true,
+			drillDown: false
+		},
+		popupWindow: {
+			title: "Information",
+			hideonmove: false,
+            anchored: true,
+            width: 180,
+            height: 120,
+			featureInfoPanel: {
+                // Option values are 'Table', 'Grid', 'Tree' and 'XML', default is 'Grid' (results in no display menu)
+                displayPanels: ['Table'],
+                showTopToolbar: false
+			}
+		}
+	}},
     // PrintDialog
     {type: "printdialog", options: {
         url: 'http://gng-apo088.linux.nieuwegein.nl:8080/print-servlet-2.1.0/pdf'
