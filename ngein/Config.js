@@ -692,3 +692,19 @@ Heron.layout = {
 
     ]
 };
+
+
+// Define the base urls for the layers.
+Heron.ngein.urls = {
+    NGEIN: 'http://gng-ap713.nieuwegein.nl',
+    PDOK : 'http://geodata.nationaalgeoregister.nl',
+    OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
+};
+
+// Define the PDOK urls for the layers, based
+Heron.PDOK.urls = {
+    NGEINGEOSERVER: Heron.ngein.urls.NGEIN + '/geoserver/wms',
+    NGEINMAPPROXY: Heron.ngein.urls.NGEIN + '/mapproxy/service',
+    PDOKTMS: Heron.ngein.urls.PDOK + '/tms/',
+    PDOKWMTS: Heron.ngein.urls.PDOK + '/tiles/service/wmts/'
+};

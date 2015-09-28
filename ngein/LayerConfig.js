@@ -15,20 +15,11 @@
  * Author: Eddy Scheper, ARIS B.V./OGG
  */
 
-// Define the base urls for the layers.
-Heron.ngein.urls = {
-    NGEIN: 'http://gng-ap713.nieuwegein.nl',
-    PDOK : 'http://geodata.nationaalgeoregister.nl',
-    OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
-};
-
-// Define the PDOK urls for the layers.
-Heron.PDOK.urls = {
-    NGEINGEOSERVER: Heron.ngein.urls.NGEIN + '/geoserver/wms',
-    NGEINMAPPROXY: Heron.ngein.urls.NGEIN + '/mapproxy/service',
-    PDOKTMS: Heron.ngein.urls.PDOK + '/tms/',
-    PDOKWMTS: Heron.ngein.urls.PDOK + '/tiles/service/wmts/'
-};
+// define the urls for the services
+// these are defined in:
+//		Heron.ngein.urls
+// but:
+// IMPORTANT: the url's are moved to Config.js, to make it easier to edit the LayerConfig.js
 
 // Define the layers.
 Heron.ngein.layermap = {
@@ -102,10 +93,24 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_GBKNI_LIJNEN,nieuwegein:GM_SP_GBKNI_CELLEN,nieuwegein:GM_SP_GBKNI_TEKST", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-	   minScale:6000
+	   minScale:6000,
+	   gridcolumns: [
+			{  
+				featureType:'GM_SP_GBKNI_CELLEN', 
+				columns: [ { dataIndex: "IGDS_LEVEL_COMMENT", header: 'Object', width: 160 } ] 
+			},
+			{  
+				featureType:'GM_SP_GBKNI_LIJNEN', 
+				columns: [ { dataIndex: "IGDS_LEVEL_COMMENT", header: 'Object', width: 160 } ] 
+			},
+			{  
+				featureType:'GM_SP_GBKNI_TEKST', 
+				columns: [ { dataIndex: "IGDS_LEVEL_COMMENT", header: 'Object', width: 160 } ] 
+			}
+	   ]
       }
     ),
-             
+
     /*----------------
      * BGT lijngericht
      ----------------- */
@@ -302,7 +307,7 @@ Heron.ngein.layermap = {
       Heron.PDOK.urls.NGEINGEOSERVER,
       {layers: "nieuwegein:GM_SP_BAG_GEOOBJK_VBO_PLUS", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
-       visibility: true, featureInfoFormat: "application/vnd.ogc.gml",
+       visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
        minScale:15000
       }
     ),
@@ -314,7 +319,7 @@ Heron.ngein.layermap = {
       Heron.PDOK.urls.NGEINGEOSERVER,
       {layers: "nieuwegein:GM_SP_BAG_STANDPLAATSEN", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
-       visibility: true, featureInfoFormat: "application/vnd.ogc.gml",
+       visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
        minScale:15000
       }
     ),
@@ -391,7 +396,7 @@ Heron.ngein.layermap = {
 
     /* ------------------------------
      * Groenbeheer
-     * ------------------------------ */
+     * ------------------------------
     groenbeheer: new OpenLayers.Layer.WMS("Groenbeheer",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {layers: "nieuwegein:GM_SP_GROENBEHEER3", format: "image/png", transparent: true},
@@ -399,7 +404,7 @@ Heron.ngein.layermap = {
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
        minScale:5000
       }
-    ),
+    ),*/
 
     /* ------------------------------
      * Wegbeheer
@@ -409,9 +414,26 @@ Heron.ngein.layermap = {
       {layers: "nieuwegein:GM_SP_WEGBEHEER2", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-       minScale:5000
-       }
+       minScale:5000,
+	   gridcolumns: [
+		   {  
+				featureType:'GM_SP_WEGBEHEER2', 
+				columns: [ 
+					// LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
+					// ID, NUMMER_WVW, OMSCHRIJVING, BESLUITDATUM
+					{ dataIndex: "STRAATNAAM", header: 'Straatnaam' },
+					{ dataIndex: "WEGVAKONDERDEEL", header: 'Wegvakonderdeel' },
+					{ dataIndex: "WEGFUNCTIE", header: 'Wegfunctie' },
+					{ dataIndex: "WEGTYPE", header: 'Wegtype' },
+					{ dataIndex: "VERHARDINGSOORT", header: 'Verhardingssoort' },
+					{ dataIndex: "ONDERHOUDSPLICHTIGE", header: 'Onderhoudsplichtige' },
+					{ dataIndex: "HOEVEELHEID", header: 'Oppervlakte' }
+				] 
+			}	
+		]
+      }
     ),
+	
     /* ------------------------------
      * Groenbomen
      * ------------------------------ 
@@ -465,7 +487,8 @@ Heron.ngein.layermap = {
       Heron.PDOK.urls.NGEINGEOSERVER,
       {layers: "nieuwegein:pc6esri2015r1", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
-       visibility: false, featureInfoFormat: "application/vnd.ogc.gml"
+       visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
+       minScale:30000
       }
     ),
 
@@ -604,6 +627,82 @@ Heron.options.map.gridcolumns = [
     }*/
 ]
 
+
+/*
+ * 'gridcolumns' define which columns will be visible in the featureinfo panel
+ * it is also possible to 'rename' column names
+ * OR change a column to be an image or clickable link.
+ *
+ * To make the maintenance/beheer easier, we define the this in the 'options' 
+ * of a layer, and collect them here in the actual 
+ * Heron.options.map.gridcolumns variable
+ *
+*/
+Heron.options.map.gridcolumns = []
+for (var name in Heron.ngein.layermap){
+	var layer = Heron.ngein.layermap[name];
+	if (layer && layer.options && layer.options.gridcolumns ){
+		Array.prototype.push.apply(Heron.options.map.gridcolumns, layer.options.gridcolumns);
+	}
+}
+// some examples below
+// see http://heron-mc.org/lib/Heron/jst/widgets/search/FeatureInfoPanel.html
+/*
+Heron.options.map.gridcolumns = [ 
+    {  
+        featureType:'GM_SP_WEGBEHEER2', 
+        columns: [ 
+            // LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
+            // ID, NUMMER_WVW, OMSCHRIJVING, BESLUITDATUM
+            { dataIndex: "STRAATNAAM", header: 'Straatnaam' },
+            { dataIndex: "WEGVAKONDERDEEL", header: 'Wegvakonderdeel' },
+            { dataIndex: "WEGFUNCTIE", header: 'Wegfunctie' },
+            { dataIndex: "WEGTYPE", header: 'Wegtype' },
+            { dataIndex: "VERHARDINGSOORT", header: 'Verhardingssoort' },
+            { dataIndex: "ONDERHOUDSPLICHTIGE", header: 'Onderhoudsplichtige' },
+            { dataIndex: "HOEVEELHEID", header: 'Oppervlakte' }
+        ] 
+    },
+    {  
+		featureType:'GM_SP_GBKNI_CELLEN', 
+		columns: [ { dataIndex: "IGDS_LEVEL_COMMENT", header: 'Object', width: 160 } ] 
+	},
+    {  
+		featureType:'GM_SP_GBKNI_LIJNEN', 
+		columns: [ { dataIndex: "IGDS_LEVEL_COMMENT", header: 'Object', width: 160 } ] 
+	},
+    {  
+		featureType:'GM_SP_GBKNI_TEKST', 
+		columns: [ { dataIndex: "IGDS_LEVEL_COMMENT", header: 'Object', width: 160 } ] 
+	}
+    ,
+	{  
+        featureType:'GM_SP_DGN_KOMGRENS', 
+        columns: [ 
+            // LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
+            // ID, NUMMER_WVW, OMSCHRIJVING, BESLUITDATUM
+            { dataIndex: "OMSCHRIJVING", header: 'Omschrijving', width: 120 },
+            { dataIndex: "BESLUIT_DATUM", header: 'Datum besluit', width: 120 },
+            { header: "More Info", width: 150,
+              renderer: function (value, metaData, record, rowIndex, colIndex, store) {
+                  var template = '<a target="_new" href="http://en.wikipedia.org/wiki/{OMSCHRIJVING}">Wikipedia Info</a>';
+                  var options = {attrNames: ['OMSCHRIJVING']};
+                  return Heron.widgets.GridCellRenderer.substituteAttrValues(template, options, record);
+              }
+            },
+            { header: "More Info", width: 150,
+              renderer: function (value, metaData, record, rowIndex, colIndex, store) {
+                  var template = '<a href="http://localhost/{OMSCHRIJVING}.png" target="foo"><img height=40 src="http://localhost/{OMSCHRIJVING}.png"/></a>';
+                  //var template = '<img height=40 src="http://localhost/{OMSCHRIJVING}.png"/>';
+                  var options = {attrNames: ['OMSCHRIJVING','OMSCHRIJVING']};
+                  return Heron.widgets.GridCellRenderer.substituteAttrValues(template, options, record);
+              }
+            }           
+        ] 
+    }
+]*/
+
+
 // Create list of layers
 // LET OP 1: Een laag MOET hier aanwezig zijn om in de viewer te kunnen gebruiken
 // LET OP 2: NET ANDERSOM DAN IN DE VIEWER !!! Dus onderaan de vlakkenlagen.
@@ -642,7 +741,7 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.bgtlijn,
     Heron.ngein.layermap.gbkni,
     Heron.ngein.layermap.bru,
-    Heron.ngein.layermap.groenbeheer,
+    //Heron.ngein.layermap.groenbeheer,
     Heron.ngein.layermap.wegbeheer,
     Heron.ngein.layermap.persleiding,
     Heron.ngein.layermap.peilgebieden,
@@ -726,7 +825,7 @@ var treeTheme = [
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.persleiding.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.waterhuishouding.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.glasvezel.name },
-                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.groenbeheer.name },
+                            //{nodeType: "gx_layer", layer: Heron.ngein.layermap.groenbeheer.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.wegbeheer.name },
                             //{nodeType: "gx_layer", layer: Heron.ngein.layermap.grasvelden.name },
                             //{nodeType: "gx_layer", layer: Heron.ngein.layermap.groenbomen.name },
