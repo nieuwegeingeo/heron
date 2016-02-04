@@ -39,6 +39,28 @@ OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
 OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 
 /*****************************************************************************
+ * NIEUWEGEIN URL SETTINGS
+ *****************************************************************************/
+
+// Define the base urls for the layers.
+Heron.ngein.urls = {
+    NGEIN: 'http://gng-ap713.nieuwegein.nl',
+	NGEINLINUX: 'http://gng-ap855.linux.nieuwegein.nl',
+    PDOK : 'http://geodata.nationaalgeoregister.nl',
+    OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
+};
+
+// Define the PDOK urls for the layers, based
+Heron.PDOK.urls = {
+    NGEINGEOSERVER: Heron.ngein.urls.NGEIN + '/geoserver/wms',
+	NGEINLINUXGEOSERVER: Heron.ngein.urls.NGEINLINUX + '/geoserver/wms',
+	NGEINGEOSERVERWFS: Heron.ngein.urls.NGEIN + '/geoserver/wfs',
+    NGEINMAPPROXY: Heron.ngein.urls.NGEIN + '/mapproxy/service',
+    PDOKTMS: Heron.ngein.urls.PDOK + '/tms/',
+    PDOKWMTS: Heron.ngein.urls.PDOK + '/tiles/service/wmts/'
+};
+
+/*****************************************************************************
  * EXTJS SETTINGS
  *****************************************************************************/
 
@@ -64,6 +86,312 @@ Heron.options.layertree = {
             text: "Thema's",
             expanded: true
         }
+    ]
+};
+
+ /** Create a config for the search panel. This panel may be embedded into the accordion
+ * or bound to the "find" button in the toolbar. Here we use the toolbar button.
+ */
+Heron.options.searchPanelConfig = {
+    xtype: 'hr_multisearchcenterpanel',
+    height: 600,
+    hropts: [
+
+        // Zoeken op Adressen uit MOR_GEOCODER tabel
+        {
+            searchPanel: {
+                xtype: 'hr_formsearchpanel',
+                name: 'Zoek op adres',
+                header: false,
+                protocol: new OpenLayers.Protocol.WFS({
+                    version: "1.1.0",
+                    url: Heron.PDOK.urls.NGEINGEOSERVERWFS,
+                    srsName: "EPSG:28992",
+                    featureType: "MOR_GEOCODER",
+                    // featureNS: "http://www.nieuwegein.nl"
+                    featurePrefix: 'nieuwegein'
+                }),
+                downloadFormats: [
+                     {
+                         name: 'CSV',
+                         outputFormat: 'csv',
+                         fileExt: '.csv'
+                     }
+                 ],
+                items: [
+                    {
+                        xtype: "textfield",
+                        name: "ADDRESS__like",  // ADDRESS or STREET
+                        value: 'Koolmees',
+                        fieldLabel: "  Adres"
+                    },
+                    {
+                        xtype: "label",
+                        id: "helplabel",
+                        html: 'Zoek op adres of straatnaam <br/>gebruik * als wildcard<br/>b.v. koolm*15 om te zoeken naar Koolmees 15',
+                        style: {
+                            fontSize: '10px',
+                            color: '#AAAAAA'
+                        }
+                    }
+                ],
+                hropts: {
+                    onSearchCompleteZoom: 10,
+                    autoWildCardAttach: true,
+                    caseInsensitiveMatch: true,
+                    logicalOperator: OpenLayers.Filter.Logical.AND
+                    //logicalOperator: OpenLayers.Filter.Logical.OR
+                }
+            },
+            resultPanel: {
+                xtype: 'hr_featuregridpanel',
+                id: 'hr-featuregridpanel',
+                header: false,
+                columns: [
+                    {header: "Straat", width: 120, dataIndex: "STREET"},
+                    {header: "Huisnummer", width: 120, dataIndex: "BUILDING_NUMBER"},
+                    {header: "Toevoeging", width: 120, dataIndex: "BUILDING_SUBDIVISION"}
+                ],
+                exportFormats: ['XLS', 'WellKnownText'],
+                hropts: {
+                    zoomOnRowDoubleClick: true,
+                    zoomOnFeatureSelect: false,
+                    zoomLevelPointSelect: 8
+                }
+            }
+        }
+	
+        // Zoeken op Postcode 6
+        ,
+		{
+            searchPanel: {
+                xtype: 'hr_formsearchpanel',
+                name: 'Zoek op postcode',
+                header: false,
+                protocol: new OpenLayers.Protocol.WFS({
+                    version: "1.1.0",
+					url: Heron.PDOK.urls.NGEINGEOSERVERWFS,
+                    srsName: "EPSG:28992",
+                    featureType: "pc6esri2015r1",
+                    // featureNS: "http://www.nieuwegein.nl"
+                    featurePrefix: 'nieuwegein'
+                }),
+                downloadFormats: [
+                     {
+                         name: 'CSV',
+                         outputFormat: 'csv',
+                         fileExt: '.csv'
+                     }
+                 ],
+                items: [
+                    {
+                        xtype: "textfield",
+                        name: "POSTCODE__like",
+                        value: '3438RR',
+                        fieldLabel: "  Postcode"
+                    },
+                    {
+                        xtype: "label",
+                        id: "helplabel",
+                        html: 'Zoeken op postcode, zonder spatie, bv "3438RR"<br/>gebruik * als wildcard<br/>b.v. "3438R*" of "3438*"',
+                        style: {
+                            fontSize: '10px',
+                            color: '#AAAAAA'
+                        }
+                    }
+                ],
+                hropts: {
+                    onSearchCompleteZoom: 10,
+                    autoWildCardAttach: false, // !! false omdat anders de query wordt 'like *1234*', veeeeel langzamer dan 'like 1234*'
+                    caseInsensitiveMatch: false
+                    //,logicalOperator: OpenLayers.Filter.Logical.AND
+                }
+            },
+            resultPanel: {
+                xtype: 'hr_featuregridpanel',
+                id: 'hr-featuregridpanel',
+                header: false,
+                columns: [
+                    {
+                        header: "Postcode",
+                        width: 100,
+                        dataIndex: "POSTCODE"
+                    }
+                    ,
+                    {
+                        header: "Desc",
+                        width: 200,
+                        dataIndex: "cmt"
+                    }
+                ],
+                exportFormats: ['XLS', 'WellKnownText'],
+                hropts: {
+                    zoomOnRowDoubleClick: true,
+                    zoomOnFeatureSelect: false,
+                    zoomLevelPointSelect: 8
+                }
+            }
+        },
+        
+        // Zoeken op perceelnummers uit GM_SP_KAD_GRONDPERCEEL
+        {
+            searchPanel: {
+                xtype: 'hr_formsearchpanel',
+                name: 'Zoek kadastraal perceel ',
+                header: false,
+                protocol: new OpenLayers.Protocol.WFS({
+                    version: "1.1.0",
+                    url: Heron.PDOK.urls.NGEINGEOSERVERWFS,
+                    srsName: "EPSG:28992",
+                    featureType: "GM_SP_KAD_GRONDPERCEEL",
+                    // featureNS: "http://www.nieuwegein.nl"
+                    featurePrefix: 'nieuwegein'
+                }),
+                downloadFormats: [
+                     {
+                         name: 'CSV',
+                         outputFormat: 'csv',
+                         fileExt: '.csv'
+                     }
+                 ],
+                items: [
+				/* WORKING
+                    {
+                        xtype: "textfield",
+                        name: "PERC_ID__like",
+                        value: 'JPS00B 11070G0000',
+                        fieldLabel: "  Kad.Nr"
+                    },
+				*/
+				/*
+					{
+                    xtype: "combo",
+                        name: "PERC_ID",
+						store:['JPS00A','JPS00B','JPS00C'],
+                        fieldLabel: "  Gemeente en Sectie"
+                    },
+                    {
+                        xtype: "textfield",
+                        name: "PERC_ID",
+                        //value: 'JPS00B 11070G0000',
+						value: '11070G0000',
+                        fieldLabel: "  Kad.Nr"
+                    },
+				*/
+					{
+                    xtype: "combo",
+                        name: "GEM_CODE",
+						store:['JPS00','VWK00'],
+                        fieldLabel: "  Gemeentecode"
+                    },
+					{
+                    xtype: "combo",
+                        name: "SECTIE",
+						store:['A','B','C','D','E','G'],
+                        fieldLabel: "  Sectie"
+                    },
+                    {
+                        xtype: "textfield",
+                        name: "PERC_NR__like",
+						value: '',
+                        fieldLabel: "  Perceelnr."
+                    },
+                    {
+                        xtype: "label",
+                        id: "helplabel",
+                        html: 'Zoeken op kadastraal perceelnummer<br/>Kies Gemeentecode en Sectie<br/> en voer perceelnummer in (11070).<br/>',
+                        style: {
+                            fontSize: '10px',
+                            color: '#AAAAAA'
+                        }
+                    }
+                ],
+                hropts: {
+                    onSearchCompleteZoom: 10,
+                    autoWildCardAttach: true,
+                    caseInsensitiveMatch: true,
+                    logicalOperator: OpenLayers.Filter.Logical.AND
+                }
+            },
+            resultPanel: {
+                xtype: 'hr_featuregridpanel',
+                id: 'hr-featuregridpanel',
+                header: false,
+                columns: [
+                    { header: "PERC_ID", width: 200, dataIndex: "PERC_ID" }
+                    /*,
+                    {
+                        header: "Desc",
+                        width: 200,
+                        dataIndex: "cmt"
+                    }*/
+                ],
+                exportFormats: ['XLS', 'WellKnownText'],
+                hropts: {
+                    zoomOnRowDoubleClick: true,
+                    zoomOnFeatureSelect: false,
+                    zoomLevelPointSelect: 8
+                }
+            }
+        }
+		
+		// zoeken via het tekenen van een geometrie
+        ,
+        {
+            searchPanel: {
+                xtype: 'hr_searchbydrawpanel',
+                name: 'Zoeken door een vlak of punt te tekenen',
+                header: false,				
+            },
+            resultPanel: {
+                xtype: 'hr_featuregridpanel',
+                id: 'hr-featuregridpanel',
+                header: false,
+                autoConfig: true,
+                autoConfigMaxSniff: 100,
+                exportFormats: ['XLS', 'GMLv2', 'GeoJSON', 'WellKnownText', 'Shapefile'],
+                gridCellRenderers: Heron.options.gridCellRenderers,
+                hropts: {
+                    zoomOnRowDoubleClick: true,
+                    zoomOnFeatureSelect: false,
+                    zoomLevelPointSelect: 8,
+                    zoomToDataExtent: false
+                }
+            }
+        }
+        
+		// zoeken op basis van de wfs in een andere laag
+        /*,
+        {
+            searchPanel: {
+                xtype: 'hr_searchbyfeaturepanel',
+                name: __('Search by Feature Selection'),
+                description: 'Select feature-geometries from one layer and use these to perform a spatial search in another layer.',
+                header: false,
+                border: false,
+                bodyStyle: 'padding: 6px',
+                style: {
+                    fontFamily: 'Verdana, Arial, Helvetica, sans-serif',
+                    fontSize: '12px'
+                }
+            },
+            resultPanel: {
+                xtype: 'hr_featuregridpanel',
+                id: 'hr-featuregridpanel',
+                header: false,
+                border: false,
+                autoConfig: true,
+                exportFormats: ['XLS', 'GMLv2', 'GeoJSON', 'WellKnownText', 'Shapefile'],
+                gridCellRenderers: Heron.options.gridCellRenderers,
+                hropts: {
+                    zoomOnRowDoubleClick: true,
+                    zoomOnFeatureSelect: false,
+                    zoomLevelPointSelect: 8,
+                    zoomToDataExtent: false
+                }
+            }
+        }*/
+
     ]
 };
 
@@ -231,6 +559,21 @@ Heron.options.map.toolbar = [
 			}
 		}
 	}},
+    // Options for SearchPanel window
+    {type: "searchcenter", options: {
+        show: true,
+
+        searchWindow: {
+            title: __('Multiple Searches'),
+            x: 100,
+            y: undefined,
+            width: 360,
+            height: 440,
+            items: [
+                Heron.options.searchPanelConfig
+            ]
+        }
+    }},
     // PrintDialog
     {type: "printdialog", options: {
         url: 'http://gng-apo088.linux.nieuwegein.nl:8080/print-servlet-2.1.0/pdf'
@@ -507,7 +850,7 @@ Heron.layout = {
                     xtype: 'panel',
                     width: 60,
                     border: false,
-                    html: '<img  id="viewer_north_img" src="resources/logo.png" alt="Heron-mc"/>'
+                    html: '<img  id="viewer_north_img" src="../basis/resources/logo.png" alt="Heron-mc"/>'
                 },
                 {
                     // Title.
@@ -515,14 +858,16 @@ Heron.layout = {
                     flex: 1,
                     border: false,
                     html: '<div id="viewer_north_text">Nieuwegein - Geo</div>'
-                },
+                }
+				/*,
                 {
                     // Help link.
                     xtype: 'panel',
                     flex: 1,
                     border: false,
-                    html: '<a href="#" id="viewer_north_help" onclick="App.btn_HelpClicked()">Help</a>'
-                }
+                    html: '<a href="#" id="viewer_north_help" onclick="App.btn_HelpClicked()">Help</a>'  // in app help
+					html: '<a href="../basis/help.html" id="viewer_north_help" target="_blank">Help</a>' // external window
+                }*/
             ]
         },
         {
@@ -548,8 +893,11 @@ Heron.layout = {
                             xtype: 'hr_layertreepanel',
                             contextMenu: [
                                 {
-                                    xtype: 'hr_layernodemenulayerinfo'
+                                    xtype: 'hr_layernodemenulayermetadata'
                                 },
+								/*{
+                                    xtype: 'hr_layernodemenulayerinfo'
+                                },*/
                                 {
                                     xtype: 'hr_layernodemenuzoomextent'
                                 },
@@ -683,28 +1031,23 @@ Heron.layout = {
                             // The map contexts to show links for in the BookmarksPanel. 
                             hropts: Heron.options.bookmarks
                         }
+						,
+                        {
+                            // Grafieken
+                            xtype: 'hr_diagrams',
+                            title: 'Grafieken',
+                            region: 'south',
+                            flex: 1,
+                            width: "100%",
+                            id: 'hr-diagrams',
+                            border: false,
+                            // The map contexts to show links for in the BookmarksPanel. 
+                            //hropts: Heron.options.bookmarks
+                        }
                     ]
                 }
             ]
         },
 
-
-
     ]
-};
-
-
-// Define the base urls for the layers.
-Heron.ngein.urls = {
-    NGEIN: 'http://gng-ap713.nieuwegein.nl',
-    PDOK : 'http://geodata.nationaalgeoregister.nl',
-    OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
-};
-
-// Define the PDOK urls for the layers, based
-Heron.PDOK.urls = {
-    NGEINGEOSERVER: Heron.ngein.urls.NGEIN + '/geoserver/wms',
-    NGEINMAPPROXY: Heron.ngein.urls.NGEIN + '/mapproxy/service',
-    PDOKTMS: Heron.ngein.urls.PDOK + '/tms/',
-    PDOKWMTS: Heron.ngein.urls.PDOK + '/tiles/service/wmts/'
 };
