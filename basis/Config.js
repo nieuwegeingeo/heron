@@ -1031,19 +1031,6 @@ Heron.layout = {
                             // The map contexts to show links for in the BookmarksPanel. 
                             hropts: Heron.options.bookmarks
                         }
-						,
-                        {
-                            // Grafieken
-                            xtype: 'hr_diagrams',
-                            title: 'Grafieken',
-                            region: 'south',
-                            flex: 1,
-                            width: "100%",
-                            id: 'hr-diagrams',
-                            border: false,
-                            // The map contexts to show links for in the BookmarksPanel. 
-                            //hropts: Heron.options.bookmarks
-                        }
                     ]
                 }
             ]
