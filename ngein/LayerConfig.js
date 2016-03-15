@@ -900,7 +900,7 @@ var treeTheme = [
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.pdok_brtachtergrondkaart.name },
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.pdok_brtachtergrondkaart_pastel.name },
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.openbasiskaart_osm.name },
-		{nodeType: "gx_layer", layer: Heron.ngein.layermap.blanco.name }
+				{nodeType: "gx_layer", layer: Heron.ngein.layermap.blanco.name }
             ]
     },
     {

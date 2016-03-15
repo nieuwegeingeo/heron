@@ -311,7 +311,11 @@ Heron.options.searchPanelConfig = {
                     autoWildCardAttach: true,
                     caseInsensitiveMatch: true,
                     logicalOperator: OpenLayers.Filter.Logical.AND
-                }
+                },
+				layerOpts: [
+					// name of layer to make visible after search
+                	{ layerOn: 'BRK', layerOpacity: 1.0 }
+                ]
             },
             resultPanel: {
                 xtype: 'hr_featuregridpanel',
@@ -562,7 +566,6 @@ Heron.options.map.toolbar = [
     // Options for SearchPanel window
     {type: "searchcenter", options: {
         show: true,
-
         searchWindow: {
             title: __('Multiple Searches'),
             x: 100,
