@@ -223,7 +223,22 @@ Heron.ngein.layermap = {
        //minScale:5000
       }
     ),
-        
+
+
+    /* ------------------------------
+     * Perceeleigenaren
+     * ------------------------------ */
+    perceeleigenaren: new OpenLayers.Layer.WMS("Perceeleigenaren",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {layers: "nieuwegein:GM_SP_KAD_PERCEELEIGENAREN", format: "image/png", transparent: true},
+      {isBaseLayer: false, singleTile: true,
+       visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
+       //,alpha: true, opacity: 0.7
+       minScale:5000
+      }
+    ),
+
+	
     /* ------------------------------
      * Panden
      * ------------------------------ */
@@ -253,67 +268,40 @@ Heron.ngein.layermap = {
 				}
       }
     ),
-
-    /* ------------------------------
-     * Grondpercelen
-     * ------------------------------ */
-    grondpercelen: new OpenLayers.Layer.WMS("Grondpercelen",
-      Heron.PDOK.urls.NGEINGEOSERVER,
-      {layers: "nieuwegein:GM_SP_KAD_GRONDPERCEEL", format: "image/png", transparent: true},
-      {isBaseLayer: false, singleTile: true, 
-       visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-       //,alpha: true, opacity: 0.7
-       minScale:10000,
-       metadata:{
-                    wfs: {
-                        protocol: 'fromWMSLayer',
-                        featurePrefix: 'GM_SP_KAD_GRONDPERCEEL',
-                        srsName: "EPSG:28992"
-                    },
-					url: "http://nationaalgeoregister.nl",  // url to metadata record
-					html: "Dit is metadata <b>vette tekst</b> enzo..." // metadata as html (will be place between <p></p>)
-                }
-      }
-    ),
-
-    
-    /* ------------------------------
-     * Perceeleigenaren
-     * ------------------------------ */
-    perceeleigenaren: new OpenLayers.Layer.WMS("Perceeleigenaren",
-      Heron.PDOK.urls.NGEINGEOSERVER,
-      {layers: "nieuwegein:GM_SP_KAD_PERCEELEIGENAREN", format: "image/png", transparent: true},
-      {isBaseLayer: false, singleTile: true, 
-       visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-       //,alpha: true, opacity: 0.7
-       minScale:5000
-      }
-    ),
-	
 	
     /* ------------------------------
      * BRK
      * ------------------------------ */
-    brk: new OpenLayers.Layer.WMS("BRK",
+    brk: new OpenLayers.Layer.WMS("Kadaster (BRK)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {layers: "nieuwegein:GM_SP_BRK_HERON", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
 			visibility: false, 
 			featureInfoFormat: "application/vnd.ogc.gml",
-			//,alpha: true, opacity: 0.7
+			alpha: true, opacity: 0.7,
 			//minScale:5000
-			/*
 			gridcolumns: [
 				{  
 					featureType:'GM_SP_BRK_HERON', 
 					columns: [ 
 						// LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
-						{ dataIndex: "AANDEEL", header: 'Aandeel', width: 150 },
-						{ dataIndex: "EIGENAAR", header: 'Eigenaar', width: 150 }					
+						{ dataIndex: "PERC_ID", header: 'Perceel id', width: 120 },
+						{ dataIndex: "OPPERVLAKTE", header: 'Oppervlakte', width: 80 },
+						{ dataIndex: "SRT_WAARDE", header: 'Toelichting', width: 80 },
+						{ dataIndex: "AANDEEL", header: 'Aandeel', width: 50 },
+						{ dataIndex: "GERECHTIGDE", header: 'Gerechtigde', width: 200 },
+						{ dataIndex: "OMSCHRIJVING_ZAKELIJKRECHT", header: 'Omschrijving Zakelijkrecht', width: 150 },
+						{ dataIndex: "BEPERKEND_ZAKELIJKRECHT", header: 'Beperkend Zakelijkrecht', width: 150 },						
+						{ dataIndex: "GEBOORTEDATUM", header: 'Geboortedatum', width: 100 },
+						{ dataIndex: "GEBOORTEDATUM", header: 'Overlijdensdatum', width: 100 },
+						{ dataIndex: "KOOPSOM>", header: 'Koopsom', width: 80 },
+						{ dataIndex: "KOOPJAAR>", header: 'Koopjaar', width: 80 },
+						{ dataIndex: "STATUTAIREZETEL", header: 'Statutaire zetel', width: 100 },
+						{ dataIndex: "KVKNUMMER", header: 'KvK-nummer', width: 100 },
+						
 					] 
 				}
 			]
-			*/
       }
     ),
 	
@@ -821,6 +809,7 @@ Heron.options.map.gridcolumns = [
 // Create list of layers
 // LET OP 1: Een laag MOET hier aanwezig zijn om in de viewer te kunnen gebruiken
 // LET OP 2: NET ANDERSOM DAN IN DE VIEWER !!! Dus onderaan de vlakkenlagen.
+// LET OP 3: de plaats in de Laagboom/Layertree wordt bepaald door de 'treeTheme'-definitie later
 // BOVENAAN IS ONDERAAN !!!
 Heron.options.map.layers = [
 
@@ -831,8 +820,8 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.ngein_luchtfoto,
     Heron.ngein.layermap.ngein_kaart,
     Heron.ngein.layermap.blanco,
-
-    // Theme layers.
+	
+    // Thema Lagen
     // vlakdekkend
     Heron.ngein.layermap.lufo2011,
     Heron.ngein.layermap.lufo2012,
@@ -843,9 +832,6 @@ Heron.options.map.layers = [
 	Heron.ngein.layermap.woonserviceszones,
 	Heron.ngein.layermap.wijken,
     Heron.ngein.layermap.panden,
-    Heron.ngein.layermap.grondpercelen,
-    Heron.ngein.layermap.perceeleigenaren,
-	Heron.ngein.layermap.brk,
     Heron.ngein.layermap.gemeentelijkeigendom,
     Heron.ngein.layermap.grondgebruik,
     Heron.ngein.layermap.grondverhuur,
@@ -856,6 +842,9 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.hoofdgebouw,
     Heron.ngein.layermap.bgtachtergrond,
     Heron.ngein.layermap.bgtstandaard,
+	// lijnen
+	Heron.ngein.layermap.perceeleigenaren,
+	Heron.ngein.layermap.brk,
     Heron.ngein.layermap.bgtlijn,
     Heron.ngein.layermap.gbkni,
     Heron.ngein.layermap.bru,
@@ -928,8 +917,7 @@ var treeTheme = [
                 {
                     text:'Kadaster', expanded: true, children:
                         [
-                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.grondpercelen.name   },
-                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.perceeleigenaren.name    },
+						    {nodeType: "gx_layer", layer: Heron.ngein.layermap.perceeleigenaren.name    },
 							{nodeType: "gx_layer", layer: Heron.ngein.layermap.brk.name    },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.gemeentelijkeigendom.name    },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.grondgebruik.name    },
