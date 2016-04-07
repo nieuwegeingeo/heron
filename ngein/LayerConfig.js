@@ -423,9 +423,9 @@ Heron.ngein.layermap = {
     ),
     
     /* ---------------------------------------
-     * beheergrens Bestuursregio Utrecht (BRU)
+     * beheergrens tramtrac provincie (voorheen BRU)
      * --------------------------------------- */
-    bru: new OpenLayers.Layer.WMS("Beheergrens BRU",
+    bru: new OpenLayers.Layer.WMS("Beheergrens Provincie",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {layers: "nieuwegein:GM_SP_DGN_BRU", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
@@ -450,7 +450,7 @@ Heron.ngein.layermap = {
      * ------------------------------*/
     groenbeheer: new OpenLayers.Layer.WMS("Groenbeheer",
       Heron.PDOK.urls.NGEINGEOSERVER,
-      {layers: "nieuwegein:GM_SP_GROENBEHEER3", format: "image/png", transparent: true},
+      {layers: "nieuwegein:GM_SP_GROENBEHEER", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
        minScale:5000
@@ -622,7 +622,7 @@ Heron.ngein.layermap = {
      * ------------------------------ */
     lufo2015: new OpenLayers.Layer.WMS("Luchtfoto 2015",
       Heron.PDOK.urls.NGEINGEOSERVER,
-      {layers: "nieuwegein:luchtfoto_ecw_2015", format: "image/png", transparent: true},
+      {layers: "nieuwegein:luchtfoto_ecw_2015,nieuwegein:straatnamenshp", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false
       }
