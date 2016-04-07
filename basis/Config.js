@@ -44,7 +44,7 @@ OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 
 // Define the base urls for the layers.
 Heron.ngein.urls = {
-    NGEIN: 'http://gng-ap713.nieuwegein.nl',
+    NGEIN: 'http://gng-ap532.nieuwegein.nl',
 	NGEINLINUX: 'http://gng-ap855.linux.nieuwegein.nl',
     PDOK : 'http://geodata.nationaalgeoregister.nl',
     OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
