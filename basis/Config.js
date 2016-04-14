@@ -860,7 +860,7 @@ Heron.layout = {
                     xtype: 'panel',
                     flex: 1,
                     border: false,
-                    html: '<div id="viewer_north_text">Nieuwegein - Geo</div>'
+                    html: '<div id="viewer_north_text">Webatlas Nieuwegein</div>'
                 }
 				/*,
                 {
