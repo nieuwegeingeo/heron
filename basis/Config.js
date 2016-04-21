@@ -122,8 +122,9 @@ Heron.options.searchPanelConfig = {
                     {
                         xtype: "textfield",
                         name: "ADDRESS__like",  // ADDRESS or STREET
-                        value: 'Koolmees',
-                        fieldLabel: "  Adres"
+                        value: '',
+                        fieldLabel: "  Adres",
+						emptyText: "Stadsplein"
                     },
                     {
                         xtype: "label",
@@ -187,8 +188,9 @@ Heron.options.searchPanelConfig = {
                     {
                         xtype: "textfield",
                         name: "POSTCODE__like",
-                        value: '3438RR',
-                        fieldLabel: "  Postcode"
+                        value: '',
+                        fieldLabel: "  Postcode",
+						emptyText: "3438RR"
                     },
                     {
                         xtype: "label",
