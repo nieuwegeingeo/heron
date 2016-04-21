@@ -282,7 +282,7 @@ Heron.ngein.layermap = {
      * ------------------------------ */
     brk: new OpenLayers.Layer.WMS("Kadaster (BRK)",
       Heron.PDOK.urls.NGEINGEOSERVER,
-      {layers: "nieuwegein:GM_SP_BRK_HERON", format: "image/png", transparent: true},
+      {layers: "nieuwegein:GM_SP_BRK_WA", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
 			visibility: false, 
 			featureInfoFormat: "application/vnd.ogc.gml",
@@ -290,7 +290,7 @@ Heron.ngein.layermap = {
 			//minScale:5000
 			gridcolumns: [
 				{  
-					featureType:'GM_SP_BRK_HERON', 
+					featureType:'GM_SP_BRK_WA', 
 					columns: [ 
 						// LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
 						{ dataIndex: "PERC_ID", header: 'Perceel id', width: 120 },
@@ -505,31 +505,22 @@ Heron.ngein.layermap = {
 	   {  
         featureType:'GM_SP_HOOGTEMERKEN', 
         columns: [ 
-            // LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
-            // PEILMERK_NUMMER, HOOGTE, LOKATIE, GEVEL, DATUM, RWS_NUMMER, OWP, STRAATNMAAM, HUISNUMMER, VERVALLEN, X_WAARDE_RD_COORDINAAT,
-			// Y_WAARDE_RD_COORDINAAT, BIJZONDERHEDEN, MAPINFO_ID, VORIGE_HOOGTE, FOTO, GEOM
-            { dataIndex: "PEILMERK_NUMMER", header: 'Peilmerknummer', width: 80 },
-            { dataIndex: "RWS_NUMMER", header: 'RWS nummer', width: 75 },
-			{ dataIndex: "HOOGTE", header: 'Hoogte', width: 50 },
-			{ dataIndex: "STRAATNAAM", header: 'Straatnaam', width: 120 },
-			{ dataIndex: "HUISNUMMER", header: 'Huisnummer', width: 75 },
-			{ dataIndex: "GEVEL", header: 'Gevel', width: 50 },
-			
-            { header: "More Info", width: 150,
-              renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                  var template = '<a target="_new" href="//gng-ap713.nieuwegein.nl/heron/hoogtemerken/{FOTO}">Foto</a>';
-                  var options = {attrNames: ['OMSCHRIJVING']};
-                  return Heron.widgets.GridCellRenderer.substituteAttrValues(template, options, record);
-              }
-            },
-            /*{ header: "More Info", width: 150,
-              renderer: function (value, metaData, record, rowIndex, colIndex, store) {
-                  var template = '<a href="http://localhost/{OMSCHRIJVING}.png" target="foo"><img height=40 src="http://localhost/{OMSCHRIJVING}.png"/></a>';
-                  //var template = '<img height=40 src="http://localhost/{OMSCHRIJVING}.png"/>';
-                  var options = {attrNames: ['OMSCHRIJVING','OMSCHRIJVING']};
-                  return Heron.widgets.GridCellRenderer.substituteAttrValues(template, options, record);
-              }
-            } */          
+				// LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
+				// PEILMERK_NUMMER, HOOGTE, LOKATIE, GEVEL, DATUM, RWS_NUMMER, OWP, STRAATNMAAM, HUISNUMMER, VERVALLEN, X_WAARDE_RD_COORDINAAT,
+				// Y_WAARDE_RD_COORDINAAT, BIJZONDERHEDEN, MAPINFO_ID, VORIGE_HOOGTE, FOTO, GEOM
+				{ dataIndex: "PEILMERK_NUMMER", header: 'Peilmerknummer', width: 100 },
+				{ dataIndex: "RWS_NUMMER", header: 'RWS nummer', width: 75 },
+				{ dataIndex: "HOOGTE", header: 'Hoogte', width: 50 },
+				{ dataIndex: "STRAATNAAM", header: 'Straatnaam', width: 120 },
+				{ dataIndex: "HUISNUMMER", header: 'Huisnummer', width: 75 },
+				{ dataIndex: "GEVEL", header: 'Gevel', width: 50 },
+				{ dataIndex: "FOTO", header: "More Info", width: 100,
+					  renderer: function (value, metaData, record, rowIndex, colIndex, store) {
+						  var template = '<a target="_new" href="//geoappstore.nieuwegein.nl/hoogtemerken/{FOTO}">Foto</a>';
+						  var options = {attrNames: ['FOTO']};
+						  return Heron.widgets.GridCellRenderer.substituteAttrValues(template, options, record);
+					  }
+				},         
 			]
 	   }			
 		]
