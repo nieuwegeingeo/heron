@@ -124,7 +124,7 @@ Heron.options.searchPanelConfig = {
                         name: "ADDRESS__like",  // ADDRESS or STREET
                         value: '',
                         fieldLabel: "  Adres",
-						emptyText: "Stadsplein"
+                        emptyText: "Stadsplein"
                     },
                     {
                         xtype: "label",
@@ -157,7 +157,8 @@ Heron.options.searchPanelConfig = {
                 hropts: {
                     zoomOnRowDoubleClick: true,
                     zoomOnFeatureSelect: false,
-                    zoomLevelPointSelect: 8
+                    zoomLevelPointSelect: 14,
+                    zoomDoDataExtent: false
                 }
             }
         }
@@ -301,7 +302,7 @@ Heron.options.searchPanelConfig = {
                     {
                         xtype: "label",
                         id: "helplabel",
-                        html: 'Zoeken op kadastraal perceelnummer<br/>Kies Gemeentecode en Sectie<br/> en voer perceelnummer in (11070).<br/>',
+                        html: 'Zoeken op kadastraal perceelnummer<br/>Kies Gemeentecode en Sectie<br/> en voer perceelnummer in (11070). <br/>(vb: JPS00 B 11070 )<br/>',
                         style: {
                             fontSize: '10px',
                             color: '#AAAAAA'
