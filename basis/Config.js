@@ -696,7 +696,7 @@ Heron.options.map.toolbar = [
 
                 trigger: function(e) {
                     var position = map.getLonLatFromPixel(e.xy);
-                    var cwindow = window.open("http://gng-ap527.nieuwegein.nl/globespotter/3.0/viewer/index.html?posx="+position.lon.toFixed(0)+"&posy="+position.lat.toFixed(), "globespotter");
+                    var cwindow = window.open("http://gng-ap527.nieuwegein.nl/globespotter/3.1/viewer/index.html?posx="+position.lon.toFixed(0)+"&posy="+position.lat.toFixed(), "globespotter");
                     cwindow.focus();
                 }
             }); 
