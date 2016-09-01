@@ -582,7 +582,7 @@ Heron.options.map.toolbar = [
     }},
     // PrintDialog
     {type: "printdialog", options: {
-        url: 'http://gng-apo088.linux.nieuwegein.nl:8080/print-servlet-2.1.0/pdf'
+        url: 'http://'+location.hostname+'/print-servlet-2.1.0/pdf'
         , tooltip: "Printen"
         , windowWidth: 360
         //, mapPrintLayout: "A4" // MapFish - 'name' entry of the 'layouts' array or Null (=> MapFish default)
