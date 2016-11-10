@@ -45,7 +45,7 @@ OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 // Define the base urls for the layers.
 Heron.ngein.urls = {
     NGEIN: 'http://gng-ap532.nieuwegein.nl',
-	NGEINLINUX: 'http://gng-ap855.linux.nieuwegein.nl',
+    NGEINLINUX: 'http://gng-ap855.linux.nieuwegein.nl',
     PDOK : 'http://geodata.nationaalgeoregister.nl',
     OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
 };
@@ -53,12 +53,177 @@ Heron.ngein.urls = {
 // Define the PDOK urls for the layers, based
 Heron.PDOK.urls = {
     NGEINGEOSERVER: Heron.ngein.urls.NGEIN + '/geoserver/wms',
-	NGEINLINUXGEOSERVER: Heron.ngein.urls.NGEINLINUX + '/geoserver/wms',
-	NGEINGEOSERVERWFS: Heron.ngein.urls.NGEIN + '/geoserver/wfs',
+    NGEINLINUXGEOSERVER: Heron.ngein.urls.NGEINLINUX + '/geoserver/wms',
+    NGEINGEOSERVERWFS: Heron.ngein.urls.NGEIN + '/geoserver/wfs',
     NGEINMAPPROXY: Heron.ngein.urls.NGEIN + '/mapproxy/service',
     PDOKTMS: Heron.ngein.urls.PDOK + '/tms/',
     PDOKWMTS: Heron.ngein.urls.PDOK + '/tiles/service/wmts/'
 };
+
+
+/*****************************************************************************
+ * MAP - GENERAL SETTINGS
+ *****************************************************************************/
+
+Heron.options.map.settings = {
+    projection: 'EPSG:28992',
+    units: 'm',
+    resolutions: [3440.640, 1720.320, 860.160, 430.080, 215.040, 107.520, 53.760, 26.880, 13.440, 6.720, 3.360, 1.680, 0.840, 0.420, 0.210, 0.105, 0.0525],
+    maxExtent: '-285401.920, 22598.080, 595401.920, 903401.920',
+    //maxExtent: '128253,445498,141747,453226',
+    //center: '155000,463000',
+    restrictedExtent: new OpenLayers.Bounds(130000,445000,140000,455000),
+    center: '134000,450000',
+    xy_precision: 0,
+    //zoom: 2,
+    zoom: 9,
+    theme: null,
+    // Custom formatting of x coordinate text.
+    formatX: function (lon, precision) {
+        var s = '';
+        if (precision > 0)
+            s = ',' + '000000000000000000'.slice(0, precision);
+        return 'x: ' + Ext.util.Format.number(lon, '0.000' + s + '/i');
+    },
+    // Custom formatting of y coordinate text.
+    formatY: function (lat, precision) {
+        var s = '';
+        if (precision > 0)
+            s = ',' + '000000000000000000'.slice(0, precision);
+        return 'y: ' + Ext.util.Format.number(lat, '0.000' + s + '/i') + ' m.';
+    },
+
+    // Useful to always have permalinks enabled. Default is enabled with these settings.
+    // MapPanel.getPermalink() returns current permalink.
+    permalinks: {
+        // The prefix to be used for parameters, e.g. map_x, default is 'map'.
+        paramPrefix: 'map',
+        // Encodes values of permalink parameters ? default false.
+        encodeType: false,
+        // Use Layer names i.s.o. OpenLayers-generated Layer Id's in Permalinks.
+        prettyLayerNames: true
+    }
+};
+
+/*****************************************************************************
+ * NIEUWEGEIN BASELAYERS
+ * if you need another set of baselayer, just override/define your owner
+ *  Heron.ngein.baselayers object in your app
+ *****************************************************************************/
+
+Heron.ngein.baselayers = {
+     /* ------------------------------
+     * BRT
+     * ------------------------------ */
+    pdok_brtachtergrondkaart: new OpenLayers.Layer.WMS('BRT Achtergrondkaart',
+            Heron.PDOK.urls.NGEINMAPPROXY,
+            {'layers': 'brt', 'format': 'image/png', transparent: false},
+            {'isBaseLayer': true, singleTile: false,
+             visibility: false,
+            legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+    }),             
+                
+    /* ------------------------------
+     * BRT Pastel
+     * ------------------------------ */            
+    pdok_brtachtergrondkaart_pastel: new OpenLayers.Layer.WMS('BRT Achtergrondkaart pastel',
+            Heron.PDOK.urls.NGEINMAPPROXY,
+            {'layers': 'brtpastel', 'format': 'image/png', transparent: false},
+            {'isBaseLayer': true, singleTile: false,
+             visibility: false,
+            legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+    }), 
+                
+    /* ------------------------------
+     * OpenBasisKaart
+     * ------------------------------ */
+    openbasiskaart_osm: new OpenLayers.Layer.TMS("OpenBasisKaart OSM",
+      Heron.ngein.urls.OPENBASISKAART_TMS,
+      {layername: 'osm@rd',
+          type: "png",
+          isBaseLayer: true,
+          transparent: true,
+          bgcolor: "0xffffff",
+          visibility: false,
+          singleTile: false,
+          alpha: true,
+          opacity: 1.0,
+          attribution: "(C) <a href='http://openbasiskaart.nl'>OpenBasisKaart</a><br/>Data <a href='http://www.openstreetmap.org/copyright'>CC-By-SA</a> <a href='http://openstreetmap.org/'>OpenStreetMap</a> ",
+          transitionEffect: 'resize',
+          legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+    }),
+
+    /*----------------------------
+     * OpenTopo (achtergrondkaart)
+     ----------------------------- */
+    opentopoachtergrondkaart: new OpenLayers.Layer.WMS('OpenTopo Achtergrondkaart',
+            Heron.PDOK.urls.NGEINMAPPROXY,
+            {'layers': 'opentopo', 'format': 'image/png', transparent: false},
+            {'isBaseLayer': true, singleTile: false,
+             visibility: false,
+            legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+    }),   
+
+    /* ------------------------------
+     * Nieuwegein Luchtfoto
+     * ------------------------------ */
+    ngein_luchtfoto: new OpenLayers.Layer.WMS("Nieuwegein Luchtfoto",
+            Heron.PDOK.urls.NGEINMAPPROXY,
+            {'layers': 'basisluchtfoto', 'format': 'image/jpeg', transparent: false},
+            {'isBaseLayer': true, singleTile: false,
+             visibility: false,
+            legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+    }),
+      
+    /*----------------
+     * BGT achtergrond
+     ----------------- */
+    bgtachtergrond: new OpenLayers.Layer.WMTS(
+        {
+            name: 'BGT (achtergrond)',
+            url: Heron.PDOK.urls.PDOKWMTS,
+            layer: 'bgtstandaard',
+            style: 'default',
+            matrixSet: 'EPSG:28992:16',
+            matrixIds: ['EPSG:28992:16:0','EPSG:28992:16:1','EPSG:28992:16:2','EPSG:28992:16:3','EPSG:28992:16:4','EPSG:28992:16:5','EPSG:28992:16:6',
+                'EPSG:28992:16:7','EPSG:28992:16:8','EPSG:28992:16:9','EPSG:28992:16:10','EPSG:28992:16:11','EPSG:28992:16:12','EPSG:28992:16:13',
+                'EPSG:28992:16:14','EPSG:28992:16:15','EPSG:28992:16:16','EPSG:28992:16:17','EPSG:28992:16:18','EPSG:28992:16:19','EPSG:28992:16:20'],
+            format: 'image/png8',
+            visibility: false,
+            isBaseLayer: false,
+            attribution: 'Kadaster',
+            minScale:5000,
+            legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+        }
+    ),       
+
+    /* ------------------------------
+     * Nieuwegein Kaart
+     * ------------------------------ */
+    ngein_kaart: new OpenLayers.Layer.WMS("Nieuwegein Kaart",
+            Heron.PDOK.urls.NGEINMAPPROXY,
+            {'layers': 'basistopo', 'format': 'image/jpeg', transparent: false},
+            {'isBaseLayer': true, singleTile: false,
+             visibility: true,
+            legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+    }),
+
+    /* ------------------------------
+     * Blanco kaart
+     * ------------------------------ */
+    blanco: new OpenLayers.Layer.Image("Blanco",
+        Ext.BLANK_IMAGE_URL,
+        OpenLayers.Bounds.fromString(Heron.options.map.settings.maxExtent),
+        new OpenLayers.Size(10, 10),
+        { resolutions: Heron.options.map.settings.resolutions, 
+            isBaseLayer: true, 
+            visibility: false, 
+            displayInLayerSwitcher: true, 
+            transitionEffect: 'resize'
+            // werkt niet bij printen omdat de blank image url DATA is en geen echte url...
+            //,legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+    }),
+}
 
 /*****************************************************************************
  * EXTJS SETTINGS
@@ -162,17 +327,17 @@ Heron.options.searchPanelConfig = {
                 }
             }
         }
-	
+    
         // Zoeken op Postcode 6
         ,
-		{
+        {
             searchPanel: {
                 xtype: 'hr_formsearchpanel',
                 name: 'Zoek op postcode',
                 header: false,
                 protocol: new OpenLayers.Protocol.WFS({
                     version: "1.1.0",
-					url: Heron.PDOK.urls.NGEINGEOSERVERWFS,
+                    url: Heron.PDOK.urls.NGEINGEOSERVERWFS,
                     srsName: "EPSG:28992",
                     featureType: "pc6esri2015r1",
                     // featureNS: "http://www.nieuwegein.nl"
@@ -191,7 +356,7 @@ Heron.options.searchPanelConfig = {
                         name: "POSTCODE__like",
                         value: '',
                         fieldLabel: "  Postcode",
-						emptyText: "3438RR"
+                        emptyText: "3438RR"
                     },
                     {
                         xtype: "label",
@@ -258,45 +423,45 @@ Heron.options.searchPanelConfig = {
                      }
                  ],
                 items: [
-				/* WORKING
+                /* WORKING
                     {
                         xtype: "textfield",
                         name: "PERC_ID__like",
                         value: 'JPS00B 11070G0000',
                         fieldLabel: "  Kad.Nr"
                     },
-				*/
-				/*
-					{
+                */
+                /*
+                    {
                     xtype: "combo",
                         name: "PERC_ID",
-						store:['JPS00A','JPS00B','JPS00C'],
+                        store:['JPS00A','JPS00B','JPS00C'],
                         fieldLabel: "  Gemeente en Sectie"
                     },
                     {
                         xtype: "textfield",
                         name: "PERC_ID",
                         //value: 'JPS00B 11070G0000',
-						value: '11070G0000',
+                        value: '11070G0000',
                         fieldLabel: "  Kad.Nr"
                     },
-				*/
-					{
+                */
+                    {
                     xtype: "combo",
                         name: "GEM_CODE",
-						store:['JPS00','VWK00'],
+                        store:['JPS00','VWK00'],
                         fieldLabel: "  Gemeentecode"
                     },
-					{
+                    {
                     xtype: "combo",
                         name: "SECTIE",
-						store:['A','B','C','D','E','G'],
+                        store:['A','B','C','D','E','G'],
                         fieldLabel: "  Sectie"
                     },
                     {
                         xtype: "textfield",
                         name: "PERC_NR__like",
-						value: '',
+                        value: '',
                         fieldLabel: "  Perceelnr."
                     },
                     {
@@ -315,9 +480,9 @@ Heron.options.searchPanelConfig = {
                     caseInsensitiveMatch: true,
                     logicalOperator: OpenLayers.Filter.Logical.AND
                 },
-				layerOpts: [
-					// name of layer to make visible after search
-                	{ layerOn: 'BRK', layerOpacity: 1.0 }
+                layerOpts: [
+                    // name of layer to make visible after search
+                    { layerOn: 'BRK', layerOpacity: 1.0 }
                 ]
             },
             resultPanel: {
@@ -341,14 +506,14 @@ Heron.options.searchPanelConfig = {
                 }
             }
         }
-		
-		// zoeken via het tekenen van een geometrie
+        
+        // zoeken via het tekenen van een geometrie
         ,
         {
             searchPanel: {
                 xtype: 'hr_searchbydrawpanel',
                 name: 'Zoeken door een vlak of punt te tekenen',
-                header: false,				
+                header: false,              
             },
             resultPanel: {
                 xtype: 'hr_featuregridpanel',
@@ -367,7 +532,7 @@ Heron.options.searchPanelConfig = {
             }
         }
         
-		// zoeken op basis van de wfs in een andere laag
+        // zoeken op basis van de wfs in een andere laag
         /*,
         {
             searchPanel: {
@@ -400,50 +565,6 @@ Heron.options.searchPanelConfig = {
         }*/
 
     ]
-};
-
-/*****************************************************************************
- * MAP - GENERAL SETTINGS
- *****************************************************************************/
-
-Heron.options.map.settings = {
-    projection: 'EPSG:28992',
-    units: 'm',
-    resolutions: [3440.640, 1720.320, 860.160, 430.080, 215.040, 107.520, 53.760, 26.880, 13.440, 6.720, 3.360, 1.680, 0.840, 0.420, 0.210, 0.105, 0.0525],
-    maxExtent: '-285401.920, 22598.080, 595401.920, 903401.920',
-    //maxExtent: '128253,445498,141747,453226',
-    //center: '155000,463000',
-    restrictedExtent: new OpenLayers.Bounds(130000,445000,140000,455000),
-    center: '134000,450000',
-    xy_precision: 0,
-    //zoom: 2,
-    zoom: 9,
-    theme: null,
-    // Custom formatting of x coordinate text.
-    formatX: function (lon, precision) {
-        var s = '';
-        if (precision > 0)
-            s = ',' + '000000000000000000'.slice(0, precision);
-        return 'x: ' + Ext.util.Format.number(lon, '0.000' + s + '/i');
-    },
-    // Custom formatting of y coordinate text.
-    formatY: function (lat, precision) {
-        var s = '';
-        if (precision > 0)
-            s = ',' + '000000000000000000'.slice(0, precision);
-        return 'y: ' + Ext.util.Format.number(lat, '0.000' + s + '/i') + ' m.';
-    },
-
-    // Useful to always have permalinks enabled. Default is enabled with these settings.
-    // MapPanel.getPermalink() returns current permalink.
-    permalinks: {
-        // The prefix to be used for parameters, e.g. map_x, default is 'map'.
-        paramPrefix: 'map',
-        // Encodes values of permalink parameters ? default false.
-        encodeType: false,
-        // Use Layer names i.s.o. OpenLayers-generated Layer Id's in Permalinks.
-        prettyLayerNames: true
-    }
 };
 
 /*****************************************************************************
@@ -549,23 +670,23 @@ Heron.options.map.toolbar = [
     {type: "tooltips", options: {
         // Pressed cannot be true when anchored is true!
         pressed: false,
-		getfeatureControl: {
-			hover: true,
-			drillDown: false
-		},
-		popupWindow: {
-			title: "Information",
-			hideonmove: false,
+        getfeatureControl: {
+            hover: true,
+            drillDown: false
+        },
+        popupWindow: {
+            title: "Information",
+            hideonmove: false,
             anchored: true,
             width: 180,
             height: 120,
-			featureInfoPanel: {
+            featureInfoPanel: {
                 // Option values are 'Table', 'Grid', 'Tree' and 'XML', default is 'Grid' (results in no display menu)
                 displayPanels: ['Table'],
                 showTopToolbar: false
-			}
-		}
-	}},
+            }
+        }
+    }},
     // Options for SearchPanel window
     {type: "searchcenter", options: {
         show: true,
@@ -600,16 +721,16 @@ Heron.options.map.toolbar = [
         // , mapAttributionYAML: "mapAttribution" // MapFish - field name in config.yaml - default is: 'mapAttribution'
         , showOutputFormats: true
         // , showRotation: true
-        , showLegend: false
+        , showLegend: true
         // , showLegendChecked: true
-        // , mapLimitScales: false
+        , mapLimitScales: false
         , mapPreviewAutoHeight: true // Adapt height of preview map automatically, if false mapPreviewHeight is used.
         // , mapPreviewHeight: 400
     }},
     // Editor
-    {type: "oleditor", options: {
+    /*{type: "oleditor", options: {
         pressed: false,
-        olEditorOptions: {
+        olEditorOptions: {*/
           /*
           activeControls: [
                            'UploadFeature', 'DownloadFeature', 'Separator', 
@@ -619,7 +740,7 @@ Heron.options.map.toolbar = [
                            'DrawHole', 'ModifyFeature', 'Separator'
           ],
           */
-          activeControls: [
+ /*         activeControls: [
                              //'SelectFeature', 'DeleteFeature', 'Separator', 'DragFeature', 'SelectFeature', 'Separator' 
                             'DragFeature', 'SelectFeature', 'Separator', 'DeleteFeature', 'StyleFeature'
           ],
@@ -665,7 +786,7 @@ Heron.options.map.toolbar = [
           }
         }
       }
-    },
+    },*/
     // Cyclomedia
     {
         create: function (mapPanel, options) {
@@ -757,7 +878,7 @@ Heron.options.map.toolbar = [
                 control: new ObliekControl()
             });
         }
-    },	
+    },  
     {
         type: "namesearch",
         // Optional options, see OpenLSSearchCombo.js
@@ -865,14 +986,14 @@ Heron.layout = {
                     border: false,
                     html: '<div id="viewer_north_text">Webatlas Nieuwegein</div>'
                 }
-				/*,
+                /*,
                 {
                     // Help link.
                     xtype: 'panel',
                     flex: 1,
                     border: false,
                     html: '<a href="#" id="viewer_north_help" onclick="App.btn_HelpClicked()">Help</a>'  // in app help
-					html: '<a href="../basis/help.html" id="viewer_north_help" target="_blank">Help</a>' // external window
+                    html: '<a href="../basis/help.html" id="viewer_north_help" target="_blank">Help</a>' // external window
                 }*/
             ]
         },
@@ -884,7 +1005,7 @@ Heron.layout = {
             margins: '0',
             region: "west",
             width: 240,
-			collapsible: true,
+            collapsible: true,
             border: false,
             items: [
                 { xtype: "panel",
@@ -901,7 +1022,7 @@ Heron.layout = {
                                 {
                                     xtype: 'hr_layernodemenulayermetadata'
                                 },
-								/*{
+                                /*{
                                     xtype: 'hr_layernodemenulayerinfo'
                                 },*/
                                 {
