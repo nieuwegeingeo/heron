@@ -993,7 +993,7 @@ Heron.layout = {
             margins: '0',
             region: "east",
             width: 240,
-			collapsible: true,
+            collapsible: true,
             border: false,
             items: [
                 { xtype: "panel",
@@ -1014,7 +1014,9 @@ Heron.layout = {
                             defaults: {
                                 useScaleParameter: true,
                                 baseParams: {
-                                    FORMAT: 'image/png'
+                                    FORMAT: 'image/png',
+                                    // to always force a title in the legendgraphics (title of SLD rule is used for that)
+                                    legend_options: 'forceLabels:on'
                                 }
                             },
                             hropts: {
