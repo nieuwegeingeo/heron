@@ -476,7 +476,27 @@ Heron.ngein.layermap = {
         ]
         }
     ),
-
+    
+    /* ------------------------------
+     * Laadpalen Nieuwegein
+     * ------------------------------*/
+    laadpalen: new OpenLayers.Layer.Vector("Laadpalen",
+      // options
+      {
+        //styleMap: styleMap,
+        visibility: false,
+        strategies: [new OpenLayers.Strategy.Fixed()],
+        projection: new OpenLayers.Projection("EPSG:4326"),
+        protocol: new OpenLayers.Protocol.HTTP(
+        {   
+            url:'http://gng-ap713.nieuwegein.nl/apps/laadpalen/nieuwegein_oplaadpalen.kml',
+            format: new OpenLayers.Format.KML({
+                kmlns: 'http://earth.google.com/kml/2.2',
+                extractStyles: true,
+                extractAttributes: true })
+        })
+      }
+    ),
     
     /* ------------------------------
      * Groenbomen
@@ -830,6 +850,7 @@ Heron.options.map.layers = [
     //Heron.ngein.layermap.groenbomen,
     Heron.ngein.layermap.florafauna,
     Heron.ngein.layermap.nap,
+    Heron.ngein.layermap.laadpalen,
     Heron.ngein.layermap.pc4,
     Heron.ngein.layermap.pc6,
     Heron.ngein.layermap.komgrens,
@@ -915,7 +936,8 @@ var treeTheme = [
                             //{nodeType: "gx_layer", layer: Heron.ngein.layermap.groenbomen.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.peilgebieden.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.florafauna.name },
-                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.nap.name }
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.nap.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.laadpalen.name }
                         ]
                 }
                 ,
