@@ -454,13 +454,15 @@ Heron.options.searchPanelConfig = {
                     xtype: "combo",
                         name: "GEM_CODE",
                         store:['JPS00','VWK00'],
-                        fieldLabel: "  Gemeentecode"
+                        fieldLabel: "  Gemeentecode",
+                        triggerAction: 'all'  // if you do not set this, you will get dropdown with only selected item
                     },
                     {
                     xtype: "combo",
                         name: "SECTIE",
                         store:['A','B','C','D','E','G'],
-                        fieldLabel: "  Sectie"
+                        fieldLabel: "  Sectie",
+                        triggerAction: 'all'  // if you do not set this, you will get dropdown with only selected item
                     },
                     {
                         xtype: "textfield",
