@@ -373,7 +373,11 @@ Heron.options.searchPanelConfig = {
                     autoWildCardAttach: false, // !! false omdat anders de query wordt 'like *1234*', veeeeel langzamer dan 'like 1234*'
                     caseInsensitiveMatch: false
                     //,logicalOperator: OpenLayers.Filter.Logical.AND
-                }
+                },
+				layerOpts: [
+					// name(!) of layer to make visible after search
+                	{ layerOn: 'Postcode 6', layerOpacity: 1.0 } 
+                ]
             },
             resultPanel: {
                 xtype: 'hr_featuregridpanel',
@@ -482,7 +486,7 @@ Heron.options.searchPanelConfig = {
                 },
                 layerOpts: [
                     // name of layer to make visible after search
-                    { layerOn: 'BRK', layerOpacity: 1.0 }
+                    { layerOn: 'Kadaster (BRK)', layerOpacity: 1.0 }
                 ]
             },
             resultPanel: {
@@ -728,9 +732,9 @@ Heron.options.map.toolbar = [
         // , mapPreviewHeight: 400
     }},
     // Editor
-    /*{type: "oleditor", options: {
+    {type: "oleditor", options: {
         pressed: false,
-        olEditorOptions: {*/
+        olEditorOptions: {
           /*
           activeControls: [
                            'UploadFeature', 'DownloadFeature', 'Separator', 
@@ -740,7 +744,7 @@ Heron.options.map.toolbar = [
                            'DrawHole', 'ModifyFeature', 'Separator'
           ],
           */
- /*         activeControls: [
+          activeControls: [
                              //'SelectFeature', 'DeleteFeature', 'Separator', 'DragFeature', 'SelectFeature', 'Separator' 
                             'DragFeature', 'SelectFeature', 'Separator', 'DeleteFeature', 'StyleFeature'
           ],
@@ -786,7 +790,7 @@ Heron.options.map.toolbar = [
           }
         }
       }
-    },*/
+    },
     // Cyclomedia
     {
         create: function (mapPanel, options) {
