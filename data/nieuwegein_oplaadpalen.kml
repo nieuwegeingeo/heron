@@ -1,0 +1,1891 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Folder><name>nieuwegein_oplaadpalen3</name>
+  <Placemark>
+	<name>Benedenmonde 51 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005481 mennekes</description>
+      <Point><coordinates>5.08031918,52.0028118</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Heidehoeve 14 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005532 mennekes</description>
+      <Point><coordinates>5.09833033,52.05047319</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Van Rensselaerlaan 7 Utrecht</name>
+	<description>Krachtstroom NewMotion 03006183 mennekes</description>
+      <Point><coordinates>5.0996305,52.0619525</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447056 mennekes</description>
+      <Point><coordinates>5.09066104888916,52.0654198672481</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447056 mennekes</description>
+      <Point><coordinates>5.09066104888916,52.0654198672481</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Nachtwachtstede 1  Nieuwegein</name>
+	<description>Krachtstroom EVnetNL AL608 mennekes</description>
+      <Point><coordinates>5.084347,52.02698</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447056 mennekes</description>
+      <Point><coordinates>5.09066104888916,52.0654198672481</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Boomgaard 32 IJsselstein</name>
+	<description>Krachtstroom EV-Box EVB-P1542216 mennekes</description>
+      <Point><coordinates>5.04732,52.0079</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447056 mennekes</description>
+      <Point><coordinates>5.09066104888916,52.0654198672481</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zwaardenburg 10 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1516003 mennekes</description>
+      <Point><coordinates>5.078909,52.043007</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447056 mennekes</description>
+      <Point><coordinates>5.09066104888916,52.0654198672481</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zwaardenburg 10 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1516003 mennekes</description>
+      <Point><coordinates>5.078909,52.043007</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Utrechtsestraatweg 28 Nieuwegein</name>
+	<description>Stopcontact EV-Box EVB-P1551046 mennekes</description>
+      <Point><coordinates>5.10299897,52.04419423</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Heidehoeve 14 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005531 mennekes</description>
+      <Point><coordinates>5.09833033,52.05047319</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw B Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_0901 mennekes</description>
+      <Point><coordinates>5.088551,52.063412</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Abraham Kuyperpark 10 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1415179 mennekes</description>
+      <Point><coordinates>5.080919,52.053993</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Abraham Kuyperpark 10 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1415179 mennekes</description>
+      <Point><coordinates>5.080919,52.053993</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Lierseschans 8 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005521 mennekes</description>
+      <Point><coordinates>5.09182683,52.01572723</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>EV-Box EVB-P1608457 </name>
+	<description>Stopcontact mennekes</description>
+      <Point><coordinates>5.07628662,52.04693207</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zwolseveste 151 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1415176 mennekes</description>
+      <Point><coordinates>5.092958,52.023293</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zwolseveste 151 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1415176 mennekes</description>
+      <Point><coordinates>5.092958,52.023293</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Van Rensselaerlaan 7 Utrecht</name>
+	<description>Krachtstroom NewMotion 03000330 mennekes</description>
+      <Point><coordinates>5.10001524246672,52.0618977923893</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Lierseschans 8 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005522 mennekes</description>
+      <Point><coordinates>5.09182683,52.01572723</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Van Rensselaerlaan 7 Utrecht</name>
+	<description>Krachtstroom NewMotion 03000329 mennekes</description>
+      <Point><coordinates>5.09996696270446,52.061957158093</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Van Rensselaerlaan 7 Utrecht</name>
+	<description>Krachtstroom NewMotion 03000328 mennekes</description>
+      <Point><coordinates>5.09991331852416,52.0620099275412</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Stopcontact NewMotion 02009538 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vuilcop 9 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1421171 mennekes</description>
+      <Point><coordinates>5.126655,52.02349163</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Van Rensselaerlaan 7 Utrecht</name>
+	<description>Krachtstroom NewMotion 03000331 mennekes</description>
+      <Point><coordinates>5.10005815781096,52.0618450228087</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447054 mennekes</description>
+      <Point><coordinates>5.0907039642334,52.0654726326051</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ir. D.S. Tuijnmanweg 10  Vianen</name>
+	<description>Krachtstroom EVnetNL AL428 mennekes</description>
+      <Point><coordinates>5.109265,51.989294</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Swammerdamweg 16 IJsselstein</name>
+	<description>Krachtstroom EV-Box EVB-P1348161 mennekes</description>
+      <Point><coordinates>5.05390552,52.01706458</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Swammerdamweg 16 IJsselstein</name>
+	<description>Krachtstroom EV-Box EVB-P1348161 mennekes</description>
+      <Point><coordinates>5.05390552,52.01706458</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw B Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_0892 mennekes</description>
+      <Point><coordinates>5.088551,52.06341</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Wiersedreef 1 Nieuwegein</name>
+	<description>Krachtstroom Ecotap 1404014 mennekes</description>
+      <Point><coordinates>5.0995599,52.0124416</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Walnootgaarde 4A Nieuwegein</name>
+	<description>Stopcontact NewMotion 02001494 mennekes</description>
+      <Point><coordinates>5.07230806350708,52.0361289978027</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Middenweg 22 IJsselstein</name>
+	<description>Krachtstroom EV-Box EVB-P1417104 mennekes</description>
+      <Point><coordinates>5.05396058,52.01455145</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Middenweg 22 IJsselstein</name>
+	<description>Krachtstroom EV-Box EVB-P1417104 mennekes</description>
+      <Point><coordinates>5.05396058,52.01455145</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Westelijke paralleweg 1 Vianen</name>
+	<description>Krachtstroom EVnetNL AL416 mennekes</description>
+      <Point><coordinates>5.082124,51.987485</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Strakonicestraat 19 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0006292 mennekes</description>
+      <Point><coordinates>5.05783822,52.01965693</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Strakonicestraat 19 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0006291 mennekes</description>
+      <Point><coordinates>5.05783822,52.01965693</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ambachtsweg 4 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1449077 mennekes</description>
+      <Point><coordinates>5.09894893,52.01540623</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Dorpsstraat 34-38 Hagestein</name>
+	<description>Krachtstroom EV-Box EVB-P1602106 mennekes</description>
+      <Point><coordinates>5.12166323,51.9808749</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw C Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_0911 mennekes</description>
+      <Point><coordinates>5.088218,52.06293</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ambachtsweg 4 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1449077 mennekes</description>
+      <Point><coordinates>5.09894893,52.01540623</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw C Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_0922 mennekes</description>
+      <Point><coordinates>5.088256,52.062937</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Carillonlaan 42 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0015971 mennekes</description>
+      <Point><coordinates>5.08801875,52.04498672</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Amerikalaan 56 IJsselstein</name>
+	<description>Stopcontact EV-Box EVB-P1417046 mennekes</description>
+      <Point><coordinates>5.04356,52.00877</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Groenewoudsedijk 50 Utrecht</name>
+	<description>Stopcontact NewMotion 02006299 mennekes</description>
+      <Point><coordinates>5.08754062652588,52.0683708190918</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447056 mennekes</description>
+      <Point><coordinates>5.09066104888916,52.0654198672481</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Groenewoudsedijk 50 Utrecht</name>
+	<description>Stopcontact NewMotion 02006231 mennekes</description>
+      <Point><coordinates>5.08754062652588,52.0683708190918</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Brunel 46 IJsselstein</name>
+	<description>Stopcontact EV-Box EVB-P1548389 mennekes</description>
+      <Point><coordinates>5.03437482,52.02228795</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Parkhout 2 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0012991 mennekes</description>
+      <Point><coordinates>5.08022849,52.01869109</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Cooklaan 3 Utrecht</name>
+	<description>Krachtstroom Nuon EVB-P1552410 mennekes</description>
+      <Point><coordinates>5.098051,52.065681</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Mercatorlaan Utrecht</name>
+	<description>Stopcontact NewMotion 02009634 mennekes</description>
+      <Point><coordinates>5.0824282,52.0698027</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Cooklaan 3 Utrecht</name>
+	<description>Krachtstroom Nuon EVB-P1552410 mennekes</description>
+      <Point><coordinates>5.098051,52.065681</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Parkhout 2 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0012992 mennekes</description>
+      <Point><coordinates>5.08022849,52.01869109</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vuilcop 9 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1421171 mennekes</description>
+      <Point><coordinates>5.126655,52.02349163</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Lorentzbaan 1-12 Nieuwegein</name>
+	<description>Stopcontact EV-Box EVB-P1421229 mennekes</description>
+      <Point><coordinates>5.0986507,52.02703385</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Nijverheidsweg 3 Nieuwegein</name>
+	<description>Stopcontact EV-Box EVB-P1541686 mennekes</description>
+      <Point><coordinates>5.1005612,52.01403295</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Koekoekslaan 1 Nieuwegein</name>
+	<description>Stopcontact NewMotion 01001022 mennekes</description>
+      <Point><coordinates>5.08061742782593,52.0251579284668</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Praagsingel   IJsselstein</name>
+	<description>Krachtstroom EVnetNL AL552 mennekes</description>
+      <Point><coordinates>5.041097,52.00998</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Uithoflaan 3 Vianen</name>
+	<description>Stopcontact Uithoflaan 4 schuko</description>
+      <Point><coordinates>5.079784,51.987316</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Heemstedelaan 32 Utrecht</name>
+	<description>Krachtstroom Nuon EVB-P1607293 mennekes</description>
+      <Point><coordinates>5.121863,52.066759</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Gelderlandhaven 4 Nieuwegein</name>
+	<description>Krachtstroom NewMotion ICUEVE900114 mennekes</description>
+      <Point><coordinates>5.1076285,52.0165164</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Brinkwal 3  Nieuwegein</name>
+	<description>Stopcontact EVnetNL AL555 mennekes</description>
+      <Point><coordinates>5.091957,52.027051</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Orpheuslaan 74 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005362 mennekes</description>
+      <Point><coordinates>5.09076229,52.04416107</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Symfonielaan 1  Nieuwegein</name>
+	<description>Stopcontact EVnetNL AL556 mennekes</description>
+      <Point><coordinates>5.089239,52.046556</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Mercatorlaan Utrecht</name>
+	<description>Stopcontact NewMotion 02009733 mennekes</description>
+      <Point><coordinates>5.0824282,52.0698027</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Mercatorlaan Utrecht</name>
+	<description>Stopcontact NewMotion 02009702 mennekes</description>
+      <Point><coordinates>5.0824282,52.0698027</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Podiumweg 1  IJsselstein</name>
+	<description>Krachtstroom EVnetNL AL547 mennekes</description>
+      <Point><coordinates>5.040206,52.016245</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Sperwerlaan 37 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0012601 mennekes</description>
+      <Point><coordinates>5.07080111,52.02067446</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Sperwerlaan 37 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0012602 mennekes</description>
+      <Point><coordinates>5.07080111,52.02067446</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw A Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_0461 mennekes</description>
+      <Point><coordinates>5.08777,52.064</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Mercatorlaan Utrecht</name>
+	<description>Stopcontact NewMotion 02009826 mennekes</description>
+      <Point><coordinates>5.0824282,52.0698027</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw A Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_0462 mennekes</description>
+      <Point><coordinates>5.08777,52.064</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Carillonlaan 42 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0015972 mennekes</description>
+      <Point><coordinates>5.08801875,52.04498672</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Krijtwal 17 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0011602 mennekes</description>
+      <Point><coordinates>5.08854257,52.0277221</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Heer Arendstraat 11 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0005131 mennekes</description>
+      <Point><coordinates>5.04627751,52.01687053</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Heer Arendstraat 11 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0005132 mennekes</description>
+      <Point><coordinates>5.04627751,52.01687053</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Einsteinweg 45 IJsselstein</name>
+	<description>Stopcontact NewMotion 02014160 mennekes</description>
+      <Point><coordinates>5.0381051,52.0059659</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Lage biezenweg 7 Vianen</name>
+	<description>Krachtstroom EV-Box EVB-P1228077 mennekes</description>
+      <Point><coordinates>5.10438623809819,51.9857364146701</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Valkenstraat 3 Vianen</name>
+	<description>Krachtstroom Allego NLALLEGO0005672 mennekes</description>
+      <Point><coordinates>5.09337527,51.99531793</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Valkenstraat 3 Vianen</name>
+	<description>Krachtstroom Allego NLALLEGO0005671 mennekes</description>
+      <Point><coordinates>5.09337527,51.99531793</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Krijtwal 9 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0006052 mennekes</description>
+      <Point><coordinates>5.0884248,52.02780091</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Krijtwal 9 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0006051 mennekes</description>
+      <Point><coordinates>5.0884248,52.02780091</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Edisonbaan 14B Nieuwegein</name>
+	<description>Stopcontact Chalet / Knoworries schuko</description>
+      <Point><coordinates>5.0962454080582,52.034808755155</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Lorentzlaan 8 IJsselstein</name>
+	<description>Stopcontact EV-Box EVB-P1427170 mennekes</description>
+      <Point><coordinates>5.06147403,52.01303665</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw E Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_1081 mennekes</description>
+      <Point><coordinates>5.086759,52.063445</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Brunel 46 IJsselstein</name>
+	<description>Stopcontact EV-Box EVB-P1548389 mennekes</description>
+      <Point><coordinates>5.03437482,52.02228795</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kasteeldrift  31 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0014512 mennekes</description>
+      <Point><coordinates>5.07371706,52.03690367</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Dissel 192 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0006082 mennekes</description>
+      <Point><coordinates>5.03518119,52.02255357</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zonnebloemstraat 70 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005172 mennekes</description>
+      <Point><coordinates>5.0804613,52.00686713</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Dissel 192 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0006081 mennekes</description>
+      <Point><coordinates>5.03518119,52.02255357</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw E Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_1071 mennekes</description>
+      <Point><coordinates>5.086733,52.063445</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw C Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_0921 mennekes</description>
+      <Point><coordinates>5.088256,52.062937</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vuilcop 9 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1421223 mennekes</description>
+      <Point><coordinates>5.12650185,52.02313335</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vosstraat 7 Hagestein</name>
+	<description>Krachtstroom Allego NLALLEGO0005782 mennekes</description>
+      <Point><coordinates>5.1216128,51.980186</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vosstraat 7 Hagestein</name>
+	<description>Krachtstroom Allego NLALLEGO0005781 mennekes</description>
+      <Point><coordinates>5.1216128,51.980186</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rietkamp 47 Vianen</name>
+	<description>Krachtstroom Allego NLALLEGO0006202 mennekes</description>
+      <Point><coordinates>5.0775726,51.9826357</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ratelaar 45 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1515027 mennekes</description>
+      <Point><coordinates>5.085965,52.006209</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rietkamp 47 Vianen</name>
+	<description>Krachtstroom Allego NLALLEGO0006201 mennekes</description>
+      <Point><coordinates>5.0775726,51.9826357</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ratelaar 45 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1515027 mennekes</description>
+      <Point><coordinates>5.085965,52.006209</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Bertus Aafjeshoeve 71 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0007072 mennekes</description>
+      <Point><coordinates>5.0822329,52.05613185</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Bertus Aafjeshoeve 71 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0007071 mennekes</description>
+      <Point><coordinates>5.0822329,52.05613185</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw B Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_0902 mennekes</description>
+      <Point><coordinates>5.088551,52.063412</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Drilleveld 20 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0011522 mennekes</description>
+      <Point><coordinates>5.09028566,52.03730359</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Julianaweg 217  Utrecht</name>
+	<description>Krachtstroom EVnetNL REE240 mennekes</description>
+      <Point><coordinates>5.118614,52.066079</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Drilleveld 20 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0011521 mennekes</description>
+      <Point><coordinates>5.09028566,52.03730359</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Galvanibaan 10 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1536056 mennekes</description>
+      <Point><coordinates>5.10599813,52.02490378</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447056 mennekes</description>
+      <Point><coordinates>5.09066104888916,52.0654198672481</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Utrecht</name>
+	<description>Krachtstroom NL MAB Exploitatie 1000000163 mennekes</description>
+      <Point><coordinates>5.087489,52.063979</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Utrecht</name>
+	<description>Krachtstroom NL MAB Exploitatie 1000000162 mennekes</description>
+      <Point><coordinates>5.087489,52.063979</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Galvanibaan 5 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1425058 mennekes</description>
+      <Point><coordinates>5.10700372,52.02711807</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Lucas van Leydenhage 4 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1406319 mennekes</description>
+      <Point><coordinates>5.07066,52.05129</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Galvanibaan 5 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1425058 mennekes</description>
+      <Point><coordinates>5.10700372,52.02711807</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Willem Klooshove 35 Nieuwegein</name>
+	<description>Stopcontact EV-Box EVB-P1339193 mennekes</description>
+      <Point><coordinates>5.08661,52.05566</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Betuwehaven 29 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1536059 mennekes</description>
+      <Point><coordinates>5.09876855,52.02029983</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Betuwehaven 29 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1536059 mennekes</description>
+      <Point><coordinates>5.09876855,52.02029983</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Veluwehaven 19 Nieuwegein</name>
+	<description>Stopcontact EV-Box EVB-P1450122 mennekes</description>
+      <Point><coordinates>5.09929305,52.01893327</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Stopcontact NewMotion 02009476 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Koekoekslaan 1 Nieuwegein</name>
+	<description>Stopcontact NewMotion 01000847 mennekes</description>
+      <Point><coordinates>5.08061742782593,52.0251579284668</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Prins Hendriklaan 35 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1415187 mennekes</description>
+      <Point><coordinates>5.096322,52.007554</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Prins Hendriklaan 35 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1415187 mennekes</description>
+      <Point><coordinates>5.096322,52.007554</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vuurvliegweide 1  Nieuwegein</name>
+	<description>Krachtstroom EVnetNL DB0266 mennekes</description>
+      <Point><coordinates>5.067478,52.045368</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Fermiweg 93 Utrecht</name>
+	<description>Stopcontact NewMotion 02004376 mennekes</description>
+      <Point><coordinates>5.1027164,52.0210252</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Einsteinbaan 4 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1449066 mennekes</description>
+      <Point><coordinates>5.10306107,52.03967277</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Stopcontact NewMotion 02012195 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Stopcontact NewMotion 02009873 mennekes</description>
+      <Point><coordinates>5.1039145,52.0575085</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Utrechthaven 35 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1414154 mennekes</description>
+      <Point><coordinates>5.09922985,52.02092605</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Stopcontact NewMotion 02009791 mennekes</description>
+      <Point><coordinates>5.1039145,52.0575085</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Utrechthaven 35 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1414157 mennekes</description>
+      <Point><coordinates>5.09928,52.02099</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Koekoekslaan 1 Nieuwegein</name>
+	<description>Stopcontact NewMotion 01000853 mennekes</description>
+      <Point><coordinates>5.08061742782593,52.0251579284668</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Utrechthaven 35 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1414157 mennekes</description>
+      <Point><coordinates>5.09928,52.02099</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Tapirweide 19  Nieuwegein</name>
+	<description>Krachtstroom EVnetNL REE200 mennekes</description>
+      <Point><coordinates>5.073461,52.046937</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Stootvalk 1 Nieuwegein</name>
+	<description>Stopcontact NewMotion 02004358 mennekes</description>
+      <Point><coordinates>5.07122373580933,52.0204582214356</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kelvinbaan 16 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1437209 mennekes</description>
+      <Point><coordinates>5.09385,52.03145</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kelvinbaan 16 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1437209 mennekes</description>
+      <Point><coordinates>5.09385,52.03145</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kelvinbaan 16 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1437209 mennekes</description>
+      <Point><coordinates>5.09385,52.03145</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hollandhaven  Nieuwegein</name>
+	<description>Krachtstroom Renault Stam mennekes</description>
+      <Point><coordinates>5.1015803217888,52.019355032098</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kelvinbaan 16 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1437209 mennekes</description>
+      <Point><coordinates>5.09385,52.03145</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Koekoekslaan 1 Nieuwegein</name>
+	<description>Stopcontact NewMotion 01000850 mennekes</description>
+      <Point><coordinates>5.08061742782593,52.0251579284668</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kelvinbaan 16 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1437207 mennekes</description>
+      <Point><coordinates>5.09686,52.03272</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kelvinbaan 16 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1437207 mennekes</description>
+      <Point><coordinates>5.09686,52.03272</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kelvinbaan 16 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1437207 mennekes</description>
+      <Point><coordinates>5.09686,52.03272</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Utrecht</name>
+	<description>Krachtstroom NL MAB Exploitatie 901100045 mennekes</description>
+      <Point><coordinates>5.087489,52.063979</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Andorrastraat 1 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0005581 mennekes</description>
+      <Point><coordinates>5.05139171,52.02305914</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Andorrastraat 1 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0005582 mennekes</description>
+      <Point><coordinates>5.05139171,52.02305914</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Willem Elsschothove 4759 Nieuwegein</name>
+	<description>Stopcontact EV-Box EVB-P1347188 mennekes</description>
+      <Point><coordinates>5.07244363,52.0547206</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Heemradenlaan 28 nst IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0005702 mennekes</description>
+      <Point><coordinates>5.02788078,52.0264586</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Gravin Adalaan 21 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0013581 mennekes</description>
+      <Point><coordinates>5.09724465,52.01377928</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Heemradenlaan 28 nst IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0005701 mennekes</description>
+      <Point><coordinates>5.02788078,52.0264586</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Gravin Adalaan 21 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0013582 mennekes</description>
+      <Point><coordinates>5.09724465,52.01377928</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Van Deventerlaan 30 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1348108 mennekes</description>
+      <Point><coordinates>5.08352,52.0666</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zeelantlaan 29  Utrecht</name>
+	<description>Krachtstroom EVnetNL DB0261 mennekes</description>
+      <Point><coordinates>5.102157,52.062597</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Galvanibaan 10 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1536056 mennekes</description>
+      <Point><coordinates>5.10599813,52.02490378</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Sofiastraat 6 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0005242 mennekes</description>
+      <Point><coordinates>5.04274787,52.01301025</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Sofiastraat 6 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0005241 mennekes</description>
+      <Point><coordinates>5.04274787,52.01301025</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Duurstedelaan 158 Utrecht</name>
+	<description>Krachtstroom Nuon EVB-P1531132 mennekes</description>
+      <Point><coordinates>5.118495,52.061126</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hooiersweide 119 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0010761 mennekes</description>
+      <Point><coordinates>5.07387783,52.04903641</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Duurstedelaan 158 Utrecht</name>
+	<description>Krachtstroom Nuon EVB-P1531132 mennekes</description>
+      <Point><coordinates>5.118495,52.061126</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Oude Utrechtseweg 8 IJsselstein</name>
+	<description>Stopcontact EV-Box EVB-P1602332 mennekes</description>
+      <Point><coordinates>5.06086632,52.01936897</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hooiersweide 119 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0010762 mennekes</description>
+      <Point><coordinates>5.07387783,52.04903641</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Reggestraat 1 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0009691 mennekes</description>
+      <Point><coordinates>5.09969368,52.0105931</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Reggestraat 1 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0009692 mennekes</description>
+      <Point><coordinates>5.09969368,52.0105931</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Aziëlaan 470 Utrecht</name>
+	<description>Krachtstroom Nuon EVB-P1548437 mennekes</description>
+      <Point><coordinates>5.104642,52.066401</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Aziëlaan 470 Utrecht</name>
+	<description>Krachtstroom Nuon EVB-P1548437 mennekes</description>
+      <Point><coordinates>5.104642,52.066401</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Diemerschans 40 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005442 mennekes</description>
+      <Point><coordinates>5.09721439,52.01941664</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Diemerschans 40 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005441 mennekes</description>
+      <Point><coordinates>5.09721439,52.01941664</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ravenswade  Nieuwegein</name>
+	<description>Stopcontact Ringwade 6a schuko</description>
+      <Point><coordinates>5.113862,52.054594</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Utrecht</name>
+	<description>Krachtstroom NL MAB Exploitatie 1000000046 mennekes</description>
+      <Point><coordinates>5.087489,52.063979</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Symfonielaan 26 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0011262 mennekes</description>
+      <Point><coordinates>5.09719391,52.04235157</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Eendrachtlaan 10 Utrecht</name>
+	<description>Krachtstroom Berenschot BV mennekes</description>
+      <Point><coordinates>5.1097687706351,52.066073246377</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Veldwade 3 Nieuwegein</name>
+	<description>Krachtstroom Ecotap 112039 mennekes</description>
+      <Point><coordinates>5.1169399,52.047975</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447054 mennekes</description>
+      <Point><coordinates>5.0907039642334,52.0654726326051</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kasteeldrift  31 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0014511 mennekes</description>
+      <Point><coordinates>5.07371706,52.03690367</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Symfonielaan 1 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0010772 mennekes</description>
+      <Point><coordinates>5.08930371,52.04663398</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Symfonielaan 1 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0010771 mennekes</description>
+      <Point><coordinates>5.08930371,52.04663398</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Gildeborglaan 10 Nieuwegein </name>
+	<description>Krachtstroom Allego NLALLEGO0007092 mennekes</description>
+      <Point><coordinates>5.09751385,52.00461371</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Gildeborglaan 10 Nieuwegein </name>
+	<description>Krachtstroom Allego NLALLEGO0007091 mennekes</description>
+      <Point><coordinates>5.09751385,52.00461371</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rijsenborch 58 aan de Leyenborch Vianen</name>
+	<description>Krachtstroom Allego NLALLEGO0005921 mennekes</description>
+      <Point><coordinates>5.09472624,51.9889343</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rijsenborch 58 aan de Leyenborch Vianen</name>
+	<description>Krachtstroom Allego NLALLEGO0005922 mennekes</description>
+      <Point><coordinates>5.09472624,51.9889343</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Velduil 50 Nieuwegein</name>
+	<description>Krachtstroom Ecotap 1420100 mennekes</description>
+      <Point><coordinates>5.0676175,52.0235587</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Schaepmanstraat 1 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0006182 mennekes</description>
+      <Point><coordinates>5.0337401,52.01391232</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kelvinbaan 16 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1437209 mennekes</description>
+      <Point><coordinates>5.09385,52.03145</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Schaepmanstraat 1 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0006181 mennekes</description>
+      <Point><coordinates>5.0337401,52.01391232</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kelvinbaan 16 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1437209 mennekes</description>
+      <Point><coordinates>5.09385,52.03145</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kelvinbaan 16 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1437207 mennekes</description>
+      <Point><coordinates>5.09686,52.03272</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Utrechthaven 35 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1414154 mennekes</description>
+      <Point><coordinates>5.09922985,52.02092605</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Twentehaven 4 Nieuwegein</name>
+	<description>Stopcontact EV-Box EVB-P1536153 mennekes</description>
+      <Point><coordinates>5.09967008,52.01918315</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Krijtwal 17 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0011601 mennekes</description>
+      <Point><coordinates>5.08854257,52.0277221</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Symfonielaan 26  Nieuwegein</name>
+	<description>Stopcontact EVnetNL AL766 mennekes</description>
+      <Point><coordinates>5.097034,52.042377</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Amaliastein 128 Vianen</name>
+	<description>Stopcontact NL MAB Laadoplossingen 1701322 mennekes</description>
+      <Point><coordinates>5.070843,51.985628</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>De Kroon (A27 Utrecht – Vianen HMP 66) Nieuwegein</name>
+	<description>Snellader Fastned De Kroon chademo</description>
+      <Point><coordinates>5.120814,52.016089</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 79 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1541582 mennekes</description>
+      <Point><coordinates>5.08356905,52.06336855</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447054 mennekes</description>
+      <Point><coordinates>5.0907039642334,52.0654726326051</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Archimedesbaan 3-18 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1410112 mennekes</description>
+      <Point><coordinates>5.10613865,52.03500273</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vosseweide 56 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1406002 mennekes</description>
+      <Point><coordinates>5.074446,52.041615</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vosseweide 56 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1406002 mennekes</description>
+      <Point><coordinates>5.074446,52.041615</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Archimedesbaan 3-18 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1410112 mennekes</description>
+      <Point><coordinates>5.10613865,52.03500273</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Van Deventerlaan 50 Utrecht</name>
+	<description>Krachtstroom Mercedes Benz Nederland mennekes</description>
+      <Point><coordinates>5.0781565904617,52.066936846393</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ferdinand Bolhage 8 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0004341 mennekes</description>
+      <Point><coordinates>5.07515316,52.05229923</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ferdinand Bolhage 8 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0004342 mennekes</description>
+      <Point><coordinates>5.07515316,52.05229923</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kaasmakerlaan  IJsselstein</name>
+	<description>Stopcontact EV-Box EVB-P1414049 mennekes</description>
+      <Point><coordinates>5.03594997,52.02539728</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Amaliastein 6 Vianen</name>
+	<description>Stopcontact EV-Box EVB-P1426248 mennekes</description>
+      <Point><coordinates>5.07027,51.98308</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03004092 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Tinnegieterstede 1 parkeergarage Cityplaza Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0010332 mennekes</description>
+      <Point><coordinates>5.085385,52.02692</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Tinnegieterstede 1 parkeergarage Cityplaza Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0010331 mennekes</description>
+      <Point><coordinates>5.085385,52.02692</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Utrecht</name>
+	<description>Krachtstroom NL MAB Exploitatie 1000000139 mennekes</description>
+      <Point><coordinates>5.087489,52.063979</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Utrecht</name>
+	<description>Krachtstroom NL MAB Exploitatie 1000000140 mennekes</description>
+      <Point><coordinates>5.087489,52.063979</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Van Rensselaerlaan 7 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003303 mennekes</description>
+      <Point><coordinates>5.0995107,52.0620859</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Sluyterslaan 425 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1516017 mennekes</description>
+      <Point><coordinates>5.085945,52.031318</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Utrecht</name>
+	<description>Krachtstroom NL MAB Exploitatie 1000000142 mennekes</description>
+      <Point><coordinates>5.087489,52.063979</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Sluyterslaan 425 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1516017 mennekes</description>
+      <Point><coordinates>5.085945,52.031318</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Utrecht</name>
+	<description>Krachtstroom NL MAB Exploitatie 1000000141 mennekes</description>
+      <Point><coordinates>5.087489,52.063979</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zonnebloemstraat 70 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005171 mennekes</description>
+      <Point><coordinates>5.0804613,52.00686713</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ratelaar 10 Nieuwegein</name>
+	<description>Stopcontact Groen Tweewielers schuko</description>
+      <Point><coordinates>5.084947,52.005375</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Jan van der Heydenweg 36  IJsselstein</name>
+	<description>Stopcontact EVnetNL AL705 mennekes</description>
+      <Point><coordinates>5.047712,52.016981</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Buizerdlaan 10 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1430111 mennekes</description>
+      <Point><coordinates>5.06643938,52.02631242</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Orpheuslaan 74 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005361 mennekes</description>
+      <Point><coordinates>5.09076229,52.04416107</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Weg der Verenigde Naties 2 IJsselstein</name>
+	<description>Krachtstroom Ecotap 1702608 mennekes</description>
+      <Point><coordinates>5.027718,52.01312</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Archimedesbaan 3-18 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1410112 mennekes</description>
+      <Point><coordinates>5.10613865,52.03500273</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Richterslaan 60 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005382 mennekes</description>
+      <Point><coordinates>5.0785384,52.03561999</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>De Kroon (A27 Utrecht – Vianen HMP 66) Nieuwegein</name>
+	<description>Snellader Fastned De Kroon combo</description>
+      <Point><coordinates>5.120814,52.016089</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Margaretha van Daunstraat 27 Vianen</name>
+	<description>Stopcontact NewMotion 03000656 mennekes</description>
+      <Point><coordinates>5.074079,51.9870749</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Edisonbaan 8 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1427153 mennekes</description>
+      <Point><coordinates>5.10181585,52.03501797</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003910 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hongkongstraat 1 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0005742 mennekes</description>
+      <Point><coordinates>5.03693739,52.00974792</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003624 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hongkongstraat 1 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0005741 mennekes</description>
+      <Point><coordinates>5.03693739,52.00974792</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Frans Halshage 35 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005452 mennekes</description>
+      <Point><coordinates>5.08478371,52.04929268</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hooft Graaflandstraat 33 Utrecht</name>
+	<description>Stopcontact NewMotion 02013865 mennekes</description>
+      <Point><coordinates>5.1171752,52.0612351</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Einsteinbaan 4 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1449066 mennekes</description>
+      <Point><coordinates>5.10306107,52.03967277</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hollantlaan 6-8 Utrecht</name>
+	<description>Krachtstroom NewMotion UTPITEN421 mennekes</description>
+      <Point><coordinates>5.10584746096038,52.0616606151277</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw A Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_0472 mennekes</description>
+      <Point><coordinates>5.08777,52.064</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw A Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_0471 mennekes</description>
+      <Point><coordinates>5.08777,52.064</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Schouwstede 7003 1 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0006322 mennekes</description>
+      <Point><coordinates>5.07846987,52.0288715</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Schouwstede 7003 1 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0006321 mennekes</description>
+      <Point><coordinates>5.07846987,52.0288715</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447054 mennekes</description>
+      <Point><coordinates>5.0907039642334,52.0654726326051</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Afrikalaan 157 Utrecht</name>
+	<description>Stopcontact EV-Box EVB-P1243077 mennekes</description>
+      <Point><coordinates>5.09391957,52.07026012</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rembrandthage 138 Nieuwegein</name>
+	<description>Krachtstroom LomboXnet 1702137 mennekes</description>
+      <Point><coordinates>5.086327,52.050532</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Huis te Vlietlaan 2 Utrecht</name>
+	<description>Krachtstroom NewMotion UTPITEN080 mennekes</description>
+      <Point><coordinates>5.122729,52.062176</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Tuinensingel 17 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0005852 mennekes</description>
+      <Point><coordinates>5.04376351,52.01200798</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Buizerdlaan 10 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1430111 mennekes</description>
+      <Point><coordinates>5.06643938,52.02631242</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Tuinensingel 17 IJsselstein</name>
+	<description>Krachtstroom Allego NLALLEGO0005851 mennekes</description>
+      <Point><coordinates>5.04376351,52.01200798</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Buizerdlaan 10 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1430111 mennekes</description>
+      <Point><coordinates>5.06643938,52.02631242</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Buizerdlaan 10 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1430111 mennekes</description>
+      <Point><coordinates>5.06643938,52.02631242</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Buizerdlaan 10 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1430111 mennekes</description>
+      <Point><coordinates>5.06643938,52.02631242</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Buizerdlaan 10 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1430111 mennekes</description>
+      <Point><coordinates>5.06643938,52.02631242</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Buizerdlaan 10 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1430111 mennekes</description>
+      <Point><coordinates>5.06643938,52.02631242</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Buizerdlaan 10 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1430111 mennekes</description>
+      <Point><coordinates>5.06643938,52.02631242</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Buizerdlaan 2L Nieuwegein</name>
+	<description>Stopcontact NewMotion 02002128 mennekes</description>
+      <Point><coordinates>5.06829071044922,52.0272369384766</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Fazantenlaan 20 Zeist</name>
+	<description>Stopcontact NewMotion 02006206 mennekes</description>
+      <Point><coordinates>5.1226277,51.9824393</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vuilcop 9 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1421223 mennekes</description>
+      <Point><coordinates>5.12650185,52.02313335</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>De Kroon (A27 Utrecht – Vianen HMP 66) Nieuwegein</name>
+	<description>Krachtstroom Fastned De Kroon mennekes</description>
+      <Point><coordinates>5.120814,52.016089</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Willem Elsschothove 36 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0010321 mennekes</description>
+      <Point><coordinates>5.07460877,52.05433583</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Edisonbaan 8 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1427153 mennekes</description>
+      <Point><coordinates>5.10181585,52.03501797</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Heemstedelaan 32 Utrecht</name>
+	<description>Krachtstroom Nuon EVB-P1607293 mennekes</description>
+      <Point><coordinates>5.121863,52.066759</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Handelskade 31 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0008001 mennekes</description>
+      <Point><coordinates>5.0941386,52.00999</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rond Het Fort 26 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1402358 mennekes</description>
+      <Point><coordinates>5.10299,52.03482</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Handelskade 31 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0008002 mennekes</description>
+      <Point><coordinates>5.0941386,52.00999</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rijnlaan 270 Utrecht</name>
+	<description>Krachtstroom NewMotion UTPITEN125 mennekes</description>
+      <Point><coordinates>5.11365283299642,52.0674644122107</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rond Het Fort 26 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1402358 mennekes</description>
+      <Point><coordinates>5.10299,52.03482</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Aardbeigaarde 2 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0003901 mennekes</description>
+      <Point><coordinates>5.07030967,52.032148</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Aardbeigaarde 2 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0003902 mennekes</description>
+      <Point><coordinates>5.07030967,52.032148</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447056 mennekes</description>
+      <Point><coordinates>5.09066104888916,52.0654198672481</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kameraarsweide 2 Nieuwegein</name>
+	<description>Stopcontact EV-Box EVB-P1541679 mennekes</description>
+      <Point><coordinates>5.07147,52.04132</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Laanakkerweg 6 Vianen</name>
+	<description>Stopcontact EV-Box EVB-P1542072 mennekes</description>
+      <Point><coordinates>5.09738603,51.97681495</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Hooft Graaflandstraat 94 Utrecht</name>
+	<description>Stopcontact Ekeris Tweewielers schuko</description>
+      <Point><coordinates>5.119831,52.066097</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw E Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_1072 mennekes</description>
+      <Point><coordinates>5.086733,52.063445</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Simon de Vliegerhage 108 nst Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005371 mennekes</description>
+      <Point><coordinates>5.07620438,52.05049399</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Bedumerschans 43 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005502 mennekes</description>
+      <Point><coordinates>5.09400568,52.01915414</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Simon de Vliegerhage 108 nst Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005372 mennekes</description>
+      <Point><coordinates>5.07620438,52.05049399</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Prins Bernhardstraat 75 Vianen</name>
+	<description>Krachtstroom NewMotion t53_0415_009 chademo</description>
+      <Point><coordinates>5.08522500132744,51.9900363839862</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Gazelleweide 9 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0007031 mennekes</description>
+      <Point><coordinates>5.06971778,52.04325947</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Gazelleweide 9 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0007032 mennekes</description>
+      <Point><coordinates>5.06971778,52.04325947</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Graaf Dirklaan 1  Nieuwegein</name>
+	<description>Stopcontact EVnetNL AL778 mennekes</description>
+      <Point><coordinates>5.091325,52.013277</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Waardijnburg 44 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0009542 mennekes</description>
+      <Point><coordinates>5.07650607,52.0421074</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Waardijnburg 44 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0009541 mennekes</description>
+      <Point><coordinates>5.07650607,52.0421074</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ptolemaeuslaan 52-62 Utrecht</name>
+	<description>Krachtstroom NewMotion 03999959 mennekes</description>
+      <Point><coordinates>5.08061767249148,52.0676503419581</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447056 mennekes</description>
+      <Point><coordinates>5.09066104888916,52.0654198672481</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Newtonbaan 1 -1 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0009661 mennekes</description>
+      <Point><coordinates>5.10010748,52.04027214</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Schouwstede 7003 2 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0006582 mennekes</description>
+      <Point><coordinates>5.07850527,52.02891506</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Newtonbaan 1 -1 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0009662 mennekes</description>
+      <Point><coordinates>5.10010748,52.04027214</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Frans Halshage 35 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005451 mennekes</description>
+      <Point><coordinates>5.08478371,52.04929268</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Schouwstede 7003 2 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0006581 mennekes</description>
+      <Point><coordinates>5.07850527,52.02891506</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Newtonbaan 1 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0009651 mennekes</description>
+      <Point><coordinates>5.10009648,52.0402178</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Newtonbaan 1 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0009652 mennekes</description>
+      <Point><coordinates>5.10009648,52.0402178</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rigolettoplantsoen 16 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0009701 mennekes</description>
+      <Point><coordinates>5.08998236,52.0422073</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Willem Bilderdijkhove 34 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1512136 mennekes</description>
+      <Point><coordinates>5.087726,52.0542</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Koekoekslaan  Nieuwegein</name>
+	<description>Krachtstroom Q-Park St. Antonius Ziekenhuis mennekes</description>
+      <Point><coordinates>5.0803490790985,52.025224536536</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rigolettoplantsoen 16 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0009702 mennekes</description>
+      <Point><coordinates>5.08998236,52.0422073</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Willem Bilderdijkhove 34 Nieuwegein</name>
+	<description>Krachtstroom Nuon EVB-P1512136 mennekes</description>
+      <Point><coordinates>5.087726,52.0542</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vreeswijksestraatweg 22 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1409149 mennekes</description>
+      <Point><coordinates>5.09142963,52.02787377</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Julianaweg 93 Utrecht</name>
+	<description>Krachtstroom NewMotion UTPITEN050 mennekes</description>
+      <Point><coordinates>5.1171477186407,52.0631476562035</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Vreeswijksestraatweg 22 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1409149 mennekes</description>
+      <Point><coordinates>5.09142963,52.02787377</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Giessenplein 1-5 Utrecht</name>
+	<description>Krachtstroom NewMotion UTPITEN298 mennekes</description>
+      <Point><coordinates>5.11364141170884,52.0660631719139</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Van Deventerlaan 30 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1348108 mennekes</description>
+      <Point><coordinates>5.08352,52.0666</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kruidenierweg 20  IJsselstein</name>
+	<description>Krachtstroom EVnetNL AL433 mennekes</description>
+      <Point><coordinates>5.027834,52.021402</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Prins Bernhardstraat  75 Vianen</name>
+	<description>Krachtstroom NewMotion 03000379 mennekes</description>
+      <Point><coordinates>5.08528991114918,51.9900350184573</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Prins Bernhardplantsoen 1 Vianen</name>
+	<description>Stopcontact Profile Patrick Klein schuko</description>
+      <Point><coordinates>5.091182,51.988827</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Produktieweg 5 IJsselstein</name>
+	<description>Stopcontact EV-Box EVB-P1406158 mennekes</description>
+      <Point><coordinates>5.05793533,52.01139092</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Produktieweg 5 IJsselstein</name>
+	<description>Stopcontact EV-Box EVB-P1406158 mennekes</description>
+      <Point><coordinates>5.05793533,52.01139092</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Prins Bernhardstraat 75 Vianen</name>
+	<description>Krachtstroom NewMotion 03000380 mennekes</description>
+      <Point><coordinates>5.08524297249141,51.9900387347829</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Professor Dr. Claylaan 10 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0012591 mennekes</description>
+      <Point><coordinates>5.0861168,52.0360831</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Professor Dr. Claylaan 10 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0012592 mennekes</description>
+      <Point><coordinates>5.0861168,52.0360831</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Edisonweg 4 IJsselstein</name>
+	<description>Krachtstroom EV-Box EVB-P1351035 mennekes</description>
+      <Point><coordinates>5.04407497,52.006687</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447056 mennekes</description>
+      <Point><coordinates>5.09066104888916,52.0654198672481</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Edisonweg 4 IJsselstein</name>
+	<description>Krachtstroom EV-Box EVB-P1351035 mennekes</description>
+      <Point><coordinates>5.04407497,52.006687</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Richterslaan 60 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005381 mennekes</description>
+      <Point><coordinates>5.0785384,52.03561999</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zomerdijk 14 IJsselstein</name>
+	<description>Stopcontact NewMotion 02001983 mennekes</description>
+      <Point><coordinates>5.0436853,52.0256347</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Harplaan 7 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005511 mennekes</description>
+      <Point><coordinates>5.08373802,52.04120671</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Harplaan 7 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005512 mennekes</description>
+      <Point><coordinates>5.08373802,52.04120671</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1338006 mennekes</description>
+      <Point><coordinates>5.0903194,52.0650747</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Verlengde Hoogravenseweg 151 Utrecht</name>
+	<description>Krachtstroom NewMotion UTPITEN337 mennekes</description>
+      <Point><coordinates>5.1171452074791,52.0653430988632</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1338006 mennekes</description>
+      <Point><coordinates>5.0903194,52.0650747</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Archimedesbaan 3-18 Nieuwegein</name>
+	<description>Krachtstroom EV-Box EVB-P1410112 mennekes</description>
+      <Point><coordinates>5.10613865,52.03500273</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Nypelsplantsoen 140 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0011592 mennekes</description>
+      <Point><coordinates>5.08332,52.0299</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Nypelsplantsoen 140 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0011591 mennekes</description>
+      <Point><coordinates>5.08332,52.0299</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zoomstede 18 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0012082 mennekes</description>
+      <Point><coordinates>5.08314,52.0275</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003930 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zoomstede 18 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0012081 mennekes</description>
+      <Point><coordinates>5.08314,52.0275</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03004096 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03004090 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003934 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003911 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1338006 mennekes</description>
+      <Point><coordinates>5.0903194,52.0650747</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003906 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Symfonielaan 26 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0011261 mennekes</description>
+      <Point><coordinates>5.09719391,52.04235157</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw C Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_0912 mennekes</description>
+      <Point><coordinates>5.088218,52.06293</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003627 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003920 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003917 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1447054 mennekes</description>
+      <Point><coordinates>5.0907039642334,52.0654726326051</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003908 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Utrecht</name>
+	<description>Stopcontact NewMotion 02005534 mennekes</description>
+      <Point><coordinates>5.1039145,52.0575085</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003937 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003913 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Bedumerschans 43 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005501 mennekes</description>
+      <Point><coordinates>5.09400568,52.01915414</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Krachtstroom NewMotion 03003625 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Utrechtsestraatweg 70 Nieuwegein</name>
+	<description>Stopcontact Begheerlijk Theetuin &amp; Meer schuko</description>
+      <Point><coordinates>5.1037180423737,52.048742891765</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Guido Gazellehoven 36 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0013802 mennekes</description>
+      <Point><coordinates>5.07320794,52.05659459</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Sneeuwgans 23 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0014502 mennekes</description>
+      <Point><coordinates>5.08141844,52.02291041</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ankermonde 4 Nieuwegein</name>
+	<description>Stopcontact EV-Box EVB-P1430015 mennekes</description>
+      <Point><coordinates>5.09089433,52.0032786</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Sneeuwgans 23 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0014501 mennekes</description>
+      <Point><coordinates>5.08141844,52.02291041</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Willem Elsschothove 36 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0010322 mennekes</description>
+      <Point><coordinates>5.07460877,52.05433583</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Clarissenhof 9 Vianen</name>
+	<description>Stopcontact NewMotion 02006113 mennekes</description>
+      <Point><coordinates>5.08798980712891,51.9836769104004</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Newtonbaan 7 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0006062 mennekes</description>
+      <Point><coordinates>5.10228171,52.04018396</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Newtonbaan 7 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0006061 mennekes</description>
+      <Point><coordinates>5.10228171,52.04018396</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Herenstraat 53 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005611 mennekes</description>
+      <Point><coordinates>5.09322159,52.03522304</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Herenstraat 53 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005612 mennekes</description>
+      <Point><coordinates>5.09322159,52.03522304</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Prins Hendriklaan 10B Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005731 mennekes</description>
+      <Point><coordinates>5.09711612,52.00997161</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Prins Hendriklaan 10B Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005732 mennekes</description>
+      <Point><coordinates>5.09711612,52.00997161</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Guido Gazellehoven 36 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0013801 mennekes</description>
+      <Point><coordinates>5.07320794,52.05659459</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rijksweg 27 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0009163 mennekes</description>
+      <Point><coordinates>5.119607,52.014842</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rijksweg 27 Nieuwegein</name>
+	<description>Snellader Allego NLALLEGO0009162 combo</description>
+      <Point><coordinates>5.119607,52.014842</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Rijksweg 27 Nieuwegein</name>
+	<description>Snellader Allego NLALLEGO0009161 chademo</description>
+      <Point><coordinates>5.119607,52.014842</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Graadt van Roggenweg 104 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1551085 mennekes</description>
+      <Point><coordinates>5.10643368,52.06519677</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Orteliuslaan 1 Utrecht</name>
+	<description>Stopcontact Creative Valley schuko</description>
+      <Point><coordinates>5.0772996246815,52.072491847868</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Graadt van Roggenweg 104 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1551085 mennekes</description>
+      <Point><coordinates>5.10643368,52.06519677</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 100 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1338006 mennekes</description>
+      <Point><coordinates>5.0903194,52.0650747</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>De Kroon Nieuwegein</name>
+	<description>Stopcontact NewMotion 02002394 mennekes</description>
+      <Point><coordinates>5.12010526657104,52.0145263671875</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Podiumweg 1  IJsselstein</name>
+	<description>Krachtstroom EVnetNL AL427 mennekes</description>
+      <Point><coordinates>5.040206,52.016245</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Winthontlaan 40 Utrecht</name>
+	<description>Stopcontact EV-Box t51-4511lujg060 chademo</description>
+      <Point><coordinates>5.1080035,52.056495</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Winthontlaan 40 Utrecht</name>
+	<description>Stopcontact EV-Box t51-4511lujg060 chademo</description>
+      <Point><coordinates>5.1080035,52.056495</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw B Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_0891 mennekes</description>
+      <Point><coordinates>5.088551,52.06341</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Winthontlaan 40 Utrecht</name>
+	<description>Snellader ANWB chademo</description>
+      <Point><coordinates>5.1082120835781,52.056175074105</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Kampsedijk 14 Enspijk</name>
+	<description>Stopcontact EV-Box EVB-P1409201 mennekes</description>
+      <Point><coordinates>5.12247,52.05433</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Papendorpseweg 99 Secoya Building Gebouw E Utrecht</name>
+	<description>Krachtstroom Alfen NLMAB_1082 mennekes</description>
+      <Point><coordinates>5.086759,52.063445</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Livingstonelaan 952 Utrecht</name>
+	<description>Krachtstroom NewMotion UTPITEN041 mennekes</description>
+      <Point><coordinates>5.10198900887235,52.0674443020984</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Makadocenter 5 Nieuwegein</name>
+	<description>Stopcontact Banierhuis Fietsplus schuko</description>
+      <Point><coordinates>5.082701,52.033428</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Zwartkopplein 3  Nieuwegein</name>
+	<description>Stopcontact EVnetNL REE631 mennekes</description>
+      <Point><coordinates>5.076356,52.026259</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Moerbeigaarde 16 Nieuwegein</name>
+	<description>Stopcontact Tweewieler Speciaalzaak R. Miltenburg schuko</description>
+      <Point><coordinates>5.071533,52.035938</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Nedereindseweg 11 Nieuwegein</name>
+	<description>Stopcontact Banierhuis Fietsplus schuko</description>
+      <Point><coordinates>5.09274,52.037842</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Griffioenlaan 1 Utrecht</name>
+	<description>Stopcontact NewMotion 02009619 mennekes</description>
+      <Point><coordinates>5.1048076,52.0575802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Nijverheidsweg 12 Nieuwegein</name>
+	<description>Stopcontact Bike &amp; Scooterworld schuko</description>
+      <Point><coordinates>5.101607,52.014938</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Benedenmonde 51 Nieuwegein</name>
+	<description>Krachtstroom Allego NLALLEGO0005482 mennekes</description>
+      <Point><coordinates>5.08031918,52.0028118</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Van Deventerlaan 30 Utrecht</name>
+	<description>Krachtstroom EV-Box EVB-P1348108 mennekes</description>
+      <Point><coordinates>5.08352,52.0666</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

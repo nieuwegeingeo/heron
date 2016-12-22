@@ -489,14 +489,53 @@ Heron.ngein.layermap = {
         projection: new OpenLayers.Projection("EPSG:4326"),
         protocol: new OpenLayers.Protocol.HTTP(
         {   
-            url:'http://gng-ap713.nieuwegein.nl/apps/laadpalen/nieuwegein_oplaadpalen.kml',
+            url:'../data/nieuwegein_oplaadpalen.kml',
             format: new OpenLayers.Format.KML({
                 kmlns: 'http://earth.google.com/kml/2.2',
                 extractStyles: true,
                 extractAttributes: true })
+        }),
+        
+        styleMap: new OpenLayers.StyleMap({
+            "default": new OpenLayers.Style(null, {
+                rules: [new OpenLayers.Rule({
+                    title: 'Laadpaal',
+                    symbolizer: {
+                        "Point": {
+                            externalGraphic: 'legends/laadpaal_s.png',
+                            graphicWidth: 30,
+                            graphicHeight: 16,  
+                            fillOpacity: 1.0                          
+                        }
+                    }
+                })]
+            })
         })
       }
     ),
+    
+    /* ------------------------------
+     * Lichtmasten
+     * ------------------------------*/
+    lichtmasten: new OpenLayers.Layer.WMS("Lichtmasten",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {layers: "nieuwegein:Lichtmasten_luminizer", format: "image/png", transparent: true},
+      {isBaseLayer: false, singleTile: true, 
+       visibility: false, featureInfoFormat: "application/vnd.ogc.gml"
+       ,minScale:5000
+      }
+    ),
+       /* ------------------------------
+     * Gasnetvervanging
+     * ------------------------------*/
+    gasnet_stedin: new OpenLayers.Layer.WMS("Gasnet vervanging",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {layers: "nieuwegein:GM_SP_STEDIN_GASNETVERVANGING", format: "image/png", transparent: true},
+      {isBaseLayer: false, singleTile: true, 
+       visibility: false, featureInfoFormat: "application/vnd.ogc.gml"
+      }
+    ),
+    
     
     /* ------------------------------
      * Groenbomen
@@ -851,6 +890,8 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.florafauna,
     Heron.ngein.layermap.nap,
     Heron.ngein.layermap.laadpalen,
+    Heron.ngein.layermap.lichtmasten,
+    Heron.ngein.layermap.gasnet_stedin,
     Heron.ngein.layermap.pc4,
     Heron.ngein.layermap.pc6,
     Heron.ngein.layermap.komgrens,
@@ -937,7 +978,9 @@ var treeTheme = [
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.peilgebieden.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.florafauna.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.nap.name },
-                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.laadpalen.name }
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.laadpalen.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.lichtmasten.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.gasnet_stedin.name }
                         ]
                 }
                 ,
