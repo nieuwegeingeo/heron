@@ -45,7 +45,7 @@ OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 // Define the base urls for the layers.
 Heron.ngein.urls = {
     NGEIN: 'http://gng-ap532.nieuwegein.nl',
-    NGEINLINUX: 'http://gng-ap855.linux.nieuwegein.nl',
+	NGEINLINUX: 'http://gng-ap855.linux.nieuwegein.nl',
     PDOK : 'http://geodata.nationaalgeoregister.nl',
     OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
 };
@@ -53,8 +53,8 @@ Heron.ngein.urls = {
 // Define the PDOK urls for the layers, based
 Heron.PDOK.urls = {
     NGEINGEOSERVER: Heron.ngein.urls.NGEIN + '/geoserver/wms',
-    NGEINLINUXGEOSERVER: Heron.ngein.urls.NGEINLINUX + '/geoserver/wms',
-    NGEINGEOSERVERWFS: Heron.ngein.urls.NGEIN + '/geoserver/wfs',
+	NGEINLINUXGEOSERVER: Heron.ngein.urls.NGEINLINUX + '/geoserver/wms',
+	NGEINGEOSERVERWFS: Heron.ngein.urls.NGEIN + '/geoserver/wfs',
     NGEINMAPPROXY: Heron.ngein.urls.NGEIN + '/mapproxy/service',
     PDOKTMS: Heron.ngein.urls.PDOK + '/tms/',
     PDOKWMTS: Heron.ngein.urls.PDOK + '/tiles/service/wmts/'
@@ -68,7 +68,7 @@ Heron.PDOK.urls = {
 Heron.options.map.settings = {
     projection: 'EPSG:28992',
     units: 'm',
-    resolutions: [3440.640, 1720.320, 860.160, 430.080, 215.040, 107.520, 53.760, 26.880, 13.440, 6.720, 3.360, 1.680, 0.840, 0.420, 0.210, 0.105, 0.0525],
+    resolutions: [3440.640, 1720.320, 860.160, 430.080, 215.040, 107.520, 53.760, 26.880, 13.440, 6.720, 3.360, 1.680, 0.840, 0.420, 0.210, 0.105, 0.0525, 0.02625, 0.013125 ],
     maxExtent: '-285401.920, 22598.080, 595401.920, 903401.920',
     //maxExtent: '128253,445498,141747,453226',
     //center: '155000,463000',
@@ -112,7 +112,7 @@ Heron.options.map.settings = {
  *****************************************************************************/
 
 Heron.ngein.baselayers = {
-     /* ------------------------------
+	 /* ------------------------------
      * BRT
      * ------------------------------ */
     pdok_brtachtergrondkaart: new OpenLayers.Layer.WMS('BRT Achtergrondkaart',
@@ -121,19 +121,19 @@ Heron.ngein.baselayers = {
             {'isBaseLayer': true, singleTile: false,
              visibility: false,
             legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
-    }),             
-                
+    }),				
+				
     /* ------------------------------
      * BRT Pastel
-     * ------------------------------ */            
-    pdok_brtachtergrondkaart_pastel: new OpenLayers.Layer.WMS('BRT Achtergrondkaart pastel',
+     * ------------------------------ */			
+	pdok_brtachtergrondkaart_pastel: new OpenLayers.Layer.WMS('BRT Achtergrondkaart pastel',
             Heron.PDOK.urls.NGEINMAPPROXY,
             {'layers': 'brtpastel', 'format': 'image/png', transparent: false},
             {'isBaseLayer': true, singleTile: false,
              visibility: false,
             legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
-    }), 
-                
+    }),	
+				
     /* ------------------------------
      * OpenBasisKaart
      * ------------------------------ */
@@ -162,7 +162,7 @@ Heron.ngein.baselayers = {
             {'isBaseLayer': true, singleTile: false,
              visibility: false,
             legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
-    }),   
+    }),	  
 
     /* ------------------------------
      * Nieuwegein Luchtfoto
@@ -174,7 +174,7 @@ Heron.ngein.baselayers = {
              visibility: false,
             legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
     }),
-      
+	  
     /*----------------
      * BGT achtergrond
      ----------------- */
@@ -211,7 +211,7 @@ Heron.ngein.baselayers = {
     /* ------------------------------
      * Blanco kaart
      * ------------------------------ */
-    blanco: new OpenLayers.Layer.Image("Blanco",
+    /*blanco: new OpenLayers.Layer.Image("Blanco",
         Ext.BLANK_IMAGE_URL,
         OpenLayers.Bounds.fromString(Heron.options.map.settings.maxExtent),
         new OpenLayers.Size(10, 10),
@@ -222,7 +222,20 @@ Heron.ngein.baselayers = {
             transitionEffect: 'resize'
             // werkt niet bij printen omdat de blank image url DATA is en geen echte url...
             //,legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
-    }),
+    }),*/
+    
+    blanco: new OpenLayers.Layer.WMS("Blanco",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {layers: "nieuwegein:blanco", format: "image/png", transparent: true},
+      { isBaseLayer: true, 
+        singleTile: true, 
+        visibility: false,
+        displayInLayerSwitcher: true, 
+        transitionEffect: 'resize',
+        legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'       
+      }
+    ),
+    
 }
 
 /*****************************************************************************
@@ -327,17 +340,17 @@ Heron.options.searchPanelConfig = {
                 }
             }
         }
-    
+	
         // Zoeken op Postcode 6
         ,
-        {
+		{
             searchPanel: {
                 xtype: 'hr_formsearchpanel',
                 name: 'Zoek op postcode',
                 header: false,
                 protocol: new OpenLayers.Protocol.WFS({
                     version: "1.1.0",
-                    url: Heron.PDOK.urls.NGEINGEOSERVERWFS,
+					url: Heron.PDOK.urls.NGEINGEOSERVERWFS,
                     srsName: "EPSG:28992",
                     featureType: "pc6esri2015r1",
                     // featureNS: "http://www.nieuwegein.nl"
@@ -356,7 +369,7 @@ Heron.options.searchPanelConfig = {
                         name: "POSTCODE__like",
                         value: '',
                         fieldLabel: "  Postcode",
-                        emptyText: "3438RR"
+						emptyText: "3438RR"
                     },
                     {
                         xtype: "label",
@@ -427,53 +440,53 @@ Heron.options.searchPanelConfig = {
                      }
                  ],
                 items: [
-                /* WORKING
+				/* WORKING
                     {
                         xtype: "textfield",
                         name: "PERC_ID__like",
                         value: 'JPS00B 11070G0000',
                         fieldLabel: "  Kad.Nr"
                     },
-                */
-                /*
-                    {
+				*/
+				/*
+					{
                     xtype: "combo",
                         name: "PERC_ID",
-                        store:['JPS00A','JPS00B','JPS00C'],
+						store:['JPS00A','JPS00B','JPS00C'],
                         fieldLabel: "  Gemeente en Sectie"
                     },
                     {
                         xtype: "textfield",
                         name: "PERC_ID",
                         //value: 'JPS00B 11070G0000',
-                        value: '11070G0000',
+						value: '11070G0000',
                         fieldLabel: "  Kad.Nr"
                     },
-                */
-                    {
+				*/
+					{
                     xtype: "combo",
                         name: "GEM_CODE",
-                        store:['JPS00','VWK00'],
+						store:['JPS00','VWK00'],
                         fieldLabel: "  Gemeentecode",
                         triggerAction: 'all'  // if you do not set this, you will get dropdown with only selected item
                     },
-                    {
+					{
                     xtype: "combo",
                         name: "SECTIE",
-                        store:['A','B','C','D','E','G'],
+						store:['A','B','C','D','E','G'],
                         fieldLabel: "  Sectie",
                         triggerAction: 'all'  // if you do not set this, you will get dropdown with only selected item
                     },
                     {
                         xtype: "textfield",
                         name: "PERC_NR__like",
-                        value: '',
+						value: '',
                         fieldLabel: "  Perceelnr."
                     },
                     {
                         xtype: "label",
                         id: "helplabel",
-                        html: 'Zoeken op kadastraal perceelnummer<br/>Kies Gemeentecode en Sectie<br/> en voer perceelnummer in (11070). <br/>(vb: JPS00 B 11070 )<br/>',
+                        html: 'Zoeken op kadastraal perceelnummer<br/>Kies Gemeentecode en Sectie<br/> en voer perceelnummer in (11070). <br/>(vb: JPS00 G 907 )<br/>',
                         style: {
                             fontSize: '10px',
                             color: '#AAAAAA'
@@ -486,9 +499,9 @@ Heron.options.searchPanelConfig = {
                     caseInsensitiveMatch: true,
                     logicalOperator: OpenLayers.Filter.Logical.AND
                 },
-                layerOpts: [
-                    // name of layer to make visible after search
-                    { layerOn: 'Kadaster (BRK)', layerOpacity: 1.0 }
+				layerOpts: [
+					// name(!) of layer to make visible after search
+                	{ layerOn: 'Kadaster (BRK)', layerOpacity: 1.0 }
                 ]
             },
             resultPanel: {
@@ -512,14 +525,14 @@ Heron.options.searchPanelConfig = {
                 }
             }
         }
-        
-        // zoeken via het tekenen van een geometrie
+		
+		// zoeken via het tekenen van een geometrie
         ,
         {
             searchPanel: {
                 xtype: 'hr_searchbydrawpanel',
                 name: 'Zoeken door een vlak of punt te tekenen',
-                header: false,              
+                header: false,				
             },
             resultPanel: {
                 xtype: 'hr_featuregridpanel',
@@ -527,7 +540,7 @@ Heron.options.searchPanelConfig = {
                 header: false,
                 autoConfig: true,
                 autoConfigMaxSniff: 100,
-                exportFormats: ['XLS', 'GMLv2', 'GeoJSON', 'WellKnownText', 'Shapefile'],
+                exportFormats: ['XLS', 'GMLv2', 'GeoJSON', 'WellKnownText'],
                 gridCellRenderers: Heron.options.gridCellRenderers,
                 hropts: {
                     zoomOnRowDoubleClick: true,
@@ -538,7 +551,7 @@ Heron.options.searchPanelConfig = {
             }
         }
         
-        // zoeken op basis van de wfs in een andere laag
+		// zoeken op basis van de wfs in een andere laag
         /*,
         {
             searchPanel: {
@@ -559,7 +572,7 @@ Heron.options.searchPanelConfig = {
                 header: false,
                 border: false,
                 autoConfig: true,
-                exportFormats: ['XLS', 'GMLv2', 'GeoJSON', 'WellKnownText', 'Shapefile'],
+                exportFormats: ['XLS', 'GMLv2', 'GeoJSON', 'WellKnownText'],
                 gridCellRenderers: Heron.options.gridCellRenderers,
                 hropts: {
                     zoomOnRowDoubleClick: true,
@@ -615,7 +628,11 @@ Heron.options.map.toolbar = [
                 // In case that the same layer would be requested more than once: discard the styles
                 discardStylesForDups: true,
                 // Export to download file. Option values are 'CSV', 'XLS', or a Formatter object (see FeaturePanel) , default is no export (results in no export menu).
-                exportFormats: ['CSV', 'XLS', 'GMLv2', 'Shapefile',
+                exportFormats: ['CSV', 'XLS', 'GMLv2',
+                    'GeoJSON', 
+                    'WellKnownText',
+                    /* NOT working because we do not have ogr2ogr available */
+                    /*'Shapefile',
                     {
                         name: 'Esri Shapefile (WGS84)',
                         formatter: 'OpenLayersFormatter',
@@ -651,8 +668,7 @@ Heron.options.map.toolbar = [
                         targetSrs: 'EPSG:4326',
                         fileExt: '.gpkg',
                         mimeType: 'application/binary'
-                    },
-                    'GeoJSON', 'WellKnownText'
+                    }*/
                 ]
             }
         }
@@ -676,23 +692,23 @@ Heron.options.map.toolbar = [
     {type: "tooltips", options: {
         // Pressed cannot be true when anchored is true!
         pressed: false,
-        getfeatureControl: {
-            hover: true,
-            drillDown: false
-        },
-        popupWindow: {
-            title: "Information",
-            hideonmove: false,
+		getfeatureControl: {
+			hover: true,
+			drillDown: false
+		},
+		popupWindow: {
+			title: "Information",
+			hideonmove: false,
             anchored: true,
             width: 180,
             height: 120,
-            featureInfoPanel: {
+			featureInfoPanel: {
                 // Option values are 'Table', 'Grid', 'Tree' and 'XML', default is 'Grid' (results in no display menu)
                 displayPanels: ['Table'],
                 showTopToolbar: false
-            }
-        }
-    }},
+			}
+		}
+	}},
     // Options for SearchPanel window
     {type: "searchcenter", options: {
         show: true,
@@ -765,10 +781,10 @@ Heron.options.map.toolbar = [
               {name: 'GeoJSON', fileExt: '.json', mimeType: 'text/plain', formatter: 'OpenLayers.Format.GeoJSON'},
               {name: 'GPS Exchange Format (GPX)', fileExt: '.gpx', mimeType: 'text/xml', formatter: 'OpenLayers.Format.GPX', fileProjection: new OpenLayers.Projection('EPSG:4326')},
               {name: 'Keyhole Markup Language (KML)', fileExt: '.kml', mimeType: 'text/xml', formatter: 'OpenLayers.Format.KML', fileProjection: new OpenLayers.Projection('EPSG:4326')},
-              {name: 'ESRI Shapefile (zipped, Google projection)', fileExt: '.zip', mimeType: 'application/zip', formatter: 'OpenLayers.Format.GeoJSON', targetFormat: 'ESRI Shapefile', fileProjection: new OpenLayers.Projection('EPSG:900913')},
-              {name: 'ESRI Shapefile (zipped, WGS84)', fileExt: '.zip', mimeType: 'application/zip', formatter: 'OpenLayers.Format.GeoJSON', targetFormat: 'ESRI Shapefile', fileProjection: new OpenLayers.Projection('EPSG:4326')},
-              {name: 'OGC GeoPackage (Google projection)', fileExt: '.gpkg', mimeType: 'application/binary', formatter: 'OpenLayers.Format.GeoJSON', targetFormat: 'GPKG', fileProjection: new OpenLayers.Projection('EPSG:900913')},
-              {name: 'OGC GeoPackage (WGS84)', fileExt: '.gpkg', mimeType: 'application/binary', formatter: 'OpenLayers.Format.GeoJSON', targetFormat: 'GPKG', fileProjection: new OpenLayers.Projection('EPSG:4326')}
+              //{name: 'ESRI Shapefile (zipped, Google projection)', fileExt: '.zip', mimeType: 'application/zip', formatter: 'OpenLayers.Format.GeoJSON', targetFormat: 'ESRI Shapefile', fileProjection: new OpenLayers.Projection('EPSG:900913')},
+              //{name: 'ESRI Shapefile (zipped, WGS84)', fileExt: '.zip', mimeType: 'application/zip', formatter: 'OpenLayers.Format.GeoJSON', targetFormat: 'ESRI Shapefile', fileProjection: new OpenLayers.Projection('EPSG:4326')},
+              //{name: 'OGC GeoPackage (Google projection)', fileExt: '.gpkg', mimeType: 'application/binary', formatter: 'OpenLayers.Format.GeoJSON', targetFormat: 'GPKG', fileProjection: new OpenLayers.Projection('EPSG:900913')},
+              //{name: 'OGC GeoPackage (WGS84)', fileExt: '.gpkg', mimeType: 'application/binary', formatter: 'OpenLayers.Format.GeoJSON', targetFormat: 'GPKG', fileProjection: new OpenLayers.Projection('EPSG:4326')}
             ],
             // For custom projections use Proj4.js
             fileProjection: new OpenLayers.Projection('EPSG:4326')
@@ -779,13 +795,13 @@ Heron.options.map.toolbar = [
               {name: 'Well-Known-Text (WKT)', fileExt: '.wkt', mimeType: 'text/plain', formatter: 'OpenLayers.Format.WKT'},
               {name: 'Geographic Markup Language - v2 (GML2)', fileExt: '.gml', mimeType: 'text/xml', formatter: 'OpenLayers.Format.GML'},
               {name: 'GeoJSON', fileExt: '.json', mimeType: 'text/plain', formatter: 'OpenLayers.Format.GeoJSON'},
-              {name: 'GPS Exchange Format (GPX)', fileExt: '.gpx', mimeType: 'text/xml', formatter: 'OpenLayers.Format.GPX', fileProjection: new OpenLayers.Projection('EPSG:4326')},
+              //{name: 'GPS Exchange Format (GPX)', fileExt: '.gpx', mimeType: 'text/xml', formatter: 'OpenLayers.Format.GPX', fileProjection: new OpenLayers.Projection('EPSG:4326')},
               {name: 'Keyhole Markup Language (KML)', fileExt: '.kml', mimeType: 'text/xml', formatter: 'OpenLayers.Format.KML', fileProjection: new OpenLayers.Projection('EPSG:4326')},
               {name: 'CSV (with X,Y in WGS84)', fileExt: '.csv', mimeType: 'text/plain', formatter: 'OpenLayers.Format.GeoJSON', fileProjection: new OpenLayers.Projection('EPSG:4326')},
-              {name: 'ESRI Shapefile (zipped, Google projection)', fileExt: '.zip', mimeType: 'text/plain', formatter: 'OpenLayers.Format.GeoJSON', fileProjection: new OpenLayers.Projection('EPSG:900913')},
-              {name: 'ESRI Shapefile (zipped, WGS84)', fileExt: '.zip', mimeType: 'text/plain', formatter: 'OpenLayers.Format.GeoJSON', fileProjection: new OpenLayers.Projection('EPSG:4326')},
-              {name: 'OGC GeoPackage (Google projection)', fileExt: '.gpkg', mimeType: 'text/plain', formatter: 'OpenLayers.Format.GeoJSON', fileProjection: new OpenLayers.Projection('EPSG:900913')},
-              {name: 'OGC GeoPackage (1 layer, WGS84)', fileExt: '.gpkg', mimeType: 'text/plain', formatter: 'OpenLayers.Format.GeoJSON', fileProjection: new OpenLayers.Projection('EPSG:4326')}
+              //{name: 'ESRI Shapefile (zipped, Google projection)', fileExt: '.zip', mimeType: 'text/plain', formatter: 'OpenLayers.Format.GeoJSON', fileProjection: new OpenLayers.Projection('EPSG:900913')},
+              //{name: 'ESRI Shapefile (zipped, WGS84)', fileExt: '.zip', mimeType: 'text/plain', formatter: 'OpenLayers.Format.GeoJSON', fileProjection: new OpenLayers.Projection('EPSG:4326')},
+              //{name: 'OGC GeoPackage (Google projection)', fileExt: '.gpkg', mimeType: 'text/plain', formatter: 'OpenLayers.Format.GeoJSON', fileProjection: new OpenLayers.Projection('EPSG:900913')},
+              //{name: 'OGC GeoPackage (1 layer, WGS84)', fileExt: '.gpkg', mimeType: 'text/plain', formatter: 'OpenLayers.Format.GeoJSON', fileProjection: new OpenLayers.Projection('EPSG:4326')}
             ],
             // For custom projections use Proj4.js
             fileProjection: new OpenLayers.Projection('EPSG:4326')
@@ -823,7 +839,7 @@ Heron.options.map.toolbar = [
 
                 trigger: function(e) {
                     var position = map.getLonLatFromPixel(e.xy);
-                    var cwindow = window.open("http://gng-ap527.nieuwegein.nl/globespotter/3.1/viewer/index.html?posx="+position.lon.toFixed(0)+"&posy="+position.lat.toFixed(), "globespotter");
+                    var cwindow = window.open("http://gng-ap527.nieuwegein.nl/globespotter/3.1/viewer/index.html?posx="+position.lon.toFixed(0)+"&posy="+position.lat.toFixed()+"&yaw=0&pitch=0", "globespotter");
                     cwindow.focus();
                 }
             }); 
@@ -884,7 +900,7 @@ Heron.options.map.toolbar = [
                 control: new ObliekControl()
             });
         }
-    },  
+    },	
     {
         type: "namesearch",
         // Optional options, see OpenLSSearchCombo.js
@@ -992,14 +1008,14 @@ Heron.layout = {
                     border: false,
                     html: '<div id="viewer_north_text">Webatlas Nieuwegein</div>'
                 }
-                /*,
+				/*,
                 {
                     // Help link.
                     xtype: 'panel',
                     flex: 1,
                     border: false,
                     html: '<a href="#" id="viewer_north_help" onclick="App.btn_HelpClicked()">Help</a>'  // in app help
-                    html: '<a href="../basis/help.html" id="viewer_north_help" target="_blank">Help</a>' // external window
+					html: '<a href="../basis/help.html" id="viewer_north_help" target="_blank">Help</a>' // external window
                 }*/
             ]
         },
@@ -1011,7 +1027,7 @@ Heron.layout = {
             margins: '0',
             region: "west",
             width: 240,
-            collapsible: true,
+			collapsible: true,
             border: false,
             items: [
                 { xtype: "panel",
@@ -1028,7 +1044,7 @@ Heron.layout = {
                                 {
                                     xtype: 'hr_layernodemenulayermetadata'
                                 },
-                                /*{
+								/*{
                                     xtype: 'hr_layernodemenulayerinfo'
                                 },*/
                                 {
@@ -1120,7 +1136,7 @@ Heron.layout = {
             margins: '0',
             region: "east",
             width: 240,
-            collapsible: true,
+			collapsible: true,
             border: false,
             items: [
                 { xtype: "panel",
@@ -1142,8 +1158,8 @@ Heron.layout = {
                                 useScaleParameter: true,
                                 baseParams: {
                                     FORMAT: 'image/png',
-                                    // to always force a title in the legendgraphics (title of SLD rule is used for that)
-                                    legend_options: 'forceLabels:on'
+									// to always force a title in the legendgraphics (title of SLD rule is used for that)
+									legend_options: 'forceLabels:on'
                                 }
                             },
                             hropts: {
