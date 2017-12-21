@@ -606,6 +606,18 @@ Heron.ngein.layermap = {
     ),    
      
     /* ------------------------------
+     * Containers
+     * ------------------------------*/
+    containers: new OpenLayers.Layer.WMS("Containers",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {layers: "nieuwegein:containers_nieuw_wms", format: "image/png", transparent: true},
+      {isBaseLayer: false, singleTile: true, 
+       visibility: false, featureInfoFormat: "application/vnd.ogc.gml"
+       //,minScale:5000
+      }
+    ),
+    
+    /* ------------------------------
      * Begraafplaatsen
      * ------------------------------*/
     begraafplaatsen: new OpenLayers.Layer.WMS("Begraafplaatsen",
@@ -1080,6 +1092,7 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.nap,
     Heron.ngein.layermap.laadpalen,
     Heron.ngein.layermap.lichtmasten,
+    Heron.ngein.layermap.containers,
     Heron.ngein.layermap.begraafplaatsen,
     Heron.ngein.layermap.gasnet_stedin,
     Heron.ngein.layermap.iasset_beheer,
@@ -1174,6 +1187,7 @@ var treeTheme = [
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.nap.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.laadpalen.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.lichtmasten.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.containers.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.begraafplaatsen.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.gasnet_stedin.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.iasset_beheer.name },
