@@ -711,7 +711,7 @@ Heron.options.map.toolbar = [
 	}},
     // Options for SearchPanel window
     {type: "searchcenter", options: {
-        show: true,
+        pressed: true, // DO NOT USE 'show' here, as it will create problems
         searchWindow: {
             title: __('Multiple Searches'),
             x: 100,
