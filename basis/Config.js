@@ -727,7 +727,7 @@ Heron.options.map.toolbar = [
     {type: "printdialog", options: {
         url: 'http://'+location.hostname+'/print-servlet-2.1.0/pdf'
         , tooltip: "Printen"
-        , windowWidth: 360
+        , windowWidth: 850
         //, mapPrintLayout: "A4" // MapFish - 'name' entry of the 'layouts' array or Null (=> MapFish default)
         // , showTitle: true
         //, mapTitle: 'My Header - Print Dialog'
@@ -900,7 +900,23 @@ Heron.options.map.toolbar = [
                 control: new ObliekControl()
             });
         }
-    },	
+    },
+    // Stadsmonitor
+    {
+        create: function (mapPanel, options) {
+            
+            return new GeoExt.Action({
+                iconCls: "stadsmonitor_btn",
+                text: "Stadsmonitor",
+                tooltip: "Open de Stadsmonitor",
+                handler: function () {
+                   var l = window.location;
+                   var cwindow = window.open(l.protocol+'//'+l.host+'/app/stadsmonitor', "stadsmonitor");
+                   cwindow.focus();
+                }
+            });
+        }
+    },    
     {
         type: "namesearch",
         // Optional options, see OpenLSSearchCombo.js
