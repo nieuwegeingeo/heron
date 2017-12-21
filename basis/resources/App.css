@@ -133,3 +133,11 @@
   -webkit-box-shadow: rgb(0, 0, 0) 2px 2px 2px 0px;
 }
 */
+
+/* Stadsmonitor button */
+.stadsmonitor_btn {
+  color:red !important;
+  font-weight: bold !important;
+  background-image: url("../../resources/images/silk/star.png") !important;
+  /*background-image: url("../../resources/images/silk/zoom.png") !important;*/
+}
