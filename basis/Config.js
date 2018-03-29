@@ -916,8 +916,9 @@ Heron.options.map.toolbar = [
                 }
             });
         }
-    },    
-    {
+    }
+/*        
+    ,{
         type: "namesearch",
         // Optional options, see OpenLSSearchCombo.js
         options : {
@@ -934,6 +935,24 @@ Heron.options.map.toolbar = [
             queryParam: 'zoekterm'
         }
     }
+*/    
+    ,{
+        type: "namesearch",
+        options : {
+            xtype: 'hr_locatieserversearchcombo',
+            id: "pdoklocserverearchcombo",
+            width: 320,
+            listWidth: 400,
+            minChars: 5,
+            queryDelay: 240,
+            zoom: 11,
+            emptyText: __('Search PDOK'),
+            tooltip: __('Search PDOK'),
+            //url: 'http://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?wt=xml&q=type:adres%20and%20nieuwegein%20and%20'
+            //url: 'http://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?wt=xml&'
+            url: 'http://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?lat=52.0310&lon=5.0885&wt=xml'
+        }
+    }    
 
 
 

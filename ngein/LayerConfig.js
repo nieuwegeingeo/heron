@@ -483,9 +483,9 @@ Heron.ngein.layermap = {
     ),*/
 
     /* ------------------------------
-     * Groenbeheer
+     * Groenbeheer (2016)
      * ------------------------------*/
-    groenbeheer: new OpenLayers.Layer.WMS("Groenbeheer",
+    groenbeheer: new OpenLayers.Layer.WMS("Groenbeheer (data: 2016)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {layers: "nieuwegein:GM_SP_GROENBEHEER", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
@@ -786,14 +786,14 @@ Heron.ngein.layermap = {
     ),
     
     /* ------------------------------------------------
-     * Projectenkaart 2017
+     * Projectenkaart
      * ------------------------------------------------ */
-    projectenkaart2017: new OpenLayers.Layer.WMS("Projectenkaart 2017",
+    projectenkaart: new OpenLayers.Layer.WMS("Projectenkaart",
       Heron.PDOK.urls.NGEINGEOSERVER,
-      {layers: "nieuwegein:projectenkaart2017", format: "image/png", transparent: true},
+      {layers: "nieuwegein:projectenkaart_gr_wa", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-       legendURL: "//gng-ap532.nieuwegein.nl/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=projectenkaart2017"
+       legendURL: "//gng-ap532.nieuwegein.nl/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=projectenkaart_wa"
       }
     ), 
     
@@ -884,6 +884,79 @@ Heron.ngein.layermap = {
       {isBaseLayer: false, singleTile: true, 
        visibility: false
       }
+    )
+    ,
+	/*
+	 * KLIC lagen
+	 */
+	
+	// Gevaarlijke Inhoud
+    klic_gevaarlijke_inhoud: new OpenLayers.Layer.WMS("KLIC Gevaarlijke Inhoud (jan 2018)",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+	  {layers: "klic:jan_2018_GEVAAR", format: "image/png", transparent: true},
+      { isBaseLayer: false, singleTile: true, visibility: false,
+		metadata: {legend: {legendURL: 'legenda/klic_gevaarlijke_inhoud.png', hideInLegend: false}}
+	  }
+    )
+	,
+	// Datatransport
+    klic_datatransport: new OpenLayers.Layer.WMS("KLIC Datatransport (jan 2018)",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+	  {layers: "klic:jan_2018_DATA", format: "image/png", transparent: true},
+      {	isBaseLayer: false, singleTile: true, visibility: false,
+		metadata: {legend: {legendURL: 'legenda/klic_datatransport.png', hideInLegend: false}}
+	  }
+    )
+	,
+	// Gas
+    klic_gas: new OpenLayers.Layer.WMS("KLIC Gas (jan 2018)",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+	  {layers: "klic:jan_2018_GAS", format: "image/png", transparent: true},
+      {	isBaseLayer: false, singleTile: true, visibility: false,
+		metadata: {legend: {legendURL: 'legenda/klic_gas.png', hideInLegend: false}}
+	  }
+    )
+	,
+	// Elektra
+    klic_electra: new OpenLayers.Layer.WMS("KLIC Elektra (jan 2018)",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+	  {layers: "klic:jan_2018_ELECTRA", format: "image/png", transparent: true},
+      {	isBaseLayer: false, singleTile: true, visibility: false,
+		metadata: {legend: {legendURL: 'legenda/klic_elektra.png', hideInLegend: false}}
+	  }
+    )
+	,
+	// Overig
+    klic_overig: new OpenLayers.Layer.WMS("KLIC Overig (jan 2018)",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+	  {layers: "klic:jan_2018_OVERIG", format: "image/png", transparent: true},
+      {	isBaseLayer: false, singleTile: true, visibility: false,
+		metadata: {legend: {legendURL: 'legenda/klic_overig.png', hideInLegend: false}}
+	  }
+    ),
+	// Riool
+    klic_riool: new OpenLayers.Layer.WMS("KLIC Riool (jan 2018)",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+	  {layers: "klic:jan_2018_RIOOL", format: "image/png", transparent: true},
+      {	isBaseLayer: false, singleTile: true,visibility: false,
+		metadata: {legend: {legendURL: 'legenda/klic_riool.png', hideInLegend: false}}
+	  }
+    ),
+	// Warmte
+    klic_warmte: new OpenLayers.Layer.WMS("KLIC Warmte (jan 2018)",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {layers: "klic:jan_2018_WARMTE", format: "image/png", transparent: true},
+      {	isBaseLayer: false, singleTile: true, visibility: false,
+		metadata: {legend: {legendURL: 'legenda/klic_warmte.png', hideInLegend: false}}
+	  }
+    ),
+	// Water
+    klic_water: new OpenLayers.Layer.WMS("KLIC Water (jan 2018)",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {layers: "klic:jan_2018_WATER", format: "image/png", transparent: true},
+      {	isBaseLayer: false, singleTile: true, visibility: false,
+		metadata: {legend: {legendURL: 'legenda/klic_water.png', hideInLegend: false}}
+	  }
     )
 
 };
@@ -1070,7 +1143,7 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.bgtstandaard,
     Heron.ngein.layermap.wegbeheer,
     Heron.ngein.layermap.groenbeheer,
-    Heron.ngein.layermap.projectenkaart2017,
+    Heron.ngein.layermap.projectenkaart,
     Heron.ngein.layermap.koop_huurwoningen,
     Heron.ngein.layermap.groenstructuurplan,
     // lijnen
@@ -1099,7 +1172,16 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.pc4,
     Heron.ngein.layermap.pc6,
     Heron.ngein.layermap.komgrens,
-    Heron.ngein.layermap.boswet
+    Heron.ngein.layermap.boswet,
+	// KLIC lagen
+	Heron.ngein.layermap.klic_gevaarlijke_inhoud,
+	Heron.ngein.layermap.klic_datatransport,
+    Heron.ngein.layermap.klic_gas,
+	Heron.ngein.layermap.klic_electra,
+	Heron.ngein.layermap.klic_overig,
+	Heron.ngein.layermap.klic_riool,
+	Heron.ngein.layermap.klic_water,
+	Heron.ngein.layermap.klic_warmte    
 ];
 
 // In Heron the first element in the layers-array will be the last in the legend
@@ -1191,10 +1273,24 @@ var treeTheme = [
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.begraafplaatsen.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.gasnet_stedin.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.iasset_beheer.name },
-                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.projectenkaart2017.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.projectenkaart.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.groenstructuurplan.name }
                         ]
                 }
+                ,
+                {
+                    text:"KLIC (LET OP: data jan 2018)", expanded: false, children:
+                        [
+							{nodeType: "gx_layer", layer: Heron.ngein.layermap.klic_gevaarlijke_inhoud.name},
+							{nodeType: "gx_layer", layer: Heron.ngein.layermap.klic_datatransport.name},
+							{nodeType: "gx_layer", layer: Heron.ngein.layermap.klic_gas.name},
+							{nodeType: "gx_layer", layer: Heron.ngein.layermap.klic_electra.name},
+							{nodeType: "gx_layer", layer: Heron.ngein.layermap.klic_overig.name},
+							{nodeType: "gx_layer", layer: Heron.ngein.layermap.klic_riool.name},
+							{nodeType: "gx_layer", layer: Heron.ngein.layermap.klic_water.name},
+							{nodeType: "gx_layer", layer: Heron.ngein.layermap.klic_warmte.name}
+                        ]
+                }                
                 ,
                 {
                     text:"Luchtfoto's", expanded: false, children:

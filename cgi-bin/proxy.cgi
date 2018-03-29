@@ -52,6 +52,7 @@ allowedDomains = [
     'tno.nl',
     'ucdavis.edu',
     'zeeland.nl'
+    'gng-ap532.nieuwegein.nl'
 ]
 
 # Add to have specific hosts, mostly IP-addresses
