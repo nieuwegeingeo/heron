@@ -168,9 +168,14 @@ Heron.ngein.baselayers = {
      * Nieuwegein Luchtfoto
      * ------------------------------ */
     ngein_luchtfoto: new OpenLayers.Layer.WMS("Nieuwegein Luchtfoto",
-            Heron.PDOK.urls.NGEINMAPPROXY,
-            {'layers': 'basisluchtfoto', 'format': 'image/jpeg', transparent: false},
-            {'isBaseLayer': true, singleTile: false,
+            //Heron.PDOK.urls.NGEINMAPPROXY,
+            //{'layers': 'basisluchtfoto', 'format': 'image/jpeg', transparent: false},
+            //{'isBaseLayer': true, singleTile: false,
+            // IPV de getilde cache te gebruiken, gebruiken we de grouplayer WMS om straatlabels groot genoeg te maken
+            Heron.PDOK.urls.NGEINGEOSERVER,
+            {'layers': 'nieuwegein:luchtfotocombi', 'format': 'image/jpeg', transparent: false},
+            {'isBaseLayer': true, singleTile: true,
+
              visibility: false,
             legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
     }),
