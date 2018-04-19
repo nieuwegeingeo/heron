@@ -594,9 +594,9 @@ Heron.ngein.layermap = {
     ),
     
     /* ------------------------------
-     * Lichtmasten
+     * Lichtmasten (data:2018)
      * ------------------------------*/
-    lichtmasten: new OpenLayers.Layer.WMS("Lichtmasten",
+    lichtmasten: new OpenLayers.Layer.WMS("Lichtmasten (data:2018)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {layers: "nieuwegein:Lichtmasten_luminizer", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
