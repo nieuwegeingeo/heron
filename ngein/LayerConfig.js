@@ -677,7 +677,7 @@ Heron.ngein.layermap = {
        /* ------------------------------
      * Gasnetvervanging
      * ------------------------------*/
-    gasnet_stedin: new OpenLayers.Layer.WMS("Gasnet vervanging",
+    gasnet_stedin: new OpenLayers.Layer.WMS("Gasnet vervanging (okt 2016)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {layers: "nieuwegein:GM_SP_STEDIN_GASNETVERVANGING", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
