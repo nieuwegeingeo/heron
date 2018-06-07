@@ -950,12 +950,12 @@ Heron.options.map.toolbar = [
             listWidth: 400,
             minChars: 5,
             queryDelay: 240,
-            zoom: 14,
+            zoom: 10,
             emptyText: __('Search PDOK'),
             tooltip: __('Search PDOK'),
             //url: 'http://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?wt=xml&q=type:adres%20and%20nieuwegein%20and%20'
             //url: 'http://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?wt=xml&'
-            url: 'http://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?fq=+type:*&lat=52.0310&lon=5.0885&wt=xml'
+            url: 'https://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?fq=+type:*&lat=52.0310&lon=5.0885&wt=xml'
         }
     }    
 
