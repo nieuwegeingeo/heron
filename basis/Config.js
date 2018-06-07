@@ -320,7 +320,7 @@ Heron.options.searchPanelConfig = {
                     }
                 ],
                 hropts: {
-                    onSearchCompleteZoom: 10,
+                    onSearchCompleteZoom: 14,  // when result is just 1 address/point, use this zoom 14 = 1:750
                     autoWildCardAttach: true,
                     caseInsensitiveMatch: true,
                     logicalOperator: OpenLayers.Filter.Logical.AND
