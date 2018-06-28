@@ -734,6 +734,42 @@ Heron.ngein.layermap = {
       }
     ),     
 
+   /* ------------------------------
+     * MOR op de gng-ap532 
+     * ------------------------------*/
+    mor: new OpenLayers.Layer.WMS("Meldingen Openbare Ruimte (MOR)",
+      'http://gng-ap532.nieuwegein.nl/geoserver/wms',
+      {layers: "nieuwegein:GM_SP_PV_ZAAKWEERGAVE_EXT,nieuwegein:GM_SP_PV_ZAAKWEERGAVE2", format: "image/png", transparent: true},
+      {isBaseLayer: false, singleTile: true, 
+       visibility: false, 
+       featureInfoFormat: "application/vnd.ogc.gml",
+       
+        gridcolumns:[
+           {  
+            featureType:'GM_SP_PV_ZAAKWEERGAVE2', 
+            columns: [ 
+                    // LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
+                    // ZAAKNUMMER,DATUM_MELDING,STATUS,HOOFDCATEGORIE,SUBCATEGORIE,TER_HOOGTE_VAN,ZAAKID
+                    { dataIndex: "ZAAKNUMMER", header: "Zaaknummer", width: 70,
+                          renderer: function (value, metaData, record, rowIndex, colIndex, store) {
+                              var template = '<a target="_new" href="http://crm2011.nieuwegein.nl/GemeenteNieuwegein/userdefined/edit.aspx?etc=10099&id=%7b{ZAAKID}%7d">{ZAAKNUMMER}</a>';
+                              var options = {attrNames: ['ZAAKID','ZAAKNUMMER']};
+                              return Heron.widgets.GridCellRenderer.substituteAttrValues(template, options, record);
+                          }
+                    },
+                    { dataIndex: "DATUM_MELDING", header: 'Datum', width: 75 },
+                    { dataIndex: "STATUS", header: 'Status', width: 100 },                    
+                    { dataIndex: "HOOFDCATEGORIE", header: 'Hoofdcategorie', width: 120 },
+                    { dataIndex: "SUBCATEGORIE", header: 'SubCategorie', width: 120 },
+                    { dataIndex: "TER_HOOGTE_VAN", header: 'Ter hoogte van', width: 150 },
+                    { dataIndex: "ZAAKID", header: 'Zaak-ID', width: 0 }
+                ]
+           }
+        ]
+       
+      }
+    ),    
+    
     /* ------------------------------
      * PC4
      * ------------------------------*/
@@ -1170,6 +1206,7 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.begraafplaatsen,
     Heron.ngein.layermap.gasnet_stedin,
     Heron.ngein.layermap.iasset_beheer,
+    Heron.ngein.layermap.mor,    
     Heron.ngein.layermap.pc4,
     Heron.ngein.layermap.pc6,
     Heron.ngein.layermap.komgrens,
@@ -1274,6 +1311,7 @@ var treeTheme = [
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.begraafplaatsen.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.gasnet_stedin.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.iasset_beheer.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.mor.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.projectenkaart.name },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.groenstructuurplan.name }
                         ]
