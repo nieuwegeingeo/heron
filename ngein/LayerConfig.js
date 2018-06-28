@@ -483,14 +483,14 @@ Heron.ngein.layermap = {
     ),*/
 
     /* ------------------------------
-     * Groenbeheer (2016)
+     * Groenbeheer
      * ------------------------------*/
-    groenbeheer: new OpenLayers.Layer.WMS("Groenbeheer (data: 2016)",
+    groenbeheer: new OpenLayers.Layer.WMS("Groenbeheer (data: jun. 2018)",
       Heron.PDOK.urls.NGEINGEOSERVER,
-      {layers: "nieuwegein:GM_SP_GROENBEHEER", format: "image/png", transparent: true},
+      {layers: "nieuwegein:groenbeheer_greenpoint_wa", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
        visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-       minScale:5000
+       minScale:6001
       }
     ),
 
@@ -543,6 +543,7 @@ Heron.ngein.layermap = {
                 { dataIndex: "STRAATNAAM", header: 'Straatnaam', width: 120 },
                 { dataIndex: "HUISNUMMER", header: 'Huisnummer', width: 75 },
                 { dataIndex: "GEVEL", header: 'Gevel', width: 50 },
+                { dataIndex: "LOKATIE", header: 'Locatie', width: 200 },
                 { dataIndex: "FOTO", header: "More Info", width: 100,
                       renderer: function (value, metaData, record, rowIndex, colIndex, store) {
                           var template = '<a target="_new" href="//geoappstore.nieuwegein.nl/hoogtemerken/{FOTO}">Foto</a>';
