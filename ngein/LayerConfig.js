@@ -199,32 +199,10 @@ Heron.ngein.layermap = {
       }
     ),
     
-    /* ------------------------------
-     * Grondpercelen
-     * ------------------------------ */
-    grondpercelen: new OpenLayers.Layer.WMS("Grondpercelen",
-      Heron.PDOK.urls.NGEINGEOSERVER,
-      {layers: "nieuwegein:GM_SP_KAD_GRONDPERCEEL", format: "image/png", transparent: true},
-      {isBaseLayer: false, singleTile: true, 
-       visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-       //,alpha: true, opacity: 0.7
-       minScale:10000,
-       metadata:{
-                    wfs: {
-                        protocol: 'fromWMSLayer',
-                        featurePrefix: 'GM_SP_KAD_GRONDPERCEEL',
-                        srsName: "EPSG:28992"
-                    },
-                    url: "http://nationaalgeoregister.nl",  // url to metadata record
-                    html: "Dit is metadata <b>vette tekst</b> enzo..." // metadata as html (will be place between <p></p>)
-                }
-      }
-    ),  
-    
     /* -------------------------------
      * BRK
      * ------------------------------ */
-    brk: new OpenLayers.Layer.WMS("Kadaster (BRK)",
+    brk: new OpenLayers.Layer.WMS("Grondpercelen",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {layers: "nieuwegein:GM_SP_BRK_WA", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
@@ -1184,7 +1162,6 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.koop_huurwoningen,
     Heron.ngein.layermap.groenstructuurplan,
     // lijnen
-    Heron.ngein.layermap.grondpercelen,
     Heron.ngein.layermap.brk,
     Heron.ngein.layermap.bgtlijn,
     Heron.ngein.layermap.bgtomtrek,
@@ -1277,7 +1254,6 @@ var treeTheme = [
                 {
                     text:'Kadaster', expanded: true, children:
                         [
-                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.grondpercelen.name    },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.brk.name    },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.gemeentelijkeigendom.name    },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.grondgebruik.name    },
