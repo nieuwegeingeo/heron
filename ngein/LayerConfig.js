@@ -218,14 +218,14 @@ Heron.ngein.layermap = {
                         { dataIndex: "PERC_ID", header: 'Perceel id', width: 120 },
                         { dataIndex: "OPPERVLAKTE", header: 'Oppervlakte', width: 80 },
                         //{ dataIndex: "SRT_OMSCHRIJVING", header: 'Toelichting', width: 80 },
-                        { dataIndex: "AANDEEL", header: 'Aandeel', width: 50 },
-                        { dataIndex: "GERECHTIGDE", header: 'Gerechtigde', width: 200 },
+                        //{ dataIndex: "AANDEEL", header: 'Aandeel', width: 50 },
+                        //{ dataIndex: "GERECHTIGDE", header: 'Gerechtigde', width: 200 },
                         //{ dataIndex: "OMSCHRIJVING_ZAKELIJKRECHT", header: 'Omschrijving Zakelijkrecht', width: 150 },
                         //{ dataIndex: "BEPERKEND_ZAKELIJKRECHT", header: 'Beperkend Zakelijkrecht', width: 150 },                        
-                        { dataIndex: "KOOPSOM", header: 'Koopsom', width: 80 },
+                        //{ dataIndex: "KOOPSOM", header: 'Koopsom', width: 80 },
                         { dataIndex: "KOOPJAAR", header: 'Koopjaar', width: 80 },
-                        { dataIndex: "STATUTAIREZETEL", header: 'Statutaire zetel', width: 100 },
-                        { dataIndex: "KVKNUMMER", header: 'KvK-nummer', width: 100 },
+                        //{ dataIndex: "STATUTAIREZETEL", header: 'Statutaire zetel', width: 100 },
+                        //{ dataIndex: "KVKNUMMER", header: 'KvK-nummer', width: 100 },
                     ] 
                 }
            ]
