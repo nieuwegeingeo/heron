@@ -732,7 +732,7 @@ Heron.options.map.toolbar = [
     {type: "printdialog", options: {
         url: 'http://'+location.hostname+'/print-servlet-2.1.0/pdf'
         , tooltip: "Printen"
-        , windowWidth: 850
+        , windowWidth: 550
         //, mapPrintLayout: "A4" // MapFish - 'name' entry of the 'layouts' array or Null (=> MapFish default)
         // , showTitle: true
         //, mapTitle: 'My Header - Print Dialog'
