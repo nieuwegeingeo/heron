@@ -35,7 +35,8 @@ Ext.namespace("Heron.PDOK");
  *****************************************************************************/
 
 OpenLayers.Util.onImageLoadErrorColor = "transparent";
-OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
+//OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
+OpenLayers.ProxyHost = "/proxy/proxy.py?url=";
 OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 
 /*****************************************************************************
@@ -45,6 +46,7 @@ OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 // Define the base urls for the layers.
 Heron.ngein.urls = {
     NGEIN: 'http://gng-ap532.nieuwegein.nl',
+    NGEIN_BASE: 'http://gng-ap532.nieuwegein.nl',
 	NGEINLINUX: 'http://gng-ap855.linux.nieuwegein.nl',
     PDOK : 'http://geodata.nationaalgeoregister.nl',
     OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
@@ -55,7 +57,7 @@ Heron.PDOK.urls = {
     NGEINGEOSERVER: Heron.ngein.urls.NGEIN + '/geoserver/wms',
 	NGEINLINUXGEOSERVER: Heron.ngein.urls.NGEINLINUX + '/geoserver/wms',
 	NGEINGEOSERVERWFS: Heron.ngein.urls.NGEIN + '/geoserver/wfs',
-    NGEINMAPPROXY: Heron.ngein.urls.NGEIN + '/mapproxy/service',
+    NGEINMAPPROXY: Heron.ngein.urls.NGEIN_BASE + '/mapproxy/service',
     PDOKTMS: Heron.ngein.urls.PDOK + '/tms/',
     PDOKWMTS: Heron.ngein.urls.PDOK + '/tiles/service/wmts/'
 };
@@ -167,7 +169,7 @@ Heron.ngein.baselayers = {
     /* ------------------------------
      * Nieuwegein Luchtfoto
      * ------------------------------ */
-    ngein_luchtfoto: new OpenLayers.Layer.WMS("Nieuwegein Luchtfoto",
+    ngein_luchtfoto: new OpenLayers.Layer.WMS("Luchtfoto 2018",
             //Heron.PDOK.urls.NGEINMAPPROXY,
             //{'layers': 'basisluchtfoto', 'format': 'image/jpeg', transparent: false},
             //{'isBaseLayer': true, singleTile: false,
@@ -422,6 +424,91 @@ Heron.options.searchPanelConfig = {
                 }
             }
         },
+
+
+        // Zoeken in Handelsregister gegevens in een zoekkolom
+		{
+            searchPanel: {
+                xtype: 'hr_formsearchpanel',
+                name: 'Zoek in Handelsregister',
+                header: false,
+                protocol: new OpenLayers.Protocol.WFS({
+                    version: "1.1.0",
+					url: Heron.PDOK.urls.NGEINGEOSERVERWFS,
+                    srsName: "EPSG:28992",
+                    featureType: "bag_geoobj_hr_wa",
+                    // featureNS: "http://www.nieuwegein.nl"
+                    featurePrefix: 'nieuwegein'
+                }),
+                downloadFormats: [
+                     {
+                         name: 'CSV',
+                         outputFormat: 'csv',
+                         fileExt: '.csv'
+                     }
+                 ],
+                items: [
+                    {
+                        xtype: "textfield",
+                        name: "QUERY_KOL__like",
+                        value: '',
+                        fieldLabel: "  Zoeken",
+						emptyText: "Zoek..."
+                    },               
+                    {
+                        xtype: "label",
+                        id: "helplabel",
+                        html: '<br/>Zoeken in Handelregistergegevens, <br/>op bedrijfsnaam, KVK-nummer, vestigingsnummer of activiteit.<br/>Zoek is niet hoofdlettergevoelig.<br/>Bijvoorbeeld "holding"',
+                        style: {
+                            fontSize: '10px',
+                            color: '#AAAAAA'
+                        }
+                    }
+                ],
+                hropts: {
+                    onSearchCompleteZoom: 8,
+                    autoWildCardAttach: true,
+                    caseInsensitiveMatch: true
+                    ,logicalOperator: OpenLayers.Filter.Logical.OR
+                },
+				layerOpts: [
+					// name(!) of layer to make visible after search
+                	//{ layerOn: 'Handelsregister', layerOpacity: 1.0 } 
+                ]
+            },
+            resultPanel: {
+                xtype: 'hr_featuregridpanel',
+                id: 'hr-featuregridpanel',
+                header: false,
+                columns: [ 
+                    { dataIndex: "HR_KVK_NUMMER", header: 'KVK-Nummer', width: 100 },
+                    { dataIndex: "HR_VESTIGINGSNUMMER", header: 'Vestigingsnummer', width: 100 },
+                    { dataIndex: "BAG_ADRES", header: 'ADRES', width: 100 },
+                    { dataIndex: "HR_HANDELSNAAM", header: 'Handelsnaam', width: 100 },
+                    { dataIndex: "HR_ACTIVITEIT_1", header: 'Activiteit 1', width: 100 },
+                    { dataIndex: "HR_ACTIVITEIT_2", header: 'Activiteit 2', width: 100 },
+                    { dataIndex: "HR_ACTIVITEIT_3", header: 'Activiteit 3', width: 100 },
+                    { dataIndex: "BAG_GEBRUIK", header: 'Gebruik', width: 100 },
+                    { dataIndex: "BAG_WOONTYPE_OMSCHRIJVING", header: 'Woontype', width: 100 },
+                    { dataIndex: "BAG_BESTEMMING_OMSCHRIJVING", header: 'Bestemming', width: 100 },
+                    { dataIndex: "BAG_MONUMENT", header: 'Monument', width: 100 },
+                    { dataIndex: "HR_CORR_NAAM_OPENBARE_RUIMTE", header: 'Correspondentie straat', width: 100 },
+                    { dataIndex: "HR_CORR_HUISNUMMER", header: 'Corresp. huisnummer', width: 100 },
+                    { dataIndex: "HR_CORR_HUISLETTER", header: 'Corresp. huisletter', width: 100 },
+                    { dataIndex: "HR_CORR_HUISNUMMERTOEVOEGING", header: 'Corresp. huisnummertoevoeging', width: 100 },
+                    { dataIndex: "HR_CORR_POSTCODE", header: 'Corresp. postcode', width: 100 },
+                    { dataIndex: "HR_CORR_WOONPLAATS", header: 'Corresp. woonplaats', width: 100 },
+                    { dataIndex: "HR_CORR_POSTBUS", header: 'Corresp. postbus', width: 100 },
+                ],
+                exportFormats: ['XLS', 'WellKnownText'],
+                hropts: {
+                    zoomOnRowDoubleClick: true,
+                    zoomOnFeatureSelect: false,
+                    zoomLevelPointSelect: 8
+                }
+            }
+        },
+
         
         // Zoeken op perceelnummers uit GM_SP_KAD_GRONDPERCEEL
         {
@@ -587,7 +674,7 @@ Heron.options.searchPanelConfig = {
                 }
             }
         }*/
-
+    
     ]
 };
 
@@ -716,7 +803,7 @@ Heron.options.map.toolbar = [
 	}},
     // Options for SearchPanel window
     {type: "searchcenter", options: {
-        pressed: true, // DO NOT USE 'show' here, as it will create problems
+        pressed: false, // DO NOT USE 'show' here, as it will create problems
         searchWindow: {
             title: __('Multiple Searches'),
             x: 100,
@@ -730,7 +817,7 @@ Heron.options.map.toolbar = [
     }},
     // PrintDialog
     {type: "printdialog", options: {
-        url: 'http://'+location.hostname+'/print-servlet-2.1.0/pdf'
+        url: 'http://'+location.hostname+'/print-servlet-2.1.4/pdf'
         , tooltip: "Printen"
         , windowWidth: 550
         //, mapPrintLayout: "A4" // MapFish - 'name' entry of the 'layouts' array or Null (=> MapFish default)
@@ -860,6 +947,53 @@ Heron.options.map.toolbar = [
             });
         }
     },
+    // Street Smart
+    {
+        create: function (mapPanel, options) {
+            var map = mapPanel.getMap();
+
+            StreetsmartControl = OpenLayers.Class(OpenLayers.Control, {
+                defaultHandlerOptions: {
+                    'single': true,
+                    'double': false,
+                    'pixelTolerance': 0,
+                    'stopSingle': false,
+                    'stopDouble': false
+                },
+
+                initialize: function(options) {
+                    this.handlerOptions = OpenLayers.Util.extend(
+                        {}, this.defaultHandlerOptions
+                    );
+                    OpenLayers.Control.prototype.initialize.apply(
+                        this, arguments
+                    ); 
+                    this.handler = new OpenLayers.Handler.Click(
+                        this, {
+                            'click': this.trigger
+                        }, this.handlerOptions
+                    );
+                }, 
+
+                trigger: function(e) {
+                    var position = map.getLonLatFromPixel(e.xy);
+                    //var cwindow = window.open("http://gng-ap527.nieuwegein.nl/globespotter/3.1/viewer/index.html?posx="+position.lon.toFixed(0)+"&posy="+position.lat.toFixed()+"&yaw=0&pitch=0", "globespotter");
+                    var cwindow = window.open("http://gng-ap527.nieuwegein.nl/streetsmart/v18.7/application/streetsmart?q="+position.lon.toFixed(0)+";"+position.lat.toFixed()+";EPSG:28992", "Streetsmart");
+                    cwindow.focus();
+                }
+            }); 
+
+            return new GeoExt.Action({
+                text: "Street Smart",
+                map: map,
+                toggleGroup: "toolGroup",
+                allowDepress: false,
+                tooltip: "Open Street Smart",
+                group: "streetsmart",
+                control: new StreetsmartControl()
+            });
+        }
+    },
     // Obliek
     {
         create: function (mapPanel, options) {
@@ -957,7 +1091,7 @@ Heron.options.map.toolbar = [
             //url: 'http://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?wt=xml&'
             url: 'https://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?fq=+type:*&lat=52.0310&lon=5.0885&wt=xml'
         }
-    }    
+    } ,   
 
 
 

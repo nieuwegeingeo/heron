@@ -1,0 +1,932 @@
+<!--
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Nieuwegein - Ngein App</title>
+
+    <!-- External lib: ExtJS -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/ext-all.js"></script>
+    <!--<script type="text/javascript" src="/ext/3.4.0/ext-all-debug.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/css/ext-all.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/css/xtheme-gray.css" media="all" />
+
+    <!-- External lib: OpenLayers -->
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/openlayers/2.12/theme/default/style.css"/>
+    <!--<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/openlayers/2.12/OpenLayers.js"></script>-->
+	<script type="text/javascript" src="./OpenLayers.js"></script><!-- fresh compressed FULL build of OpenLayers dev, to be able to work in IE11 -->
+
+    <!-- External lib: GeoExt -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/geoext/1.1/script/GeoExt.js"></script>
+
+    <!-- External lib: Editor -->
+    <script type="text/javascript" src="../ux/oleditor/ole/client/lib/Editor/Lang/nl.js"></script>
+    <!--<script type="text/javascript" src="/openlayers-editor/justs.ole.git/client/lib/Editor/Lang/en.js"></script>-->
+    <!--<script type="text/javascript" src="/openlayers-editor/justs.ole.git/client/lib/loader.js"></script>-->
+    <!--<script type="text/javascript" src="../../ux/oleditor/ole/client/lib/loader.js"></script>-->
+    <script type="text/javascript" src="../ux/oleditor/ole/ole.min.js"></script>
+
+    <!-- Application Editor overrides -->
+    <script type="text/javascript" src="../basis/nl.js"></script>
+
+    <!-- Heron default css style -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/default.css"/>
+
+    <!-- External lib: Editor - heron - toolbar position / shadow -->
+    <!--
+    <link rel="stylesheet" type="text/css" href="../../resources/css/ux-oleditor-toolbar-HL.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/css/ux-oleditor-toolbar-HR.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/css/ux-oleditor-toolbar-VL.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/css/ux-oleditor-toolbar-VR.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/css/ux-oleditor-toolbar-shadow.css" />
+    -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/ux-oleditor-toolbar-VR.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/css/ux-oleditor-toolbar-shadow.css" />
+
+    <!-- Script and css resources for printpreview ux -->
+    <script type="text/javascript" src="../ux/printpreview/lib/GeoExt.ux/PrintPreview.js"></script>
+    <script type="text/javascript" src="../ux/printpreview/lib/locale/PrintPreview-en.js"></script>
+    <link rel="stylesheet" type="text/css" href="../ux/printpreview/resources/css/printpreview.css" />
+ 
+    <!-- Application css style -->
+    <link rel="stylesheet" type="text/css" href="../basis/resources/App.css"/>
+
+    <!-- Heron il8n definitions -->
+    <script type="text/javascript" src="../lib/i18n/nl_NL.js"></script>
+
+    <!-- Application il8n overrides -->
+    <script type="text/javascript" src="../basis/nl_NL.js"></script>
+
+    <!-- Heron Application -->
+    <!--<script type="text/javascript" src="../script/Heron.js"></script>-->
+    <!--<script type="text/javascript" src="http://lib.heron-mc.org/heron/latest/lib/DynLoader.js"></script>-->
+    <script type="text/javascript" src="../lib/DynLoader.js"></script>
+
+    <script type="text/javascript" src="../ux/gxp/gxp.js"></script>
+	
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+	
+	<style>
+	  	.axis path,
+		.axis line {
+		  fill: none;
+		  stroke: #000;
+		  shape-rendering: crispEdges;
+		}
+
+		.bar {
+		  fill: #88179F;
+		}
+
+		.bar:hover {
+		  fill: #C99DD5;
+		}
+
+		.x.axis path {
+		  display: none;
+		}
+		
+		.d3-tip {
+		  line-height: 1;
+		  font-weight: normal;
+		  font-size: 10px;
+		  padding: 6px;
+		  bbackground: rgba(150, 150, 150, 0.8);
+		  background: #dcdcdc;
+		  color: #000;
+		  border-radius: 2px;
+		}
+
+		/* Creates a small triangle extender for the tooltip */
+		.d3-tip:after {
+		  box-sizing: border-box;
+		  display: inline;
+		  font-size: 8px;
+		  width: 100%;
+		  line-height: 1;
+		  color: rgba(0, 0, 0, 0.8);
+		  content: "\25BC";
+		  position: absolute;
+		  text-align: center;
+		}
+
+		/* Style northward tooltips differently */
+		.d3-tip.n:after {
+		  margin: -1px 0 0 0;
+		  top: 100%;
+		  left: 0;
+		}
+		
+		.hr-diagram-p {
+			padding:10px;
+			font-family: sans-serif;
+			font-size:10px;
+		}
+		
+		.hr-diagram-head {
+			padding:10px;
+			font-family: sans-serif;
+			font-size:11px;
+			font-weight: bold;
+		}
+
+	</style>
+	<script type="text/javascript" src="./diagrams.js"></script>
+	<script type="text/javascript" src="../basis/Ngein.js"></script>
+	
+	<!-- NOTE: using our own Config to be able to add the diagram widget, hide default search etc -->
+    <script type="text/javascript" src="Config.js"></script>
+    <script type="text/javascript" src="LayerConfig.js"></script>
+	
+	<script>
+	
+		Ext.onReady(function(){
+		
+			var map = Heron.App.getMap();
+			
+			// Layers that have an option 'diagramgroup:true' can only be visible one at a time
+			// We collect these layers and let them listen to the 'visibilitychanged'-event
+			// In the 'visibilitychanged' function:
+			// we create a WMSGetFeatureInfo for every layer
+			// on making one of these visible we:
+			//  - make other layers from the diagramgroup INvisible
+			//  - deactivate all WMSGetFeatureInfo controls, and activate this one
+			var diagramLayers = [ ];
+			var currentDiagramLayer;
+			
+			for (var i=0;i<map.layers.length;i++){
+				if (map.layers[i].diagramgroup){
+					diagramLayers.push(map.layers[i]);
+					map.layers[i].events.register('visibilitychanged', map.layers[i], function(e) {
+						// remove diagram if available
+						d3.select("#hr-diagram").html('')
+						var activeLayer;
+						for (var j=0;j<diagramLayers.length;j++){
+							// only if this is the first visible one, hide all others
+							// with this.visibility==true we know this event will only work once
+							if (this.visibility==true && this != diagramLayers[j]){
+								diagramLayers[j].setVisibility(false);
+								// DEactivate diagramInfo controls
+								//console.log('DEactivating diagramInfo ', diagramLayers[j].name)
+								if (diagramLayers[j].diagramInfo){
+									//console.log('DEactivating diagramInfo 2 ', diagramLayers[j].name)
+									diagramLayers[j].diagramInfo.deactivate();
+								}								
+							}
+							else if (this.visibility==true && this==diagramLayers[j]){
+								// activate diagramInfo controls
+								//console.log('AActivating diagramInfo ', diagramLayers[j].name)
+								if (this.diagramInfo){
+									//console.log('AActivating diagramInfo 2 ', diagramLayers[j].name)
+									this.diagramInfo.activate();
+									activeLayer = diagramLayers[j];
+								}
+							}
+							else{
+								//console.log("Nothin? ", diagramLayers[j].name)
+							}
+						}
+						// deferring the activation of the layer info control because some controls share layers
+						// and these are deactivated as part of the loop above
+						if (activeLayer){
+							//console.log('activating: ', activeLayer)
+							activeLayer.diagramInfo.activate();
+						}
+					})
+				}
+			}
+			
+			/**
+			 * GM_SP_CRM_SM_VV
+			 * vervuiling
+			 * TIJDREEKS: 2015,01,7,N, 2015,02,8,-1, ..."
+			 **/
+			var vervuilingsLayer = map.getLayersByName(Heron.ngein.layermap.vervuiling.name)[0];
+			var vervuilingsInfo = new OpenLayers.Control.WMSGetFeatureInfo({
+			  url: Heron.PDOK.urls.NGEINGEOSERVER,
+			  drillDown: false,  // Or true if you want drill down (see the docs)
+			  hover: false,      // Or true if you want but bear in mind this could get chatty
+			  layers: [vervuilingsLayer],
+			  queryVisible: true,
+			  infoFormat: "application/json",
+			  eventListeners: {
+				getfeatureinfo: function(event) {
+					handleJaarMaandTijdReeksInfo(event, 
+					"Aantal meldingen mbt vervuiling, Kleuring betreft onder of bovengemiddelde score voor die periode over alle gebieden(!)",
+					"NAAM_OBR")
+				},
+				beforegetfeatureinfo: function(event) {
+					//console.log('before vervuilingsinfo')
+					d3.select("#hr-diagram").html("")
+				},
+				nogetfeatureinfo: function(event) {
+					//console.log('geen vervuilingsInfo?');
+				}
+			  } 
+			});
+			map.addControl(vervuilingsInfo);
+			vervuilingsLayer.diagramInfo = vervuilingsInfo;
+			
+			/**
+			* GM_SP_CRM_SM_BBB_EMIG_TR 
+			* vertrekkers
+			* jaar,aantal,waarde
+			* 2011,1,1, 2012,6,1, 2013,3,1, 2014,9,1 ..."
+			**/
+			var vertrekkersLayer = map.getLayersByName(Heron.ngein.layermap.vertrekkers.name)[0];
+			var vertrekkersInfo = new OpenLayers.Control.WMSGetFeatureInfo({
+			  url: Heron.PDOK.urls.NGEINGEOSERVER,
+			  drillDown: false,  // Or true if you want drill down (see the docs)
+			  hover: false,      // Or true if you want but bear in mind this could get chatty
+			  layers: [vertrekkersLayer],
+			  queryVisible: true,
+			  infoFormat: "application/json",
+			  eventListeners: {
+				getfeatureinfo: function(event) {
+					handleJaarTijdReeksInfo(event,
+					"Aantal vertrekkers, Kleuring betreft onder of bovengemiddelde score voor die periode over alle gebieden(!)",
+					"NAAM_OBR")
+				},
+				beforegetfeatureinfo: function(event) {
+					//console.log('before vertrekkersinfo')
+					d3.select("#hr-diagram").html("")
+				},
+				nogetfeatureinfo: function(event) {
+					//console.log('geen vertrekkersInfo?');
+				}
+			  } 
+			});
+			map.addControl(vertrekkersInfo);
+			vertrekkersLayer.diagramInfo = vertrekkersInfo;
+			
+			/**
+			* GM_SP_SM_SK_IMB_TR                      
+			* inkomen en minimabeleid
+			* jaar,maand,waarde,value
+			* 2015,1,13,-1, 2015,2,10,-1, 2015,3,8,-1, 2015,4,3,-1
+			**/
+			var inkomenenminimabeleidLayer = map.getLayersByName(Heron.ngein.layermap.inkomenenminimabeleid.name)[0];
+			var inkomenenminimabeleidInfo = new OpenLayers.Control.WMSGetFeatureInfo({
+			  url: Heron.PDOK.urls.NGEINGEOSERVER,
+			  drillDown: false,  // Or true if you want drill down (see the docs)
+			  hover: false,      // Or true if you want but bear in mind this could get chatty
+			  layers: [inkomenenminimabeleidLayer],
+			  queryVisible: true,
+			  infoFormat: "application/json",
+			  eventListeners: {
+				getfeatureinfo: function(event) {
+					handleJaarMaandTijdReeksInfo(event, 
+					"Inkomen en minimabeleid indicatoren per maand, Kleuring betreft onder of bovengemiddelde score voor die periode over alle gebieden(!)",
+					"NAAM_OBR")
+				},
+				beforegetfeatureinfo: function(event) {
+					//console.log('before vervuilingsinfo')
+					d3.select("#hr-diagram").html("")
+				},
+				nogetfeatureinfo: function(event) {
+					//console.log('geen vervuilingsInfo?');
+				}
+			  } 
+			});
+			map.addControl(inkomenenminimabeleidInfo);
+			inkomenenminimabeleidLayer.diagramInfo = inkomenenminimabeleidInfo;		
+			
+			/**
+			* GM_SP_SM_SK_SHV_TR
+			* schuldhulpverlening
+			* jaar,maand,waarde,value
+			* "2015,1,195,1, 2015,2,795,1"
+			**/
+			var schuldhulpverleningLayer = map.getLayersByName(Heron.ngein.layermap.schuldhulpverlening.name)[0];
+			var schuldhulpverleningInfo = new OpenLayers.Control.WMSGetFeatureInfo({
+			  url: Heron.PDOK.urls.NGEINGEOSERVER,
+			  drillDown: false,  // Or true if you want drill down (see the docs)
+			  hover: false,      // Or true if you want but bear in mind this could get chatty
+			  layers: [schuldhulpverleningLayer],
+			  queryVisible: true,
+			  infoFormat: "application/json",
+			  eventListeners: {
+				getfeatureinfo: function(event) {
+					handleJaarMaandTijdReeksInfo(event, 
+					"Inkomen en minimabeleid indicatoren per maand, Kleuring betreft onder of bovengemiddelde score voor die periode over alle gebieden(!)",
+					"NAAM_OBR")
+				},
+				beforegetfeatureinfo: function(event) {
+					//console.log('before vervuilingsinfo')
+					d3.select("#hr-diagram").html("")
+				},
+				nogetfeatureinfo: function(event) {
+					//console.log('geen vervuilingsInfo?');
+				}
+			  } 
+			});
+			map.addControl(schuldhulpverleningInfo);
+			schuldhulpverleningLayer.diagramInfo = schuldhulpverleningInfo;					
+			
+			/**
+			* GM_SP_SM_SK_WMO_TR
+			* wmoverstrekkingen
+			* jaar,maand,waarde,value
+			* "2015,2,374,1, 2015,3,235,-1"	
+			**/
+			var wmoverstrekkingenLayer = map.getLayersByName(Heron.ngein.layermap.wmoverstrekkingen.name)[0];
+			var wmoverstrekkingenInfo = new OpenLayers.Control.WMSGetFeatureInfo({
+			  url: Heron.PDOK.urls.NGEINGEOSERVER,
+			  drillDown: false,  // Or true if you want drill down (see the docs)
+			  hover: false,      // Or true if you want but bear in mind this could get chatty
+			  layers: [wmoverstrekkingenLayer],
+			  queryVisible: true,
+			  infoFormat: "application/json",
+			  eventListeners: {
+				getfeatureinfo: function(event) {
+					handleJaarMaandTijdReeksInfo(event, 
+					"WMO indicator, aantal WMO verstrekkingen. Kleuring betreft onder of bovengemiddelde score voor die periode over alle gebieden(!)",
+					"NAAM_OBR")
+				},
+				beforegetfeatureinfo: function(event) {
+					//console.log('before vervuilingsinfo')
+					d3.select("#hr-diagram").html("")
+				},
+				nogetfeatureinfo: function(event) {
+					//console.log('geen vervuilingsInfo?');
+				}
+			  } 
+			});
+			map.addControl(wmoverstrekkingenInfo);
+			wmoverstrekkingenLayer.diagramInfo = wmoverstrekkingenInfo;
+
+			/**
+			* GM_SP_SM_VEO_OV_TR
+			* overlast meldingen
+			* jaar,maand,waarde,value
+			* "2015,2,374,1, 2015,3,235,-1"	
+			**/
+			var overlastmeldingenLayer = map.getLayersByName(Heron.ngein.layermap.overlastmeldingen.name)[0];
+			var overlastmeldingenInfo = new OpenLayers.Control.WMSGetFeatureInfo({
+			  url: Heron.PDOK.urls.NGEINGEOSERVER,
+			  drillDown: false,  // Or true if you want drill down (see the docs)
+			  hover: false,      // Or true if you want but bear in mind this could get chatty
+			  layers: [overlastmeldingenLayer],
+			  queryVisible: true,
+			  infoFormat: "application/json",
+			  eventListeners: {
+				getfeatureinfo: function(event) {
+					handleJaarMaandTijdReeksInfo(event, 
+					"Overlast indicator, aantal overlast meldingen. Kleuring betreft onder of bovengemiddelde score voor die periode over alle gebieden(!)",
+					"NAAM_OBR")
+				},
+				beforegetfeatureinfo: function(event) {
+					d3.select("#hr-diagram").html("")
+				},
+				nogetfeatureinfo: function(event) {
+				}
+			  } 
+			});
+			map.addControl(overlastmeldingenInfo);
+			overlastmeldingenLayer.diagramInfo = overlastmeldingenInfo;
+			
+			/**
+			* GM_SP_SM_VEO_PO_TR
+			* parkeeroverlast
+			* jaar,maand,waarde,value
+			* "2015,2,374,1, 2015,3,235,-1"	
+			**/
+			var parkeeroverlastLayer = map.getLayersByName(Heron.ngein.layermap.parkeeroverlast.name)[0];
+			var parkeeroverlastInfo = new OpenLayers.Control.WMSGetFeatureInfo({
+			  url: Heron.PDOK.urls.NGEINGEOSERVER,
+			  drillDown: false,  // Or true if you want drill down (see the docs)
+			  hover: false,      // Or true if you want but bear in mind this could get chatty
+			  layers: [parkeeroverlastLayer],
+			  queryVisible: true,
+			  infoFormat: "application/json",
+			  eventListeners: {
+				getfeatureinfo: function(event) {
+					handleJaarMaandTijdReeksInfo(event, 
+					"Parkeeroverlast indicator, aantal parkeeroverlast meldingen. Kleuring betreft onder of bovengemiddelde score voor die periode over alle gebieden(!)",
+					"NAAM_OBR")
+				},
+				beforegetfeatureinfo: function(event) {
+					d3.select("#hr-diagram").html("")
+				},
+				nogetfeatureinfo: function(event) {
+				}
+			  } 
+			});
+			map.addControl(parkeeroverlastInfo);
+			parkeeroverlastLayer.diagramInfo = parkeeroverlastInfo;
+			
+			/**
+			 * GM_SP_SM_VEO_AI_TR
+			 * Autoinbraken
+			 * jaar,maand,waarde,value
+			 * 2016,01,0,N, 2016,02,0,N
+			 **/
+			var autoinbrakenLayer = map.getLayersByName(Heron.ngein.layermap.autoinbraken.name)[0];
+			var autoinbrakenInfo = new OpenLayers.Control.WMSGetFeatureInfo({
+			  url: Heron.PDOK.urls.NGEINGEOSERVER,
+			  drillDown: false,  // Or true if you want drill down (see the docs)
+			  hover: false,      // Or true if you want but bear in mind this could get chatty
+			  layers: [autoinbrakenLayer],
+			  queryVisible: true,
+			  infoFormat: "application/json",
+			  eventListeners: {
+				getfeatureinfo: function(event) {
+					handleJaarMaandTijdReeksInfo(event, 
+					"Autoinbraken indicator. Kleuring betreft onder of bovengemiddelde score voor die periode over alle gebieden(!)",
+					"NAAM_OBR")
+				},
+				beforegetfeatureinfo: function(event) {
+					d3.select("#hr-diagram").html("")
+				},
+				nogetfeatureinfo: function(event) {
+				}
+			  } 
+			});
+			map.addControl(autoinbrakenInfo);
+			autoinbrakenLayer.diagramInfo = autoinbrakenInfo;
+			
+			/**
+			 * GM_SP_SM_VEO_WI_TR
+			 * Woninginbraken
+			 * jaar,maand,waarde,value
+			 * 2016,01,0,N, 2016,02,0,N,2016, 03,0,N
+			 **/
+			var woninginbrakenLayer = map.getLayersByName(Heron.ngein.layermap.woninginbraken.name)[0];
+			var woninginbrakenInfo = new OpenLayers.Control.WMSGetFeatureInfo({
+			  url: Heron.PDOK.urls.NGEINGEOSERVER,
+			  drillDown: false,  // Or true if you want drill down (see the docs)
+			  hover: false,      // Or true if you want but bear in mind this could get chatty
+			  layers: [woninginbrakenLayer],
+			  queryVisible: true,
+			  infoFormat: "application/json",
+			  eventListeners: {
+				getfeatureinfo: function(event) {
+					handleJaarMaandTijdReeksInfo(event, 
+					"Woninginbraken indicator. Kleuring betreft onder of bovengemiddelde score voor die periode over alle gebieden(!)",
+					"NAAM_OBR")
+				},
+				beforegetfeatureinfo: function(event) {
+					d3.select("#hr-diagram").html("")
+				},
+				nogetfeatureinfo: function(event) {
+				}
+			  } 
+			});
+			map.addControl(woninginbrakenInfo);
+			woninginbrakenLayer.diagramInfo = woninginbrakenInfo;
+
+			/**
+			 *	GBA MIGRATIE
+			 **/			
+			/*var migratieLayer2011 = map.getLayersByName(Heron.ngein.layermap.gbamigratie2011.name)[0];
+			var migratieLayer2012 = map.getLayersByName(Heron.ngein.layermap.gbamigratie2012.name)[0];
+			var migratieLayer2013 = map.getLayersByName(Heron.ngein.layermap.gbamigratie2013.name)[0];
+			var migratieInfo = new OpenLayers.Control.WMSGetFeatureInfo({
+			  url: Heron.PDOK.urls.NGEINGEOSERVER,
+			  drillDown: false,  // Or true if you want drill down (see the docs)
+			  hover: false,      // Or true if you want but bear in mind this could get chatty
+			  layers: [ migratieLayer2011,migratieLayer2012,migratieLayer2013 ],
+			  //queryVisible: true,
+			  infoFormat: "application/json",
+			  eventListeners: {
+				getfeatureinfo:handleMigratieInfo,
+				beforegetfeatureinfo: function(event) {
+					console.log('before migratieInfo?');
+					d3.select("#hr-diagram").html("")
+				},
+				nogetfeatureinfo: function(event) {
+					console.log('geen migratieInfo?');
+				}
+			  } 
+			});
+			map.addControl(migratieInfo);
+			migratieLayer2011.diagramInfo = migratieInfo;
+			migratieLayer2012.diagramInfo = migratieInfo;
+			migratieLayer2013.diagramInfo = migratieInfo;
+			migratieInfo.activate();
+			
+			handleMigratieInfo = function(event){
+				//console.log('handling migratieinfo')
+				//console.log( $.parseJSON(event.text) );
+				var featureCollection = Ext.decode(event.text);
+				if (featureCollection.features.length==0){
+					return;
+				}
+				var f = featureCollection.features[0];
+				
+				// this also cleans up
+				d3.select("#hr-diagram").html('')
+							
+				d3.select("#hr-diagram").append("p")
+				  .attr("class", "hr-diagram-p")
+				  .text('Percentage vertrokkenen per aantal woningen van: '+f.properties.OBR_NAAM)
+							
+				var title = '<p><b>'+f.properties.OBR_NAAM+'</b></p>';
+				
+				var data = [
+						{jaar: 2011, migratie: f.properties.AANTAL_VERTREKKERS_2011, straat:f.properties.OBR_NAAM },
+						{jaar: 2012, migratie: f.properties.AANTAL_VERTREKKERS_2012, straat:f.properties.OBR_NAAM },
+						{jaar: 2013, migratie: f.properties.AANTAL_VERTREKKERS_2013, straat:f.properties.OBR_NAAM }
+				];
+				
+				var barWidth = (width - margin.right - margin.left - data.length*padding.right) / data.length;
+
+				var x = d3.scale.linear().domain([0, data.length]).range([0, width]);
+				//var y = d3.scale.linear().domain([0, d3.max(data, function(datum) { return datum.migratie; })]).rangeRound([0, height]);
+				var y = d3.scale.linear().domain([d3.max(data, function(datum) { return datum.migratie; }), 0]).rangeRound([0, height]);
+
+				// add the canvas to the DOM
+				var svg = d3.select("#hr-diagram")
+				  .append("svg:svg")
+					.attr("width", width + margin.left + margin.right)
+					.attr("height", height + margin.bottom + margin.top)
+				  .append("g")
+					.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+					
+				// a tooltip
+				var tip = d3.tip()
+				  .attr('class', 'd3-tip')
+				  .offset([30, 0])
+				  .html(function(d) {
+					return d.straat+'<br/>'+d.jaar+': <span style="color:black">' + d.migratie + '%</span>';
+				})
+				//svg.call(tip);
+				
+				// bars
+				svg.selectAll("rect")
+				  .data(data)
+				  .enter()
+				  .append("svg:rect")
+				  .attr("x", function(datum, index) { return x(index)+padding.left; })
+				  .attr("y", function(datum) { 
+					//console.log(height, y(datum.migratie), (height - y(datum.migratie)));
+					return y(datum.migratie);
+					//return height - y(datum.migratie); 
+				  })
+				  //.attr("height", function(datum) { return y(datum.migratie); })
+				  .attr("height", function(datum) { return height-y(datum.migratie); })
+				  .attr("width", barWidth)
+				  .attr("fill", "#88179F")
+				  //.on('mouseover', tip.show)
+				  //.on('mouseout', tip.hide);
+				  
+				// x-axis
+				svg.selectAll("text.yAxis")
+				  .data(data)
+				  .enter().append("svg:text")
+				  .attr("x", function(datum, index) { return x(index)+barWidth+padding.left; })
+				  .attr("y", height)
+				  .attr("dx", -barWidth/2)
+				  .attr("text-anchor", "middle")
+				  .attr("style", "font-size: 10; font-family: Helvetica, sans-serif")
+				  .text(function(datum) { return datum.jaar;})
+				  .attr("transform", "translate(0, 18)")
+				  .attr("class", "yAxis");
+				  
+				yAxis = d3.svg.axis()
+				  .scale(y)
+				  .orient("left");		  
+				svg.append("g")
+				  .attr("class", "y axis")
+				  .attr("transform", "translate(" + padding.left + ",0)")
+				  .attr("style", "font-size: 10px; font-family: Helvetica, sans-serif")
+				  .call(yAxis);
+			}
+			*/
+			
+			/**
+			 *	Bevolkingsdichtheid
+			 **/
+			var bevolkingsdichtheid_0_tot_4Layer = map.getLayersByName(Heron.ngein.layermap.bevolkingsdichtheid_0_tot_4.name)[0];
+			var bevolkingsdichtheid_12_tot_18Layer = map.getLayersByName(Heron.ngein.layermap.bevolkingsdichtheid_12_tot_18.name)[0];
+			var bevolkingsdichtheid_18_tot_25Layer = map.getLayersByName(Heron.ngein.layermap.bevolkingsdichtheid_18_tot_25.name)[0];
+			var bevolkingsdichtheid_70_en_ouderLayer = map.getLayersByName(Heron.ngein.layermap.bevolkingsdichtheid_70_en_ouder.name)[0];
+			var bevolkingsdichtheidInfo = new OpenLayers.Control.WMSGetFeatureInfo({
+			  url: Heron.PDOK.urls.NGEINGEOSERVER,
+			  drillDown: false,  // Or true if you want drill down (see the docs)
+			  hover: false,      // Or true if you want but bear in mind this could get chatty
+			  layers: [ bevolkingsdichtheid_0_tot_4Layer, bevolkingsdichtheid_12_tot_18Layer, bevolkingsdichtheid_18_tot_25Layer, bevolkingsdichtheid_70_en_ouderLayer ],
+			  //queryVisible: true,
+			  infoFormat: "application/json",
+			  eventListeners: {
+				getfeatureinfo:handleBevolkingsdichtheidInfo,
+				beforegetfeatureinfo: function(event) {
+					//console.log('before bevolkingsdichtheidInfo?');
+					d3.select("#hr-diagram").html("")
+				},
+				nogetfeatureinfo: function(event) {
+					//console.log('geen bevolkingsdichtheidInfo?');
+				}
+			  } 
+			});
+			map.addControl(bevolkingsdichtheidInfo);
+			bevolkingsdichtheid_0_tot_4Layer.diagramInfo = bevolkingsdichtheidInfo;
+			bevolkingsdichtheid_12_tot_18Layer.diagramInfo = bevolkingsdichtheidInfo;
+			bevolkingsdichtheid_18_tot_25Layer.diagramInfo = bevolkingsdichtheidInfo;
+			bevolkingsdichtheid_70_en_ouderLayer.diagramInfo = bevolkingsdichtheidInfo;
+			//bevolkingsdichtheidInfo.activate();
+			
+		});
+		
+		// DIAGRAM SIZES
+		// 
+		var height = 200;
+		// margin is for whole diagram
+		var margin = {top: 20, right: 5, bottom: 60, left: 25};
+		// padding is for bars
+		var padding = {top: 20, right: 1, bottom: 0, left: 0};
+		// width
+		var width = 240 - margin.right - margin.left;
+		
+		handleBevolkingsdichtheidInfo = function(event){
+			//console.log('handling bevolkingsdichtheidInfo')
+			var featureCollection = Ext.decode(event.text);
+			if (featureCollection.features.length==0){
+				return;
+			}
+			var f = featureCollection.features[0];
+
+			// this also cleans up
+			d3.select("#hr-diagram").html('')
+						
+			d3.select("#hr-diagram").append("p")
+			  .attr("class", "hr-diagram-p")
+			  .text("Demografie (per leeftijdsklassen)")
+						
+			// "0_TOT_4,152,4_TOT_12,287,0_TOT_12,412,12_TOT_18,198,18_TOT_25,195,25_TOT_45,645,45_TOT_65,879,65_TOT_80,424,65_EN_OUDER,457,70_EN_OUDER,188,75_EN_OUDER,79,80_EN_OUDER,33"
+			var data = [];
+			var arr = f.properties.DEMOGRAFIE;
+			arr = arr.split(",");
+			for (var i=0;i<arr.length;i++){
+				var groep = arr[i]; // groep
+				i++
+				aantal=arr[i]
+				//i++
+				var d = arr[i];
+				if (d=="N"){d=2}
+				var col = "#88179F";
+				data.push({groep:groep, color:col, aantal:aantal})
+			}
+			
+			var barWidth = (width - margin.right - margin.left - data.length*padding.right) / data.length;
+
+			var x = d3.scale.linear()
+						.domain([0, data.length])
+						.range([0, width]);
+			var y = d3.scale.linear()
+						.domain([d3.max(data, function(datum) { return +datum.aantal; }), 0])
+						//.domain([1, 0])
+						.rangeRound([0, height]);
+
+			// add the canvas to the DOM
+			var svg = d3.select("#hr-diagram")
+			  .append("svg:svg")
+				.attr("width", width + margin.left + margin.right)
+				.attr("height", height + margin.bottom + margin.top)
+			  .append("g")
+				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+			// a tooltip
+			var tip = d3.tip()
+			  .attr('class', 'd3-tip')
+			  .offset([-10, 0])
+			  .html(function(d) {
+				return d.aantal;
+			})
+			//svg.call(tip);
+			
+			// bars
+			svg.selectAll("rect")
+			  .data(data)
+			  .enter()
+				.append("svg:rect")
+				  .attr("x", function(datum, index) { return x(index)+padding.left; })
+				  .attr("y", function(datum) { return y(datum.aantal); })
+				  .attr("height", function(datum) { return height-y(datum.aantal); })
+				  .attr("width", barWidth)
+				  .attr("fill", function(datum) { return datum.color; })
+				  .attr("opacity", "0.8")
+				  //.on('mouseover', tip.show)
+				  //.on('mouseout', tip.hide);
+			  
+			// x-axis
+			svg.selectAll("text.yAxis")
+			  .data(data)                 
+			  .enter()
+				.append("svg:text")
+				  //.attr("x", function(datum, index) { return x(index)+barWidth+padding.left; })
+				  //.attr("y", height)
+				  .attr("dx", -5)
+				  .attr("text-anchor", "end")
+				  .attr("style", "font-size: 8px; font-family: Helvetica, sans-serif")
+				.text( function(datum) { return datum.groep.replace(/_/g, " ").toLowerCase();} )
+				  //.attr("transform", "translate(0, 18)")
+				  .attr("transform", function(datum, index) { return "translate(" + (x(index)+barWidth/2+padding.left+3) + "," + (height) + ")rotate(270)" })
+				  .attr("class", "yAxis");
+
+			// aantal
+			svg.selectAll("text.values")
+			  .data(data)                 
+			  .enter().append("svg:text")
+				  .attr("x", function(datum, index) { return x(index)+barWidth+padding.left; })
+				  //.attr("y", height)
+				  .attr("y", function(datum) { return y(datum.aantal); })
+				  .attr("dx", -barWidth/2)
+				  .attr("text-anchor", "middle")
+				  .attr("style", "fill:black; font-size: 5px; font-family: Helvetica, sans-serif")
+				  .text( function(datum) { return datum.aantal;} )
+				  .attr("transform", "translate(0, -5)")
+				  .attr("class", "yAxis");
+				  
+			yAxis = d3.svg.axis()
+			  .scale(y)
+			  .orient("left");
+			svg.append("g")
+			  .attr("class", "y axis")
+			  .attr("transform", "translate(" + padding.left + ",0)")
+			  .attr("style", "font-size: 8px; font-family: Helvetica, sans-serif")
+			  .call(yAxis);
+		}
+		
+		
+		handleJaarMaandTijdReeksInfo = function(event, title, nameAttribute){
+			//console.log('handleJaarMaandTijdReeksInfo')
+			var featureCollection = Ext.decode(event.text);
+			if (featureCollection.features.length==0){
+				return;
+			}
+			var f = featureCollection.features[0];
+			
+			// "TIJDREEKS":"2015,01,7,N, 2015,02,8,-1, ..."
+			var data = [];
+			var arr = f.properties.TIJDREEKS;
+			arr = arr.split(",");
+			for (var i=0;i<arr.length;i++){
+				var jaar = arr[i]; // year
+				i++
+				jaar=arr[i] // only month // +'-'+jaar;
+				i++
+				aantal=arr[i];  // aantal = absolute aantal  
+				i++
+				var d = arr[i];  // data <= kleur
+				if (d=="N"){d=2}
+				var col = "#ffffff";
+				if (d==0){ col = "#FFA500" }
+				else if(d==1){ col = "#00ff00" }
+				else if(d==-1){ col = "#ff0000" }
+				data.push({jaar:jaar, migratie:1, color:col, aantal:aantal})
+			}
+
+			var name = f.properties[nameAttribute]
+			createTijdReeksDiagram(data, title, name);
+		}	
+	
+		// 2011,1,1, 2012,6,1, 2013,3,1, 2014,9,1
+		handleJaarTijdReeksInfo = function(event, title, nameAttribute){
+			//console.log('handling handleJaarTijdReeksInfo')
+			//console.log(event)
+			var featureCollection = Ext.decode(event.text);
+			if (featureCollection.features.length==0){
+				return;
+			}
+			var f = featureCollection.features[0];
+			
+			// "TIJDREEKS":"2011,1,1, 2012,6,1, 2013,3,1, 2014,9,1 ..."
+			var data = [];
+			var arr = f.properties.TIJDREEKS;
+			arr = arr.split(",");
+			for (var i=0;i<arr.length;i++){
+				var jaar = arr[i]; // year
+				i++
+				//jaar=arr[i] // only month // +'-'+jaar;
+				//i++
+				aantal=arr[i]
+				i++
+				var d = arr[i];
+				if (d=="N"){d=2}
+				var col = "#ffffff";
+				if (d==0){ col = "#FFA500" }
+				else if(d==1){ col = "#00ff00" }
+				else if(d==-1){ col = "#ff0000" }
+				data.push({jaar:jaar, migratie:1, color:col, aantal:aantal})
+			}
+			
+			var name = f.properties[nameAttribute]
+			createTijdReeksDiagram(data, title, name);
+		}
+			
+			
+		createTijdReeksDiagram = function(data, title, name){
+
+			// this also cleans up
+			d3.select("#hr-diagram").html('')
+			d3.select("#hr-diagram").append("p")
+			  .attr("class", "hr-diagram-head")
+			  .text(name)			
+			// title						
+			d3.select("#hr-diagram").append("p")
+			  .attr("class", "hr-diagram-p")
+			  .text(title)
+		
+			var barWidth = (width - margin.right - margin.left - data.length*padding.right) / data.length;
+
+			var x = d3.scale.linear()
+						.domain([0, data.length])
+						.range([0, width]);
+			var y = d3.scale.linear()
+						.domain([d3.max(data, function(datum) { return +datum.aantal; }), 0])
+						//.domain([1, 0])
+						.rangeRound([0, height]);
+
+			// add the canvas to the DOM
+			var svg = d3.select("#hr-diagram")
+			  .append("svg:svg")
+				.attr("width", width + margin.left + margin.right)
+				.attr("height", height + margin.bottom + margin.top)
+			  .append("g")
+				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+			// a tooltip
+			var tip = d3.tip()
+			  .attr('class', 'd3-tip')
+			  .offset([-10, 0])
+			  .html(function(d) {
+				return d.aantal;
+			})
+			//svg.call(tip);
+			
+			// bars
+			svg.selectAll("rect")
+			  .data(data)
+			  .enter()
+				.append("svg:rect")
+				  .attr("x", function(datum, index) { return x(index)+padding.left; })
+				  .attr("y", function(datum) { return y(datum.aantal); })
+				  .attr("height", function(datum) { return height-y(datum.aantal); })
+				  .attr("width", barWidth)
+				  .attr("fill", function(datum) { return datum.color; })
+				  .attr("opacity", "0.8")
+				  //.on('mouseover', tip.show)
+				  //.on('mouseout', tip.hide);
+			  
+			// x-axis
+			svg.selectAll("text.yAxis")
+			  .data(data)                 
+			  .enter()
+				.append("svg:text")
+				  .attr("x", function(datum, index) { return x(index)+barWidth+padding.left; })
+				  .attr("y", height)
+				  .attr("dx", -barWidth/2)
+				  .attr("text-anchor", "middle")
+				  .attr("style", "font-size: 8px; font-family: Helvetica, sans-serif")
+				.text( function(datum) { return datum.jaar;} )
+				  .attr("transform", "translate(0, 18)")
+				  .attr("class", "yAxis");
+
+			// aantal
+			svg.selectAll("text.values")
+			  .data(data)                 
+			  .enter().append("svg:text")
+				  .attr("x", function(datum, index) { return x(index)+barWidth+padding.left; })
+				  .attr("y", height)
+				  .attr("dx", -barWidth/2)
+				  .attr("text-anchor", "middle")
+				  .attr("style", "fill:white; font-size: 8px; font-family: Helvetica, sans-serif")
+				  .text( function(datum) { return datum.aantal;} )
+				  .attr("transform", "translate(0, -5)")
+				  .attr("class", "yAxis");
+				  
+			yAxis = d3.svg.axis()
+			  .scale(y)
+			  .orient("left");
+			svg.append("g")
+			  .attr("class", "y axis")
+			  .attr("transform", "translate(" + padding.left + ",0)")
+			  .attr("style", "font-size: 8px; font-family: Helvetica, sans-serif")
+			  .call(yAxis);
+		}	
+		
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

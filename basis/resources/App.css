@@ -47,6 +47,7 @@
 /* A custom png for the layerswitcher. */
 .x-tree-node-leaf .x-tree-node-icon {
   background-image: url(maplayer.png) !important;
+  /*background-image: none !important;*/
 }
 
 /* The header-bar of the layertree. */
@@ -140,4 +141,21 @@
   font-weight: bold !important;
   background-image: url("../../resources/images/silk/star.png") !important;
   /*background-image: url("../../resources/images/silk/zoom.png") !important;*/
+}
+
+/* Login button */
+.login_btn {
+  background-image: url("../../resources/images/silk/key.png") !important;
+}
+
+.hr-tree-node-icon-layer-secure {
+    background-image: url("../../resources/images/silk/key.png") !important;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+.third_opaque {
+    opacity: 0.33;
+    filter: alpha(opacity=33); /* msie */
 }
