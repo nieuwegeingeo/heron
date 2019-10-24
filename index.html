@@ -1,11 +1,51 @@
 <html>
+<style>
+* {
+    font-family: montserrat;
+}
+
+#counter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: red;
+    font-size: 200px;
+    transform: translate(-50%,-50%);
+    
+}
+
+#text {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+
+</style>
 <body>
+<div id="text">
 <p>
-Dit de webatlas.nieuwegein.nl
+Dit is webatlas.nieuwegein.nl... je zit verkeerd, je wordt doogestuurd naar de ware WebAtlas!
 </p>
 <p>
 Ga nu naar de <a href="./ngein">ngein</a> webatlas.
+</div>
+<span id="counter">3</span>
 </p>
 </body>
+<script>
+
+setTimeout(function(){
+    document.querySelector('#counter').innerText = 2;
+},1000);
+
+setTimeout(function(){
+    document.querySelector('#counter').innerText = 1;
+},2000);
+
+setTimeout(function(){open('./ngein', '_self')},3000);
+</script>
+
 </html>
 

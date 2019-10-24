@@ -35,8 +35,8 @@ Ext.namespace("Heron.PDOK");
  *****************************************************************************/
 
 OpenLayers.Util.onImageLoadErrorColor = "transparent";
-//OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
-OpenLayers.ProxyHost = "/proxy/proxy.py?url=";
+// OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
+// OpenLayers.ProxyHost = "/proxy/proxy.py?url=";
 OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 
 /*****************************************************************************
@@ -44,9 +44,19 @@ OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
  *****************************************************************************/
 
 // Define the base urls for the layers.
+/*
 Heron.ngein.urls = {
-    NGEIN: 'http://gng-ap532.nieuwegein.nl',
-    NGEIN_BASE: 'http://gng-ap532.nieuwegein.nl',
+    NGEIN: 'http://geoappstore.nieuwegein.nl',
+    NGEIN_BASE: 'http://geoappstore.nieuwegein.nl',
+	NGEINLINUX: 'http://gng-ap855.linux.nieuwegein.nl',
+    PDOK : 'http://geodata.nationaalgeoregister.nl',
+    OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
+};
+*/
+
+Heron.ngein.urls = {
+    NGEIN: 'http://' + location.hostname,
+    NGEIN_BASE: 'http://' + location.hostname,
 	NGEINLINUX: 'http://gng-ap855.linux.nieuwegein.nl',
     PDOK : 'http://geodata.nationaalgeoregister.nl',
     OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
@@ -55,6 +65,7 @@ Heron.ngein.urls = {
 // Define the PDOK urls for the layers, based
 Heron.PDOK.urls = {
     NGEINGEOSERVER: Heron.ngein.urls.NGEIN + '/geoserver/wms',
+    //NGEINGEOSERVER: 'http://gng-ap713.nieuwegein.nl/geoserver/wms',
 	NGEINLINUXGEOSERVER: Heron.ngein.urls.NGEINLINUX + '/geoserver/wms',
 	NGEINGEOSERVERWFS: Heron.ngein.urls.NGEIN + '/geoserver/wfs',
     NGEINMAPPROXY: Heron.ngein.urls.NGEIN_BASE + '/mapproxy/service',
@@ -122,7 +133,7 @@ Heron.ngein.baselayers = {
             {'layers': 'brt', 'format': 'image/png', transparent: false},
             {'isBaseLayer': true, singleTile: false,
              visibility: false,
-            legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+            legendURL: 'http://geoappstore.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
     }),				
 				
     /* ------------------------------
@@ -133,7 +144,7 @@ Heron.ngein.baselayers = {
             {'layers': 'brtpastel', 'format': 'image/png', transparent: false},
             {'isBaseLayer': true, singleTile: false,
              visibility: false,
-            legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+            legendURL: 'http://geoappstore.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
     }),	
 				
     /* ------------------------------
@@ -152,7 +163,7 @@ Heron.ngein.baselayers = {
           opacity: 1.0,
           attribution: "(C) <a href='http://openbasiskaart.nl'>OpenBasisKaart</a><br/>Data <a href='http://www.openstreetmap.org/copyright'>CC-By-SA</a> <a href='http://openstreetmap.org/'>OpenStreetMap</a> ",
           transitionEffect: 'resize',
-          legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+          legendURL: 'http://geoappstore.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
     }),
 
     /*----------------------------
@@ -163,7 +174,7 @@ Heron.ngein.baselayers = {
             {'layers': 'opentopo', 'format': 'image/png', transparent: false},
             {'isBaseLayer': true, singleTile: false,
              visibility: false,
-            legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+            legendURL: 'http://geoappstore.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
     }),	  
 
     /* ------------------------------
@@ -177,9 +188,8 @@ Heron.ngein.baselayers = {
             Heron.PDOK.urls.NGEINGEOSERVER,
             {'layers': 'nieuwegein:luchtfotocombi', 'format': 'image/jpeg', transparent: false},
             {'isBaseLayer': true, singleTile: true,
-
-             visibility: false,
-            legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+            visibility: false,
+            legendURL: 'http://geoappstore.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
     }),
 	  
     /*----------------
@@ -200,7 +210,7 @@ Heron.ngein.baselayers = {
             isBaseLayer: false,
             attribution: 'Kadaster',
             minScale:5000,
-            legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+            legendURL: 'http://geoappstore.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
         }
     ),       
 
@@ -212,7 +222,7 @@ Heron.ngein.baselayers = {
             {'layers': 'basistopo', 'format': 'image/jpeg', transparent: false},
             {'isBaseLayer': true, singleTile: false,
              visibility: true,
-            legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+            legendURL: 'http://geoappstore.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
     }),
 
     /* ------------------------------
@@ -228,7 +238,7 @@ Heron.ngein.baselayers = {
             displayInLayerSwitcher: true, 
             transitionEffect: 'resize'
             // werkt niet bij printen omdat de blank image url DATA is en geen echte url...
-            //,legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+            //,legendURL: 'http://geoappstore.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
     }),*/
     
     blanco: new OpenLayers.Layer.WMS("Blanco",
@@ -239,7 +249,7 @@ Heron.ngein.baselayers = {
         visibility: false,
         displayInLayerSwitcher: true, 
         transitionEffect: 'resize',
-        legendURL: 'http://gng-apo088.linux.nieuwegein.nl/app/resources/images/silk/arrow_out.png'       
+        legendURL: 'http://geoappstore.nieuwegein.nl/app/resources/images/silk/arrow_out.png'       
       }
     ),
     
@@ -290,7 +300,8 @@ Heron.options.searchPanelConfig = {
                 header: false,
                 protocol: new OpenLayers.Protocol.WFS({
                     version: "1.1.0",
-                    url: Heron.PDOK.urls.NGEINGEOSERVERWFS,
+                    //url: "http://webatlas.nieuwegein.nl/proxy/proxy.py?url=" + Heron.PDOK.urls.NGEINGEOSERVERWFS, //Heron.PDOK.urls.NGEINGEOSERVERWFS, 
+                    url: "http://"+location.hostname+"/proxy/proxy.py?url=" + Heron.PDOK.urls.NGEINGEOSERVERWFS, //Heron.PDOK.urls.NGEINGEOSERVERWFS, 
                     srsName: "EPSG:28992",
                     featureType: "MOR_GEOCODER",
                     // featureNS: "http://www.nieuwegein.nl"
@@ -721,7 +732,7 @@ Heron.options.map.toolbar = [
                 discardStylesForDups: true,
                 // Export to download file. Option values are 'CSV', 'XLS', or a Formatter object (see FeaturePanel) , default is no export (results in no export menu).
                 exportFormats: ['CSV', 'XLS', 'GMLv2',
-                    'GeoJSON', 
+                    'GeoJSON',
                     'WellKnownText',
                     /* NOT working because we do not have ogr2ogr available */
                     /*'Shapefile',
@@ -772,35 +783,27 @@ Heron.options.map.toolbar = [
     {type: "zoomvisible"},
     {type: "-"} ,
     {type: "zoomprevious"},
-    {type: "zoomnext"},
-    {type: "scale"},    
+    {type: "zoomnext"},   
+    {
+        type: "namesearch",
+        options : {
+            xtype: 'hr_locatieserversearchcombo',
+            id: "pdoklocserverearchcombo",
+            width: 150,
+            listWidth: 400,
+            minChars: 3,
+            queryDelay: 240,
+            zoom: 14,
+            emptyText: __('Search PDOK'),
+            tooltip: __('Search PDOK'),
+            //url: 'http://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?wt=xml&q=type:adres%20and%20nieuwegein%20and%20'
+            //url: 'http://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?wt=xml&'
+            url: 'http://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?fq=+type:*&lat=52.0310&lon=5.0885&wt=xml'
+        }
+    },
+    
+    {type: "scale", options: {width: 75}},
     {type: "-"},
-    // Measure
-    // Use "geodesic: true" for non-linear/Mercator projections like Google, Bing etc.
-    {type: "measurelength", options: {geodesic: false}},
-    {type: "measurearea", options: {geodesic: false}},
-    {type: "-"},
-    // tooltips
-    {type: "tooltips", options: {
-        // Pressed cannot be true when anchored is true!
-        pressed: false,
-		getfeatureControl: {
-			hover: true,
-			drillDown: false
-		},
-		popupWindow: {
-			title: "Information",
-			hideonmove: false,
-            anchored: true,
-            width: 180,
-            height: 120,
-			featureInfoPanel: {
-                // Option values are 'Table', 'Grid', 'Tree' and 'XML', default is 'Grid' (results in no display menu)
-                displayPanels: ['Table'],
-                showTopToolbar: false
-			}
-		}
-	}},
     // Options for SearchPanel window
     {type: "searchcenter", options: {
         pressed: false, // DO NOT USE 'show' here, as it will create problems
@@ -840,22 +843,177 @@ Heron.options.map.toolbar = [
         , mapLimitScales: false
         , mapPreviewAutoHeight: true // Adapt height of preview map automatically, if false mapPreviewHeight is used.
         // , mapPreviewHeight: 400
-    }},
+    }}, 
+    // Cyclomedia
+    {
+        create: function (mapPanel, options) {
+            var map = mapPanel.getMap();
+
+            CyclomediaControl = OpenLayers.Class(OpenLayers.Control, {
+                defaultHandlerOptions: {
+                    'single': true,
+                    'double': false,
+                    'pixelTolerance': 0,
+                    'stopSingle': false,
+                    'stopDouble': false
+                },
+
+                initialize: function(options) {
+                    this.handlerOptions = OpenLayers.Util.extend(
+                        {}, this.defaultHandlerOptions
+                    );
+                    OpenLayers.Control.prototype.initialize.apply(
+                        this, arguments
+                    );
+                    this.handler = new OpenLayers.Handler.Click(
+                        this, {
+                            'click': this.trigger
+                        }, this.handlerOptions
+                    );
+                },
+
+                trigger: function(e) {
+                    var position = map.getLonLatFromPixel(e.xy);
+                    var cwindow = window.open("http://gng-ap527.nieuwegein.nl/globespotter/3.1/viewer/index.html?posx="+position.lon.toFixed(0)+"&posy="+position.lat.toFixed()+"&yaw=0&pitch=0", "globespotter");
+                    cwindow.focus();
+                }
+            });
+
+            return new GeoExt.Action({
+                text: "Cyclomedia",
+                map: map,
+                toggleGroup: "toolGroup",
+                allowDepress: false,
+                tooltip: "Open cyclorama",
+                group: "cyclomedia",
+                control: new CyclomediaControl()
+            });
+        }
+    },
+    // Streetsmart
+    {
+        create: function (mapPanel, options) {
+            var map = mapPanel.getMap();
+
+            StreetsmartControl = OpenLayers.Class(OpenLayers.Control, {
+                defaultHandlerOptions: {
+                    'single': true,
+                    'double': false,
+                    'pixelTolerance': 0,
+                    'stopSingle': false,
+                    'stopDouble': false
+                },
+
+                initialize: function(options) {
+                    this.handlerOptions = OpenLayers.Util.extend(
+                        {}, this.defaultHandlerOptions
+                    );
+                    OpenLayers.Control.prototype.initialize.apply(
+                        this, arguments
+                    );
+                    this.handler = new OpenLayers.Handler.Click(
+                        this, {
+                            'click': this.trigger
+                        }, this.handlerOptions
+                    );
+                },
+
+                trigger: function(e) {
+                    var position = map.getLonLatFromPixel(e.xy);
+                    //var cwindow = window.open("http://gng-ap527.nieuwegein.nl/globespotter/3.1/viewer/index.html?posx="+position.lon.toFixed(0)+"&posy="+position.lat.toFixed()+"&yaw=0&pitch=0", "globespotter");
+                    var cwindow = window.open("http://gng-ap527.nieuwegein.nl/streetsmart/v18.7/application/streetsmart?q="+position.lon.toFixed(0)+";"+position.lat.toFixed()+";EPSG:28992", "Streetsmart");
+                    cwindow.focus();
+                }
+            });
+
+            return new GeoExt.Action({
+                text: "Streetsmart",
+                map: map,
+                toggleGroup: "toolGroup",
+                allowDepress: false,
+                tooltip: "Open streetsmart",
+                group: "streetsmart",
+                control: new StreetsmartControl()
+            });
+        }
+    },
+    // Obliek
+    {
+        create: function (mapPanel, options) {
+            var map = mapPanel.getMap();
+
+            ObliekControl = OpenLayers.Class(OpenLayers.Control, {
+                defaultHandlerOptions: {
+                    'single': true,
+                    'double': false,
+                    'pixelTolerance': 0,
+                    'stopSingle': false,
+                    'stopDouble': false
+                },
+
+                initialize: function(options) {
+                    this.handlerOptions = OpenLayers.Util.extend(
+                        {}, this.defaultHandlerOptions
+                    );
+                    OpenLayers.Control.prototype.initialize.apply(
+                        this, arguments
+                    );
+                    this.handler = new OpenLayers.Handler.Click(
+                        this, {
+                            'click': this.trigger
+                        }, this.handlerOptions
+                    );
+                },
+
+                trigger: function(e) {
+                    var position = map.getLonLatFromPixel(e.xy);
+                    var cwindow = window.open("http://viewer.slagboomenpeeters.com/?dataset=Nieuwegein&pos="+position.lon.toFixed(0)+"_"+position.lat.toFixed(0)+"&tab=oblique&richting=NOORD&zl=10&renderer=2d&srid=EPSG:28992", "obliek");
+                    cwindow.focus();
+                }
+            });
+
+            return new GeoExt.Action({
+                text: "Obliek",
+                map: map,
+                toggleGroup: "toolGroup",
+                allowDepress: false,
+                tooltip: "Open obliek fotos",
+                group: "obliek",
+                control: new ObliekControl()
+            });
+        }
+    },
+    // Stadsmonitor
+    {
+        create: function (mapPanel, options) {
+
+            return new GeoExt.Action({
+                iconCls: "stadsmonitor_btn",
+                text: "Stadsmonitor",
+                tooltip: "Open de Stadsmonitor",
+                handler: function () {
+                   var l = window.location;
+                   var cwindow = window.open(l.protocol+'//'+l.host+'/app/stadsmonitor', "stadsmonitor");
+                   cwindow.focus();
+                }
+            });
+        }
+    },
     // Editor
     {type: "oleditor", options: {
         pressed: false,
         olEditorOptions: {
           /*
           activeControls: [
-                           'UploadFeature', 'DownloadFeature', 'Separator', 
-                           'Navigation', 'SnappingSettings', 'CADTools', 
-                           'Separator', 'DeleteAllFeatures', 'DeleteFeature', 
-                           'DragFeature', 'SelectFeature', 'Separator', 
+                           'UploadFeature', 'DownloadFeature', 'Separator',
+                           'Navigation', 'SnappingSettings', 'CADTools',
+                           'Separator', 'DeleteAllFeatures', 'DeleteFeature',
+                           'DragFeature', 'SelectFeature', 'Separator',
                            'DrawHole', 'ModifyFeature', 'Separator'
           ],
           */
           activeControls: [
-                             //'SelectFeature', 'DeleteFeature', 'Separator', 'DragFeature', 'SelectFeature', 'Separator' 
+                             //'SelectFeature', 'DeleteFeature', 'Separator', 'DragFeature', 'SelectFeature', 'Separator'
                             'DragFeature', 'SelectFeature', 'Separator', 'DeleteFeature', 'StyleFeature'
           ],
           options: {
@@ -900,163 +1058,34 @@ Heron.options.map.toolbar = [
           }
         }
       }
-    },
-    // Cyclomedia
-    {
-        create: function (mapPanel, options) {
-            var map = mapPanel.getMap();
-
-            CyclomediaControl = OpenLayers.Class(OpenLayers.Control, {
-                defaultHandlerOptions: {
-                    'single': true,
-                    'double': false,
-                    'pixelTolerance': 0,
-                    'stopSingle': false,
-                    'stopDouble': false
-                },
-
-                initialize: function(options) {
-                    this.handlerOptions = OpenLayers.Util.extend(
-                        {}, this.defaultHandlerOptions
-                    );
-                    OpenLayers.Control.prototype.initialize.apply(
-                        this, arguments
-                    ); 
-                    this.handler = new OpenLayers.Handler.Click(
-                        this, {
-                            'click': this.trigger
-                        }, this.handlerOptions
-                    );
-                }, 
-
-                trigger: function(e) {
-                    var position = map.getLonLatFromPixel(e.xy);
-                    var cwindow = window.open("http://gng-ap527.nieuwegein.nl/globespotter/3.1/viewer/index.html?posx="+position.lon.toFixed(0)+"&posy="+position.lat.toFixed()+"&yaw=0&pitch=0", "globespotter");
-                    cwindow.focus();
-                }
-            }); 
-
-            return new GeoExt.Action({
-                text: "Cyclomedia",
-                map: map,
-                toggleGroup: "toolGroup",
-                allowDepress: false,
-                tooltip: "Open cyclorama",
-                group: "cyclomedia",
-                control: new CyclomediaControl()
-            });
-        }
-    },
-    // Street Smart
-    {
-        create: function (mapPanel, options) {
-            var map = mapPanel.getMap();
-
-            StreetsmartControl = OpenLayers.Class(OpenLayers.Control, {
-                defaultHandlerOptions: {
-                    'single': true,
-                    'double': false,
-                    'pixelTolerance': 0,
-                    'stopSingle': false,
-                    'stopDouble': false
-                },
-
-                initialize: function(options) {
-                    this.handlerOptions = OpenLayers.Util.extend(
-                        {}, this.defaultHandlerOptions
-                    );
-                    OpenLayers.Control.prototype.initialize.apply(
-                        this, arguments
-                    ); 
-                    this.handler = new OpenLayers.Handler.Click(
-                        this, {
-                            'click': this.trigger
-                        }, this.handlerOptions
-                    );
-                }, 
-
-                trigger: function(e) {
-                    var position = map.getLonLatFromPixel(e.xy);
-                    //var cwindow = window.open("http://gng-ap527.nieuwegein.nl/globespotter/3.1/viewer/index.html?posx="+position.lon.toFixed(0)+"&posy="+position.lat.toFixed()+"&yaw=0&pitch=0", "globespotter");
-                    var cwindow = window.open("http://gng-ap527.nieuwegein.nl/streetsmart/v18.7/application/streetsmart?q="+position.lon.toFixed(0)+";"+position.lat.toFixed()+";EPSG:28992", "Streetsmart");
-                    cwindow.focus();
-                }
-            }); 
-
-            return new GeoExt.Action({
-                text: "Street Smart",
-                map: map,
-                toggleGroup: "toolGroup",
-                allowDepress: false,
-                tooltip: "Open Street Smart",
-                group: "streetsmart",
-                control: new StreetsmartControl()
-            });
-        }
-    },
-    // Obliek
-    {
-        create: function (mapPanel, options) {
-            var map = mapPanel.getMap();
-
-            ObliekControl = OpenLayers.Class(OpenLayers.Control, {
-                defaultHandlerOptions: {
-                    'single': true,
-                    'double': false,
-                    'pixelTolerance': 0,
-                    'stopSingle': false,
-                    'stopDouble': false
-                },
-
-                initialize: function(options) {
-                    this.handlerOptions = OpenLayers.Util.extend(
-                        {}, this.defaultHandlerOptions
-                    );
-                    OpenLayers.Control.prototype.initialize.apply(
-                        this, arguments
-                    ); 
-                    this.handler = new OpenLayers.Handler.Click(
-                        this, {
-                            'click': this.trigger
-                        }, this.handlerOptions
-                    );
-                }, 
-
-                trigger: function(e) {
-                    var position = map.getLonLatFromPixel(e.xy);
-                    var cwindow = window.open("http://viewer.slagboomenpeeters.com/?dataset=Nieuwegein&pos="+position.lon.toFixed(0)+"_"+position.lat.toFixed(0)+"&tab=oblique&richting=NOORD&zl=10&renderer=2d&srid=EPSG:28992", "obliek");
-                    cwindow.focus();
-                }
-            }); 
-
-            return new GeoExt.Action({
-                text: "Obliek",
-                map: map,
-                toggleGroup: "toolGroup",
-                allowDepress: false,
-                tooltip: "Open obliek fotos",
-                group: "obliek",
-                control: new ObliekControl()
-            });
-        }
-    },
-    // Stadsmonitor
-    {
-        create: function (mapPanel, options) {
-            
-            return new GeoExt.Action({
-                iconCls: "stadsmonitor_btn",
-                text: "Stadsmonitor",
-                tooltip: "Open de Stadsmonitor",
-                handler: function () {
-                   var l = window.location;
-                   var cwindow = window.open(l.protocol+'//'+l.host+'/app/stadsmonitor', "stadsmonitor");
-                   cwindow.focus();
-                }
-            });
-        }
-    }
-/*        
+    },      
+    // Measure
+    // Use "geodesic: true" for non-linear/Mercator projections like Google, Bing etc.
+    {type: "measurelength", options: {geodesic: false}},
+    {type: "measurearea", options: {geodesic: false}},
+    //{type: "-"},
+    // tooltips
+    {type: "tooltips", options: {
+        // Pressed cannot be true when anchored is true!
+        pressed: false,
+		getfeatureControl: {
+			hover: true,
+			drillDown: false
+		},
+		popupWindow: {
+			title: "Information",
+			hideonmove: false,
+            anchored: true,
+            width: 180,
+            height: 120,
+			featureInfoPanel: {
+                // Option values are 'Table', 'Grid', 'Tree' and 'XML', default is 'Grid' (results in no display menu)
+                displayPanels: ['Table'],
+                showTopToolbar: false
+			}
+		}
+	}},
+/*
     ,{
         type: "namesearch",
         // Optional options, see OpenLSSearchCombo.js
@@ -1074,27 +1103,8 @@ Heron.options.map.toolbar = [
             queryParam: 'zoekterm'
         }
     }
-*/    
-    ,{
-        type: "namesearch",
-        options : {
-            xtype: 'hr_locatieserversearchcombo',
-            id: "pdoklocserverearchcombo",
-            width: 320,
-            listWidth: 400,
-            minChars: 5,
-            queryDelay: 240,
-            zoom: 10,
-            emptyText: __('Search PDOK'),
-            tooltip: __('Search PDOK'),
-            //url: 'http://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?wt=xml&q=type:adres%20and%20nieuwegein%20and%20'
-            //url: 'http://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?wt=xml&'
-            url: 'https://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?fq=+type:*&lat=52.0310&lon=5.0885&wt=xml'
-        }
-    } ,   
-
-
-
+*/
+   
 ];
 
 /*****************************************************************************

@@ -35,16 +35,17 @@ Ext.namespace("Heron.PDOK");
  *****************************************************************************/
 
 OpenLayers.Util.onImageLoadErrorColor = "transparent";
-OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
+// OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
+// OpenLayers.ProxyHost = "/proxy/proxy.py?url=";
 OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 
 /*****************************************************************************
  * NIEUWEGEIN URL SETTINGS
  *****************************************************************************/
 
-// Define the base urls for the layers.
 Heron.ngein.urls = {
-    NGEIN: 'http://gng-ap532.nieuwegein.nl', // 'http://gng-ap713.nieuwegein.nl',
+    NGEIN: 'http://' + location.hostname,
+    NGEIN_BASE: 'http://' + location.hostname,
 	NGEINLINUX: 'http://gng-ap855.linux.nieuwegein.nl',
     PDOK : 'http://geodata.nationaalgeoregister.nl',
     OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
@@ -694,7 +695,7 @@ Heron.options.map.toolbar = [
     }},
     // PrintDialog
     {type: "printdialog", options: {
-        url: 'http://gng-apo088.linux.nieuwegein.nl:8080/print-servlet-2.1.0/pdf'
+        url: 'http://'+location.hostname+'/print-servlet-2.1.4/pdf'
         , tooltip: "Printen"
         , windowWidth: 360
         //, mapPrintLayout: "A4" // MapFish - 'name' entry of the 'layouts' array or Null (=> MapFish default)
@@ -714,7 +715,7 @@ Heron.options.map.toolbar = [
         // , showRotation: true
         , showLegend: false
         // , showLegendChecked: true
-        // , mapLimitScales: false
+        , mapLimitScales: false
         , mapPreviewAutoHeight: true // Adapt height of preview map automatically, if false mapPreviewHeight is used.
         // , mapPreviewHeight: 400
     }},
@@ -870,6 +871,22 @@ Heron.options.map.toolbar = [
             });
         }
     },	
+    // Webatlas
+     {
+        create: function (mapPanel, options) {
+
+            return new GeoExt.Action({
+                iconCls: "stadsmonitor_btn",
+                text: "WebAtlas",
+                tooltip: "Open de WebAtlas",
+                handler: function () {
+                   var l = window.location;
+                   var cwindow = window.open(l.protocol+'//'+l.host+'/app/ngein', "WebAtlas");
+                   cwindow.focus();
+                }
+            });
+        }
+    },
     {
         type: "namesearch",
         // Optional options, see OpenLSSearchCombo.js

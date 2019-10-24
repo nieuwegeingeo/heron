@@ -48,3 +48,10 @@ Heron.widgets.LayerNodeMenuItem.LayerMetadata = Ext.extend(Heron.widgets.LayerNo
 
 /** api: xtype = hr_layernodemenulayermetadata */
 Ext.reg('hr_layernodemenulayermetadata', Heron.widgets.LayerNodeMenuItem.LayerMetadata);
+
+// var test = {
+// var point = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(position.lon,position.lat));
+// var result = new OpenLayers.Layer.Vector('pdokResult');
+// result.addFeatures([point]);
+// Heron.App.getMap().addLayer(result);
+// }
