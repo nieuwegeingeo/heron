@@ -44,8 +44,12 @@ OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
  *****************************************************************************/
 
 Heron.ngein.urls = {
-    NGEIN: 'http://' + location.hostname,
-    NGEIN_BASE: 'http://' + location.hostname,
+    //TP 29-01-2020: tijdelijk de stadmonitor in test laten verwijzen naar productie nieuwe lagen naar NGEINNEW totdat alle layers over zijn
+    //NGEIN: 'http://' + location.hostname,
+    //NGEIN_BASE: 'http://' + location.hostname,
+    NGEINNEW: 'http://' + location.hostname,
+    NGEIN: 'http://geoappstore.nieuwegein.nl',
+    NGEIN_BASE: 'http://geoappstore.nieuwegein.nl',
 	NGEINLINUX: 'http://gng-ap855.linux.nieuwegein.nl',
     PDOK : 'http://geodata.nationaalgeoregister.nl',
     OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
@@ -54,6 +58,8 @@ Heron.ngein.urls = {
 // Define the PDOK urls for the layers, based
 Heron.PDOK.urls = {
     NGEINGEOSERVER: Heron.ngein.urls.NGEIN + '/geoserver/wms',
+    //TP: tijdelijn NIEUWEGEINGEOSERVERNEW OM LOKAAL TE VERWIJZEN
+    NGEINGEOSERVERNEW: Heron.ngein.urls.NGEINNEW + '/geoserver/wms',
 	NGEINLINUXGEOSERVER: Heron.ngein.urls.NGEINLINUX + '/geoserver/wms',
 	NGEINGEOSERVERWFS: Heron.ngein.urls.NGEIN + '/geoserver/wfs',
     NGEINMAPPROXY: Heron.ngein.urls.NGEIN + '/mapproxy/service',
@@ -1012,7 +1018,7 @@ Heron.layout = {
             layout: 'vbox',
             margins: '0',
             region: "west",
-            width: 240,
+            width: 280,
 			collapsible: true,
             border: false,
             items: [
@@ -1145,7 +1151,10 @@ Heron.layout = {
                                 baseParams: {
                                     FORMAT: 'image/png',
 									// to always force a title in the legendgraphics (title of SLD rule is used for that)
-									legend_options: 'forceLabels:on'
+									legend_options: 'hideEmptyRules:true; forceLabels:on' 
+                                    // TP: labels verbergen met emty rules hideemptyrules : true
+                                                 
+                                    
                                 }
                             },
                             hropts: {

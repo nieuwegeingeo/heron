@@ -925,7 +925,199 @@ Heron.ngein.layermap = {
 					html: 'Meer informatie over de woningen groter dan 250m2 vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Woningen_gt_250m2">hier</a>' // metadata as html (will be place between <p></p>)		   
 				}
       }
+    ),
+    
+    /*
+	 * Supermarkten op basis van provinciaal arbeidsregister
+	 */
+	supermarkten: new OpenLayers.Layer.WMS("Supermarkten",
+      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      {
+		  layers: 'nieuwegein_wa:supermarkten_wa',
+		  format: "image/png", 
+		  transparent: true, 
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de supermarkten vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Supermarkten">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+    
+     /*
+	 * Buurthuizen uit gemeentegids
+	 */
+	buurthuizen: new OpenLayers.Layer.WMS("Buurthuizen",
+      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      {
+		  layers: 'nieuwegein_wa:buurthuizen_wa',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de buurthuizen vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Buurthuizen">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+     /*
+	 * Wijk ontmoetingsplek aangeleverd door SMO
+	 */
+	wijk_ontmoetingsplekken: new OpenLayers.Layer.WMS("Wijk ontmoetingsplek",
+      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      {
+		  layers: 'nieuwegein_wa:wijk_ontmoetingsplek_wa',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de wijk ontmoetingsplekken vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Wijk_ontmoetingsplekken">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+     /*
+	 * Huisartsen op basis van gemeentegids
+	 */
+	huisartsen: new OpenLayers.Layer.WMS("Huisartsen",
+      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      {
+		  layers: 'nieuwegein_wa:huisartsen_wa',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de wijk ontmoetingsplekken vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Huisartsen">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ), 
+     /*
+	 * Huisartsen op basis van gemeentegids
+	 */
+	fysiotherapie: new OpenLayers.Layer.WMS("Fysiotherapie",
+      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      {
+		  layers: 'nieuwegein_wa:fysiotherapie_wa',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over Fysiotherapie vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Fysiotherapie">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+       /*
+	 * Ziekenhuis op basis van gemeentegids
+	 */
+	ziekenhuis: new OpenLayers.Layer.WMS("Ziekenhuis",
+      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      {
+		  layers: 'nieuwegein_wa:ziekenhuis_wa',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over het ziekenhuis vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Ziekenhuis">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+       /*
+	 * Basisscholen op basis van DUO
+	 */
+	basisscholen: new OpenLayers.Layer.WMS("Basisschool",
+      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      {
+		  layers: 'nieuwegein_wa:basisscholen_wa',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de basisscholen vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Basisscholen">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+     /*
+	 * Middelbare scholen op basis van DUO
+	 */
+	middelbare_scholen: new OpenLayers.Layer.WMS("Middelbare school",
+      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      {
+		  layers: 'nieuwegein_wa:middelbare_scholen_wa',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de middelbare scholen vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Middelbare_scholen">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+      /*
+	 * Buitenschoolse opvang op basis van landelijk register kinderopvang LRK
+	 */
+	buitenschoolse_opvang: new OpenLayers.Layer.WMS("Buitenschoolse Opvang",
+      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      {
+		  layers: 'nieuwegein_wa:buitenschoolse_opvang_bso_wa',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de buitenschoolse opvang vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Buitenschoolse_opvang">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+     /*
+	 * Kinderdagverblijven op basis van landelijk register kinderopvang LRK
+	 */
+	kinderdagverblijven: new OpenLayers.Layer.WMS("Kinderdagverblijf",
+      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      {
+		  layers: 'nieuwegein_wa:kinderdagverblijf_kdv_wa',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de kinderdagverblijven opvang vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Kinderdagverblijven">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+     /*
+	 * Gastouder opvang op basis van landelijk register kinderopvang LRK
+	 */
+	gastouder_opvang: new OpenLayers.Layer.WMS("Gastouder opvang",
+      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      {
+		  layers: 'nieuwegein_wa:gastouder_opvang_vgo_wa',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de kinderdagverblijven opvang vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Gastouder_opvang">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
     )
+    
+    
+    
 };
 
 /**
@@ -1058,7 +1250,20 @@ Heron.options.map.layers = [
 	Heron.ngein.layermap.bevolkingsdichtheid_4_tot_12,
 	Heron.ngein.layermap.bevolkingsdichtheid_12_tot_18,
 	Heron.ngein.layermap.bevolkingsdichtheid_18_tot_25,
-	Heron.ngein.layermap.bevolkingsdichtheid_70_en_ouder,	
+	Heron.ngein.layermap.bevolkingsdichtheid_70_en_ouder,
+    
+    //Voorzieningen
+    Heron.ngein.layermap.supermarkten,
+    Heron.ngein.layermap.buurthuizen,
+    Heron.ngein.layermap.wijk_ontmoetingsplekken,
+    Heron.ngein.layermap.huisartsen,
+    Heron.ngein.layermap.fysiotherapie,
+    Heron.ngein.layermap.ziekenhuis,
+    Heron.ngein.layermap.basisscholen,
+    Heron.ngein.layermap.middelbare_scholen,
+    Heron.ngein.layermap.buitenschoolse_opvang,
+    Heron.ngein.layermap.kinderdagverblijven,
+    Heron.ngein.layermap.gastouder_opvang,
 	
 	// Vervuiling
 	Heron.ngein.layermap.vervuiling,
@@ -1143,7 +1348,25 @@ var treeTheme = [
 							{nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_70_en_ouder.name },
 							{nodeType: "gx_layer", layer: Heron.ngein.layermap.oppervlakte_per_inwoner.name },
 							{nodeType: "gx_layer", layer: Heron.ngein.layermap.leegstand_woningen.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.projectenkaart2017.name }
+							{nodeType: "gx_layer", layer: Heron.ngein.layermap.projectenkaart2017.name },
+                                {
+                                    text:'Voorzieningen', expanded: true, children:
+                                    [
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.supermarkten.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.buurthuizen.name }, 
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.wijk_ontmoetingsplekken.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.huisartsen.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.fysiotherapie.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.ziekenhuis.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.basisscholen.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.middelbare_scholen.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.buitenschoolse_opvang.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.kinderdagverblijven.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.gastouder_opvang.name }
+                                    ]
+                                }
+                                
+                                        
                             /*{nodeType: "gx_layer", layer: Heron.ngein.layermap.pc4.name   },
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.pc6.name },
 							{nodeType: "gx_layer", layer: Heron.ngein.layermap.wijken.name }*/
