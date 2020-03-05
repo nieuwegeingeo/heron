@@ -1033,10 +1033,10 @@ Heron.layout = {
                             // LayerTree.
                             xtype: 'hr_layertreepanel',
                             contextMenu: [
-                                {
+                                /*{
                                     xtype: 'hr_layernodemenulayermetadata'
                                 },
-								/*{
+								{
                                     xtype: 'hr_layernodemenulayerinfo'
                                 },*/
                                 {
