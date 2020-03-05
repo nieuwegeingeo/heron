@@ -144,7 +144,7 @@ Heron.ngein.baselayers = {
             {'layers': 'brtpastel', 'format': 'image/png', transparent: false},
             {'isBaseLayer': true, singleTile: false,
              visibility: false,
-            legendURL: 'http://geoappstore.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
+            legendURL: 'http://geoappstore.nieuwegein.nl/app/resources/images/silk/arrow_out.png'            
     }),	
 				
     /* ------------------------------
@@ -186,7 +186,7 @@ Heron.ngein.baselayers = {
             //{'isBaseLayer': true, singleTile: false,
             // IPV de getilde cache te gebruiken, gebruiken we de grouplayer WMS om straatlabels groot genoeg te maken
             Heron.PDOK.urls.NGEINGEOSERVER,
-            {'layers': 'nieuwegein:luchtfotocombi', 'format': 'image/jpeg', transparent: false},
+            {'layers': 'nieuwegein:luchtfotocombi_mp', 'format': 'image/jpeg', transparent: false},
             {'isBaseLayer': true, singleTile: true,
             visibility: false,
             legendURL: 'http://geoappstore.nieuwegein.nl/app/resources/images/silk/arrow_out.png'
@@ -1225,10 +1225,10 @@ Heron.layout = {
                             // LayerTree.
                             xtype: 'hr_layertreepanel',
                             contextMenu: [
-                                {
+                                /*{
                                     xtype: 'hr_layernodemenulayermetadata'
                                 },
-								/*{
+								{
                                     xtype: 'hr_layernodemenulayerinfo'
                                 },*/
                                 {

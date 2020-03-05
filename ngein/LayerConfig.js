@@ -86,7 +86,8 @@ Heron.ngein.layermap = {
     minScale: 5000,
     // opmerking: nu legenda live van pdokviewer,maar ook beschikbaar in legends mapje in ngein map
     legendURL: "http://pdokviewer.pdok.nl/images/legends/GetLegendGraphic-bgtstandaard.png"
-  }),
+  }
+  ),
 
   /* ------------------------------
    * Buurtgrenzen Nieuwegein
@@ -158,11 +159,7 @@ Heron.ngein.layermap = {
       featureInfoFormat: "application/vnd.ogc.gml",
       alpha: true,
       opacity: 0.7,
-      minScale: 6001,
-      metadata: {
-        //url: "http://nationaalgeoregister.nl",  // url to metadata record
-        html: "Panden uit de BAG.<br><br><p>Verversing: Dagelijks</p>" // metadata as html (will be place between <p></p>)
-      }
+      minScale: 6001
     }
   ),
 
@@ -181,11 +178,7 @@ Heron.ngein.layermap = {
       featureInfoFormat: "application/vnd.ogc.gml",
       alpha: true,
       opacity: 0.7,
-      minScale: 6001,
-      metadata: {
-        //url: "http://nationaalgeoregister.nl",  // url to metadata record
-        html: "Pandomtrek uit de lijgerichte BGT.<br><p>Verversing: Dagelijks</p>" // metadata as html (will be place between <p></p>)
-      }
+      minScale: 6001
     }
   ),
 
@@ -243,9 +236,7 @@ Heron.ngein.layermap = {
           protocol: 'fromWMSLayer',
           featurePrefix: 'grondpercelen_wa',
           srsName: "EPSG:28992"
-        },
-        //url: "http://gng-ap713.nieuwegein.nl/geoserver/www/metadata/nieuwegein.GM_SP_BRK_WA.txt"  // url to metadata record
-        html: "Percelen met perceelnummers uit de BRK.<br><br><p>Verversing: Dagelijks</p>" // metadata as html (will be place between <p></p>)
+        }        
       }
     }
   ),
@@ -255,7 +246,8 @@ Heron.ngein.layermap = {
    * ------------------------------ */
   brk_secure: new OpenLayers.Layer.WMS("Perceeleigenaren (beveiligd)",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:GM_SP_BRK_WA",
+      //layers: "nieuwegein:GM_SP_BRK_WA",
+      layers: "nieuwegein_wa:brk_perceeleigenaren_wa",
       format: "image/png",
       transparent: true
     },
@@ -270,7 +262,8 @@ Heron.ngein.layermap = {
       layerIcons: 'secure',
       //minScale:5000
       gridcolumns: [{
-        featureType: 'GM_SP_BRK_WA',
+        featureType: 'brk_perceeleigenaren_wa',
+        //featureType: 'GM_SP_BRK_WA',
         //featureType:'brk_app',
         columns: [
           // LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
@@ -337,15 +330,13 @@ Heron.ngein.layermap = {
           },
         ]
       }],
-      /* metadata:{
-           wfs: {
+      metadata:{
+           /*wfs: {
                protocol: 'fromWMSLayer',
                featurePrefix: 'GM_SP_BRK_WA',
                srsName: "EPSG:28992"
-           },
-           url: "http://gng-ap713.nieuwegein.nl/geoserver/www/metadata/nieuwegein.GM_SP_BRK_WA.txt"  // url to metadata record
-           //,html: "Dit is metadata <b>vette tekst</b> enzo..." // metadata as html (will be place between <p></p>)
-       }*/
+           }*/
+       }
     }
   ),
 
@@ -354,7 +345,7 @@ Heron.ngein.layermap = {
    * ------------------------------ */
   brk_appartementsrecht: new OpenLayers.Layer.WMS("Appartementsrechten (beveiligd)",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:brk_appartementsrechten_wa",
+      layers: "nieuwegein_wa:brk_appartementsrechten_wa",
       format: "image/png",
       transparent: true
     }, {
@@ -427,9 +418,7 @@ Heron.ngein.layermap = {
                protocol: 'fromWMSLayer',
                featurePrefix: 'brk_appartementsrechten_wa',
                srsName: "EPSG:28992"
-           },
-           url: "http://gng-ap713.nieuwegein.nl/geoserver/www/metadata/nieuwegein.brk_appartementsrechten_wa.txt"  // url to metadata record
-           //,html: "Dit is metadata <b>vette tekst</b> enzo..." // metadata as html (will be place between <p></p>)
+           }
        }*/
     }
   ),
@@ -581,7 +570,7 @@ Heron.ngein.layermap = {
    * ------------------------------ */
   verblijfsobjecten: new OpenLayers.Layer.WMS("Verblijfsobjecten",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:GM_SP_BAG_GEOOBJK_VBO_PLUS",
+      layers: "nieuwegein_wa:GM_SP_BAG_GEOOBJK_VBO_PLUS",
       format: "image/png",
       transparent: true
     }, {
@@ -595,10 +584,7 @@ Heron.ngein.layermap = {
           protocol: 'fromWMSLayer',
           featurePrefix: 'GM_SP_BAG_GEOOBJK_VBO_PLUS',
           srsName: "EPSG:28992"
-        },
-        url: "https://www.stelselvanbasisregistraties.nl/bag/doc/concept/Verblijfsobject",
-        url_title: "Link naar Stelselpedia",
-        html: "Verblijfsobjecten uit de BAG, dit zijn adresseerbare objecten.<br><br><p>Verversing: Dagelijks</p>"
+        }
       }
 
     }
@@ -623,10 +609,7 @@ Heron.ngein.layermap = {
           protocol: 'fromWMSLayer',
           featurePrefix: 'GM_SP_BAG_STANDPLAATSEN',
           srsName: "EPSG:28992"
-        },
-        url: "https://www.stelselvanbasisregistraties.nl/bag/doc/concept/Standplaats",
-        url_title: "Link naar Stelselpedia",
-        html: "Standplaatsen uit de BAG.<br><br><p>Verversing: Dagelijks</p>"
+        }
       }
     }
   ),
@@ -650,15 +633,14 @@ Heron.ngein.layermap = {
           protocol: 'fromWMSLayer',
           featurePrefix: 'GM_SP_BAG_LIGPLAATSEN',
           srsName: "EPSG:28992"
-        },
-        url: "https://www.stelselvanbasisregistraties.nl/bag/doc/concept/Ligplaats",
-        url_title: "Link naar Stelselpedia",
-        html: "Ligplaatsen uit de BAG.<br><br><p>Verversing: Dagelijks</p>"
+        }
       }
     }
   ),
-
-  // Handelsregister bag_geoobj_hr_wa tabel
+    
+   /* ---------------------------------------*
+    * Handelsregister bag_geoobj_hr_wa tabel *
+    * ---------------------------------------*/
   handelsregister: new OpenLayers.Layer.WMS("Handelsregister",
     Heron.PDOK.urls.NGEINGEOSERVER, {
       layers: "nieuwegein:bag_geoobj_hr_wa",
@@ -673,111 +655,27 @@ Heron.ngein.layermap = {
         featureType: 'bag_geoobj_hr_wa',
         columns: [
           // LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
-          {
-            dataIndex: "HR_KVK_NUMMER",
-            header: 'KVK-Nummer',
-            width: 100
-          },
-          {
-            dataIndex: "HR_VESTIGINGSNUMMER",
-            header: 'Vestigingsnummer',
-            width: 100
-          },
-          {
-            dataIndex: "BAG_ADRES",
-            header: 'ADRES',
-            width: 100
-          },
-          {
-            dataIndex: "HR_HANDELSNAAM",
-            header: 'Handelsnaam',
-            width: 100
-          },
-          {
-            dataIndex: "HR_ACTIVITEIT_1",
-            header: 'Activiteit 1',
-            width: 100
-          },
-          {
-            dataIndex: "HR_ACTIVITEIT_2",
-            header: 'Activiteit 2',
-            width: 100
-          },
-          {
-            dataIndex: "HR_ACTIVITEIT_3",
-            header: 'Activiteit 3',
-            width: 100
-          },
-          {
-            dataIndex: "HR_TELEFOONNUMMER",
-            header: 'Telefoonnummer 3',
-            width: 100
-          },
-          {
-            dataIndex: "HR_EMAIL",
-            header: 'Email 3',
-            width: 100
-          },
-          {
-            dataIndex: "HR_WEBSITE",
-            header: 'Website 3',
-            width: 100
-          },
-          {
-            dataIndex: "BAG_GEBRUIK",
-            header: 'Gebruik',
-            width: 100
-          },
-          {
-            dataIndex: "BAG_WOONTYPE_OMSCHRIJVING",
-            header: 'Woontype',
-            width: 100
-          },
-          {
-            dataIndex: "BAG_BESTEMMING_OMSCHRIJVING",
-            header: 'Bestemming',
-            width: 100
-          },
-          {
-            dataIndex: "BAG_MONUMENT",
-            header: 'Monument',
-            width: 100
-          },
-          {
-            dataIndex: "HR_CORR_NAAM_OPENBARE_RUIMTE",
-            header: 'Correspondentie straat',
-            width: 100
-          },
-          {
-            dataIndex: "HR_CORR_HUISNUMMER",
-            header: 'Corresp. huisnummer',
-            width: 100
-          },
-          {
-            dataIndex: "HR_CORR_HUISLETTER",
-            header: 'Corresp. huisletter',
-            width: 100
-          },
-          {
-            dataIndex: "HR_CORR_HUISNUMMERTOEVOEGING",
-            header: 'Corresp. huisnummertoevoeging',
-            width: 100
-          },
-          {
-            dataIndex: "HR_CORR_POSTCODE",
-            header: 'Corresp. postcode',
-            width: 100
-          },
-          {
-            dataIndex: "HR_CORR_WOONPLAATS",
-            header: 'Corresp. woonplaats',
-            width: 100
-          },
-          {
-            dataIndex: "HR_CORR_POSTBUS",
-            header: 'Corresp. postbus',
-            width: 100
-          },
+          {dataIndex: "HR_KVK_NUMMER",header: 'KVK-Nummer',width: 100},
+          {dataIndex: "HR_VESTIGINGSNUMMER",header: 'Vestigingsnummer',width: 100},
+          {dataIndex: "BAG_ADRES",header: 'ADRES',width: 100},
+          {dataIndex: "HR_HANDELSNAAM",header: 'Handelsnaam',width: 100},
+          {dataIndex: "HR_ACTIVITEIT_1",header: 'Activiteit 1',width: 100},
+          {dataIndex: "HR_ACTIVITEIT_2",header: 'Activiteit 2',width: 100},
+          {dataIndex: "HR_ACTIVITEIT_3",header: 'Activiteit 3',width: 100},
+          {dataIndex: "HR_TELEFOONNUMMER",header: 'Telefoonnummer 3',width: 100},
+          {dataIndex: "HR_EMAIL",header: 'Email 3',width: 100},
+          {dataIndex: "HR_WEBSITE",header: 'Website 3',width: 100},
+          {dataIndex: "BAG_GEBRUIK",header: 'Gebruik',width: 100},
+          {dataIndex: "BAG_WOONTYPE_OMSCHRIJVING",header: 'Woontype',width: 100},
+          {dataIndex: "BAG_BESTEMMING_OMSCHRIJVING",header: 'Bestemming',width: 100},
+          {dataIndex: "BAG_MONUMENT",header: 'Monument',width: 100},
+          {dataIndex: "HR_CORR_NAAM_OPENBARE_RUIMTE",header: 'Correspondentie straat',width: 100},
+          {dataIndex: "HR_CORR_HUISNUMMER",header: 'Corresp. huisnummer',width: 100},
+          {dataIndex: "HR_CORR_HUISLETTER",header: 'Corresp. huisletter',width: 100},
+          {dataIndex: "HR_CORR_HUISNUMMERTOEVOEGING",header: 'Corresp. huisnummertoevoeging',width: 100},
+          {dataIndex: "HR_CORR_POSTCODE",header: 'Corresp. postcode',width: 100},
+          {dataIndex: "HR_CORR_WOONPLAATS",header: 'Corresp. woonplaats',width: 100},
+           {dataIndex: "HR_CORR_POSTBUS",header: 'Corresp. postbus',width: 100},
         ]
       }],
       metadata: {
@@ -787,6 +685,23 @@ Heron.ngein.layermap = {
           srsName: "EPSG:28992"
         }
       }
+    }
+  ),
+  
+  /* ------------------------------
+   * Provinciaal Arbeidsregister
+   * ------------------------------ */
+  par: new OpenLayers.Layer.WMS("Provinciaal Arbeidsregister",
+    'https://services.geodata-utrecht.nl/geoserver/s01_6_arbeidsmarkt/wms', {
+      layers: "s01_6_arbeidsmarkt:Provinciaal_Arbeidsplaatsen_Register_PAR",
+      format: "image/png",
+      transparent: true
+    }, {
+      isBaseLayer: false,
+      singleTile: true,
+      visibility: false,
+      featureInfoFormat: "application/vnd.ogc.gml",
+      minScale:6001
     }
   ),
 
@@ -952,9 +867,7 @@ Heron.ngein.layermap = {
           protocol: 'fromWMSLayer',
           featurePrefix: 'GM_SP_KOOP_HUURWONINGEN',
           srsName: "EPSG:28992"
-        },
-        //url: "http://nationaalgeoregister.nl",  // url to metadata record
-        //html: "Dit is metadata <b>vette tekst</b> enzo..." // metadata as html (will be place between <p></p>)
+        }
       }
     }
   ),
@@ -1818,9 +1731,9 @@ Heron.ngein.layermap = {
   ),
 
   /* ------------------------------------------------
-   * Zonnepanelen
+   * Zonnepanelen op daken
    * ------------------------------------------------ */
-  zonnepanelen: new OpenLayers.Layer.WMS("Zonnepanelen",
+  zonnepanelen: new OpenLayers.Layer.WMS("Zonnepanelen op daken",
     Heron.PDOK.urls.NGEINGEOSERVER, {
       layers: "nieuwegein:inventarisatie_zonnepanelen_wa",
       format: "image/png",
@@ -1852,6 +1765,23 @@ Heron.ngein.layermap = {
       }]
     }
   ),
+  
+  /* ------------------------------------------------
+   * Zonnevelden
+   * ------------------------------------------------ */
+  zonnevelden: new OpenLayers.Layer.WMS("Zonnevelden",
+    Heron.PDOK.urls.NGEINGEOSERVER, {
+      layers: "nieuwegein:zonneweides_wa",
+      format: "image/png",
+      transparent: true
+    }, {
+      isBaseLayer: false,
+      singleTile: true,
+      visibility: false,
+      legendURL: "//gng-ap532.nieuwegein.nl/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=zonneweides_wa",
+
+    }
+  ),
 
   /* ------------------------------------------------
    * Zonnekaart
@@ -1875,7 +1805,7 @@ Heron.ngein.layermap = {
    * ------------------------------ */
   lufo2019: new OpenLayers.Layer.WMS("Luchtfoto 2019",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:luchtfoto_ecw_2019,nieuwegein:straatnamenshp",
+      layers: "nieuwegein_wa:luchtfoto_2019_wa,nieuwegein_wa:straatnamen_wa",
       format: "image/png",
       transparent: true
     }, {
@@ -1890,7 +1820,7 @@ Heron.ngein.layermap = {
    * ------------------------------ */
   lufo2018: new OpenLayers.Layer.WMS("Luchtfoto 2018",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:luchtfoto_ecw_2018,nieuwegein:straatnamenshp",
+      layers: "nieuwegein_wa:luchtfoto_2018_wa,nieuwegein_wa:straatnamen_wa",
       format: "image/png",
       transparent: true
     }, {
@@ -1905,7 +1835,7 @@ Heron.ngein.layermap = {
    * ------------------------------ */
   lufo2017: new OpenLayers.Layer.WMS("Luchtfoto 2017",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:luchtfoto_ecw_2017,nieuwegein:straatnamenshp",
+      layers: "nieuwegein_wa:luchtfoto_2017_wa,nieuwegein_wa:straatnamen_wa",
       format: "image/png",
       transparent: true
     }, {
@@ -1920,7 +1850,7 @@ Heron.ngein.layermap = {
    * ------------------------------ */
   lufo2016: new OpenLayers.Layer.WMS("Luchtfoto 2016",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:luchtfoto_ecw_2016,nieuwegein:straatnamenshp",
+      layers: "nieuwegein_wa:luchtfoto_2016_wa,nieuwegein_wa:straatnamen_wa",
       format: "image/png",
       transparent: true
     }, {
@@ -1935,7 +1865,7 @@ Heron.ngein.layermap = {
    * ------------------------------ */
   lufo2015: new OpenLayers.Layer.WMS("Luchtfoto 2015",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:luchtfoto_ecw_2015,nieuwegein:straatnamenshp",
+      layers: "nieuwegein_wa:luchtfoto_2015_wa,nieuwegein_wa:straatnamen_wa",
       format: "image/png",
       transparent: true
     }, {
@@ -1950,7 +1880,7 @@ Heron.ngein.layermap = {
    * ------------------------------ */
   lufo2014: new OpenLayers.Layer.WMS("Luchtfoto 2014",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:luchtfoto_ecw_2014",
+      layers: "nieuwegein_wa:luchtfoto_2014_wa",
       format: "image/png",
       transparent: true
     }, {
@@ -1965,7 +1895,7 @@ Heron.ngein.layermap = {
    * ------------------------------ */
   lufo2013: new OpenLayers.Layer.WMS("Luchtfoto 2013",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:luchtfoto_ecw_2013",
+      layers: "nieuwegein_wa:luchtfoto_2013_wa",
       format: "image/png",
       transparent: true
     }, {
@@ -1980,13 +1910,13 @@ Heron.ngein.layermap = {
    * ------------------------------ */
   lufo2012: new OpenLayers.Layer.WMS("Luchtfoto 2012",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:luchtfoto_ecw_2012",
+      layers: "nieuwegein_wa:luchtfoto_2012_wa",
       format: "image/png",
       transparent: true
     }, {
       isBaseLayer: true,
       singleTile: true,
-      visibility: false
+      visibility: false   
     }
   ),
 
@@ -1995,13 +1925,13 @@ Heron.ngein.layermap = {
    * ------------------------------ */
   lufo2011: new OpenLayers.Layer.WMS("Luchtfoto 2011",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:luchtfoto_ecw_2011",
+      layers: "nieuwegein_wa:luchtfoto_2011_wa",
       format: "image/png",
       transparent: true
     }, {
       isBaseLayer: true,
       singleTile: true,
-      visibility: false
+      visibility: false  
     }
   ),
 
@@ -2034,202 +1964,241 @@ Heron.ngein.layermap = {
           protocol: 'fromWMSLayer',
           featurePrefix: 'ahn3_05m_dsm',
           srsName: "EPSG:28992"
-        },
-        url: "https://www.pdok.nl/nl/ahn3-downloads",
-        url_title: "Link naar PDOK",
-        html: "<b>Het Algemeen Hoogtebestand Nederland 3</b><br><br><p>Dit bestand bevat hoogtemetingen. De cell groote is 0,5m</p><br><p>Voor meer informatie ga naar de AHN site</p>"
+        }
       }
     }
   ),
+  
+  /*
+   * KLIC lagen
+   */
 
-  /* ------------------------------
-   * Hoogspanning
-   * ------------------------------*/
-  hoogspanning: new OpenLayers.Layer.WMS("Hoogspanning",
+    // Gevaarlijke Inhoud
+    klic_gevaarlijke_inhoud: new OpenLayers.Layer.WMS("KLIC Gevaarlijke Inhoud (mrt 2020)",
     Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "nieuwegein:hoogspanning_wa",
+      layers: "nieuwegein_wa:klic_melding_wa",
       format: "image/png",
-      transparent: true
+      CQL_FILTER: "SOORT = 'buisleidingGevaarlijkeInhoud'",
+      transparent: true,
     }, {
       isBaseLayer: false,
       singleTile: true,
       visibility: false,
       featureInfoFormat: "application/vnd.ogc.gml",
       gridcolumns: [{
-        featureType: 'hoogspanning_wa',
+        featureType: 'klic_melding_wa',
         columns: [{
-            dataIndex: "TYPE",
-            header: 'Type',
-            width: 120
+            dataIndex: "SOORT",
+            header: 'Soort',
+            width: 150
           },
           {
-            dataIndex: "OPMERKING",
-            header: 'Opmerking',
-            width: 120
+            dataIndex: "EIGENAAR",
+            header: 'Eigenaar',
+            width: 150
           },
+          {
+            dataIndex: "TYPE",
+            header: 'Type',
+            width: 150
+          },
+          {
+            dataIndex: "JAAR_MELDING",
+            header: 'Jaar Klic-melding',
+            width: 150
+          },
+
         ]
       }],
-    }
-  ),
-
-  /*
-   * KLIC lagen
-   */
-
-  // Gevaarlijke Inhoud
-  klic_gevaarlijke_inhoud: new OpenLayers.Layer.WMS("KLIC Gevaarlijke Inhoud (jan 2018)",
-    Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "klic:jan_2018_GEVAAR",
-      format: "image/png",
-      transparent: true
-    }, {
-      isBaseLayer: false,
-      singleTile: true,
-      visibility: false,
       metadata: {
         legend: {
-          legendURL: 'legenda/klic_gevaarlijke_inhoud.png',
+          legendURL: "//"+location.host+"/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&layer=nieuwegein_wa:klic_melding_wa&CQL_FILTER=SOORT%20%3D%20%27buisleidingGevaarlijkeInhoud%27&legend_options=hideEmptyRules:true;forceLabels:on;",
           hideInLegend: false
-        },
-        html: 'Klic Gevaarlijke inhoud, datum melding: januari 2018'
+        }
       }
     }
-  ),
-  // Datatransport
-  klic_datatransport: new OpenLayers.Layer.WMS("KLIC Datatransport (jan 2018)",
-    Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "klic:jan_2018_DATA",
-      format: "image/png",
-      transparent: true
-    }, {
-      isBaseLayer: false,
-      singleTile: true,
-      visibility: false,
-      metadata: {
-        legend: {
-          legendURL: 'legenda/klic_datatransport.png',
-          hideInLegend: false
-        },
-        html: 'Klic Datatransport, datum melding: januari 2018'
-      }
-    }
-  ),
-  // Gas
-  klic_gas: new OpenLayers.Layer.WMS("KLIC Gas (jan 2018)",
-    Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "klic:jan_2018_GAS",
-      format: "image/png",
-      transparent: true
-    }, {
-      isBaseLayer: false,
-      singleTile: true,
-      visibility: false,
-      metadata: {
-        legend: {
-          legendURL: 'legenda/klic_gas.png',
-          hideInLegend: false
-        },
-        html: 'Klic Gas, datum melding: januari 2018'
-      }
-    }
-  ),
-
-  // Elektra
-  klic_electra: new OpenLayers.Layer.WMS("KLIC Elektra (jan 2018)",
-    Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "klic:jan_2018_ELECTRA",
-      format: "image/png",
-      transparent: true
-    }, {
-      isBaseLayer: false,
-      singleTile: true,
-      visibility: false,
-      metadata: {
-        legend: {
-          legendURL: 'legenda/klic_elektra.png',
-          hideInLegend: false
-        },
-        html: 'Klic Electra, datum melding: januari 2018'
-      }
-    }
-  ),
-  // Overig
-  klic_overig: new OpenLayers.Layer.WMS("KLIC Overig (jan 2018)",
-    Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "klic:jan_2018_OVERIG",
-      format: "image/png",
-      transparent: true
-    }, {
-      isBaseLayer: false,
-      singleTile: true,
-      visibility: false,
-      metadata: {
-        legend: {
-          legendURL: 'legenda/klic_overig.png',
-          hideInLegend: false
-        },
-        html: 'Klic Overige kabels en leidingen, datum melding: januari 2018'
-      }
-    }
-  ),
-  // Riool
-  klic_riool: new OpenLayers.Layer.WMS("KLIC Riool (jan 2018)",
-    Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "klic:jan_2018_RIOOL",
-      format: "image/png",
-      transparent: true
-    }, {
-      isBaseLayer: false,
-      singleTile: true,
-      visibility: false,
-      metadata: {
-        legend: {
-          legendURL: 'legenda/klic_riool.png',
-          hideInLegend: false
-        },
-        html: 'Klic Riool, datum melding: januari 2018'
-      }
-    }
-  ),
-  // Warmte
-  klic_warmte: new OpenLayers.Layer.WMS("KLIC Warmte (jan 2018)",
-    Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "klic:jan_2018_WARMTE",
-      format: "image/png",
-      transparent: true
-    }, {
-      isBaseLayer: false,
-      singleTile: true,
-      visibility: false,
-      metadata: {
-        legend: {
-          legendURL: 'legenda/klic_warmte.png',
-          hideInLegend: false
-        },
-        html: 'Klic Warmte, datum melding: januari 2018'
-      }
-    }
-  ),
-  // Water
-  klic_water: new OpenLayers.Layer.WMS("KLIC Water (jan 2018)",
-    Heron.PDOK.urls.NGEINGEOSERVER, {
-      layers: "klic:jan_2018_WATER",
-      format: "image/png",
-      transparent: true
-    }, {
-      isBaseLayer: false,
-      singleTile: true,
-      visibility: false,
-      metadata: {
-        legend: {
-          legendURL: 'legenda/klic_water.png',
-          hideInLegend: false
-        },
-        html: 'Klic Water, datum melding: januari 2018'
-      }
-    }
-  ),
-
+    ),
+    klic_datatransport: new OpenLayers.Layer.WMS("KLIC Datatransport (mrt 2020)",
+        Heron.PDOK.urls.NGEINGEOSERVER, {
+          layers: "nieuwegein_wa:klic_melding_wa",
+          format: "image/png",
+          CQL_FILTER: "SOORT = 'datatransport'",
+          transparent: true,
+        }, {
+          isBaseLayer: false,
+          singleTile: true,
+          visibility: false,
+          featureInfoFormat: "application/vnd.ogc.gml",
+          metadata: {
+            legend: {
+              legendURL: "//"+location.host+"/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&layer=nieuwegein_wa:klic_melding_wa&CQL_FILTER=SOORT%20%3D%20%27datatransport%27&legend_options=hideEmptyRules:true;forceLabels:on;",
+              hideInLegend: false
+            }
+          }
+        }
+      ),
+      
+      // Gas Hoge druk
+      klic_gas: new OpenLayers.Layer.WMS("KLIC Gas Hoge/Lage Druk(mrt 2020)",
+        Heron.PDOK.urls.NGEINGEOSERVER, {
+          layers: "nieuwegein_wa:klic_melding_wa",
+          format: "image/png",
+          CQL_FILTER: "SOORT = 'gasHogeDruk' OR SOORT = 'gasLageDruk'",
+          transparent: true
+        }, {
+          isBaseLayer: false,
+          singleTile: true,
+          visibility: false,
+          featureInfoFormat: "application/vnd.ogc.gml",
+          metadata: {
+            legend: {
+              legendURL: "//"+location.host+"/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&layer=nieuwegein_wa:klic_melding_wa&CQL_FILTER=SOORT%20%3D%20%27gasHogeDruk%27%20OR%20SOORT%20%3D%20%27gasLageDruk%27&legend_options=hideEmptyRules:true;forceLabels:on;",
+              hideInLegend: false
+            }
+          }
+        }
+      ), 
+      
+      // Elektra
+      klic_electra_hs: new OpenLayers.Layer.WMS("KLIC Hoogspanning (mrt 2020)",
+        Heron.PDOK.urls.NGEINGEOSERVER, {
+          layers: "nieuwegein_wa:klic_melding_wa",
+          format: "image/png",
+          CQL_FILTER: "SOORT = 'hoogspanning' OR SOORT = 'landelijkHoogspanningsnet'",
+          transparent: true
+        }, {
+          isBaseLayer: false,
+          singleTile: true,
+          visibility: false,
+          featureInfoFormat: "application/vnd.ogc.gml",
+          metadata: {
+            legend: {
+              legendURL: "//"+location.host+"/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&layer=nieuwegein_wa:klic_melding_wa&CQL_FILTER=SOORT%20%3D%20%27hoogspanning%27%20OR%20SOORT%20%3D%20%27landelijkHoogspanningsnet%27&legend_options=hideEmptyRules:true;forceLabels:on;",
+              hideInLegend: false
+            }
+          }
+        }
+      ),
+      
+      klic_electra_ms: new OpenLayers.Layer.WMS("KLIC Middenspanning (mrt 2020)",
+        Heron.PDOK.urls.NGEINGEOSERVER, {
+          layers: "nieuwegein_wa:klic_melding_wa",
+          format: "image/png",
+          CQL_FILTER: "SOORT = 'middenspanning'",
+          transparent: true
+        }, {
+          isBaseLayer: false,
+          singleTile: true,
+          visibility: false,
+          featureInfoFormat: "application/vnd.ogc.gml",
+          metadata: {
+            legend: {
+              legendURL: "//"+location.host+"/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&layer=nieuwegein_wa:klic_melding_wa&CQL_FILTER=SOORT%20%3D%20%27middenspanning%27&legend_options=hideEmptyRules:true;forceLabels:on;",
+              hideInLegend: false
+            }
+          }
+        }
+      ),
+      
+      klic_electra_ls: new OpenLayers.Layer.WMS("KLIC Laagspanning (mrt 2020)",
+        Heron.PDOK.urls.NGEINGEOSERVER, {
+          layers: "nieuwegein_wa:klic_melding_wa",
+          format: "image/png",
+          CQL_FILTER: "SOORT = 'laagspanning'",
+          transparent: true
+        }, {
+          isBaseLayer: false,
+          singleTile: true,
+          visibility: false,
+          featureInfoFormat: "application/vnd.ogc.gml",
+          metadata: {
+            legend: {
+              legendURL: "//"+location.host+"/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&layer=nieuwegein_wa:klic_melding_wa&CQL_FILTER=SOORT%20%3D%20%27laagspanning%27&legend_options=hideEmptyRules:true;forceLabels:on;",
+              hideInLegend: false
+            }
+          }
+        }
+      ),
+      // Overig
+      klic_overig: new OpenLayers.Layer.WMS("KLIC Overig (mrt 2020)",
+        Heron.PDOK.urls.NGEINGEOSERVER, {
+          layers: "nieuwegein_wa:klic_melding_wa",
+          format: "image/png",
+          CQL_FILTER: "SOORT = 'overig'",
+          transparent: true
+        }, {
+          isBaseLayer: false,
+          singleTile: true,
+          visibility: false,
+          featureInfoFormat: "application/vnd.ogc.gml",
+          metadata: {
+            legend: {
+              legendURL: "//"+location.host+"/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&layer=nieuwegein_wa:klic_melding_wa&CQL_FILTER=SOORT%20%3D%20%27overig%27&legend_options=hideEmptyRules:true;forceLabels:on;",
+              hideInLegend: false
+            }
+          }
+        }
+      ),
+      // Riool
+      klic_riool: new OpenLayers.Layer.WMS("KLIC Riool (mrt 2020)",
+        Heron.PDOK.urls.NGEINGEOSERVER, {
+          layers: "nieuwegein_wa:klic_melding_wa",
+          format: "image/png",
+          CQL_FILTER: "SOORT = 'rioolOnderOverOfOnderdruk' OR SOORT = 'rioolVrijverval'",
+          transparent: true
+        }, {
+          isBaseLayer: false,
+          singleTile: true,
+          visibility: false,
+          featureInfoFormat: "application/vnd.ogc.gml",
+          metadata: {
+            legend: {
+              legendURL: "//"+location.host+"/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&layer=nieuwegein_wa:klic_melding_wa&CQL_FILTER=SOORT%20%3D%20%27rioolOnderOverOfOnderdruk%27%20OR%20SOORT%20%3D%20%27rioolVrijverval%27&legend_options=hideEmptyRules:true;forceLabels:on;",
+              hideInLegend: false
+            }
+          }
+        }
+      ),
+      // Warmte
+      klic_warmte: new OpenLayers.Layer.WMS("KLIC Warmte (mrt 2020)",
+        Heron.PDOK.urls.NGEINGEOSERVER, {
+          layers: "nieuwegein_wa:klic_melding_wa",
+          format: "image/png",
+          CQL_FILTER: "SOORT = 'warmte'",
+          transparent: true
+        }, {
+          isBaseLayer: false,
+          singleTile: true,
+          visibility: false,
+          featureInfoFormat: "application/vnd.ogc.gml",
+          metadata: {
+            legend: {
+              legendURL: "//"+location.host+"/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&layer=nieuwegein_wa:klic_melding_wa&CQL_FILTER=SOORT%20%3D%20%27warmte%27&legend_options=hideEmptyRules:true;forceLabels:on;",
+              hideInLegend: false
+            }
+          }
+        }
+      ),
+      // Water
+      klic_water: new OpenLayers.Layer.WMS("KLIC Water (mrt 2020)",
+        Heron.PDOK.urls.NGEINGEOSERVER, {
+          layers: "nieuwegein_wa:klic_melding_wa",
+          format: "image/png",
+          CQL_FILTER: "SOORT = 'water'",
+          transparent: true
+        }, {
+          isBaseLayer: false,
+          singleTile: true,
+          visibility: false,
+          featureInfoFormat: "application/vnd.ogc.gml",
+          metadata: {
+            legend: {
+              legendURL: "//"+location.host+"/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&layer=nieuwegein_wa:klic_melding_wa&CQL_FILTER=SOORT%20%3D%20%27water%27&legend_options=hideEmptyRules:true;forceLabels:on;",
+              hideInLegend: false
+            }
+          }
+        }
+      ),
 
 };
 
@@ -2435,6 +2404,7 @@ Heron.options.map.layers = [
   // Thema Lagen
   // vlakdekkend
 
+
   // polygonen
   Heron.ngein.layermap.brk_grondperceel,
   Heron.ngein.layermap.brk_secure,
@@ -2466,9 +2436,9 @@ Heron.options.map.layers = [
   Heron.ngein.layermap.warmte_gasaansluiting,
   Heron.ngein.layermap.zonnekaart,
   Heron.ngein.layermap.zonnepanelen,
-  Heron.ngein.layermap.hoogspanning,
+  Heron.ngein.layermap.zonnevelden,
   Heron.ngein.layermap.hondenuitlaatkaart,
-
+  Heron.ngein.layermap.handelsregister,
 
   // lijnen
   Heron.ngein.layermap.gbkni,
@@ -2491,16 +2461,21 @@ Heron.options.map.layers = [
   Heron.ngein.layermap.pc6,
   Heron.ngein.layermap.komgrens,
   Heron.ngein.layermap.boswet,
+  
   // KLIC lagen
   Heron.ngein.layermap.klic_gevaarlijke_inhoud,
   Heron.ngein.layermap.klic_datatransport,
   Heron.ngein.layermap.klic_gas,
-  Heron.ngein.layermap.klic_electra,
+  Heron.ngein.layermap.klic_electra_hs,  
+  Heron.ngein.layermap.klic_electra_ms,  
+  Heron.ngein.layermap.klic_electra_ls,  
   Heron.ngein.layermap.klic_overig,
   Heron.ngein.layermap.klic_riool,
   Heron.ngein.layermap.klic_water,
   Heron.ngein.layermap.klic_warmte,
-  Heron.ngein.layermap.handelsregister
+  
+  // Punten
+  Heron.ngein.layermap.par,
 ];
 
 // In Heron the first element in the layers-array will be the last in the legend
@@ -2616,10 +2591,10 @@ var treeTheme = [{
       {
         text: 'Bedrijven en Instellingen',
         expanded: true,
-        children: [{
-          nodeType: "gx_layer",
-          layer: Heron.ngein.layermap.handelsregister.name
-        }, ]
+        children: [
+            {nodeType: "gx_layer",layer: Heron.ngein.layermap.par.name}, 
+            {nodeType: "gx_layer",layer: Heron.ngein.layermap.handelsregister.name},
+        ]
       },
       {
         text: 'Grondgebruik en Eigendommen',
@@ -2717,10 +2692,7 @@ var treeTheme = [{
       {
         text: "Kabels en Leidingen",
         expanded: false,
-        children: [{
-            nodeType: "gx_layer",
-            layer: Heron.ngein.layermap.hoogspanning.name
-          },
+        children: [
           {
             nodeType: "gx_layer",
             layer: Heron.ngein.layermap.gasnet_stedin.name
@@ -2743,7 +2715,15 @@ var treeTheme = [{
           },
           {
             nodeType: "gx_layer",
-            layer: Heron.ngein.layermap.klic_electra.name
+            layer: Heron.ngein.layermap.klic_electra_hs.name
+          },
+          {
+            nodeType: "gx_layer",
+            layer: Heron.ngein.layermap.klic_electra_ms.name
+          },
+          {
+            nodeType: "gx_layer",
+            layer: Heron.ngein.layermap.klic_electra_ls.name
           },
           {
             nodeType: "gx_layer",
@@ -2870,6 +2850,10 @@ var treeTheme = [{
       {
         nodeType: "gx_layer",
         layer: Heron.ngein.layermap.zonnepanelen.name
+      },
+      {
+        nodeType: "gx_layer",
+        layer: Heron.ngein.layermap.zonnevelden.name
       },
     ]
   },
