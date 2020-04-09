@@ -92,9 +92,9 @@ Heron.ngein.layermap = {
      * ------------------------------ */
     wijken: new OpenLayers.Layer.WMS("Wijken",
       Heron.PDOK.urls.NGEINGEOSERVER,
-      {layers: "nieuwegein:GM_SP_WIJKEN", format: "image/png", transparent: true},
+      {layers: "nieuwegein_sm:wijken_sm", format: "image/png", transparent: true},
       {isBaseLayer: false, singleTile: true, 
-       visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
+       visibility: true, featureInfoFormat: "application/vnd.ogc.gml",
        //,alpha: true, opacity: 0.7
        //minScale:5000
       }
@@ -245,10 +245,10 @@ Heron.ngein.layermap = {
     /*
      * Vervuiling
      * ------------------------------ */
-    vervuiling: new OpenLayers.Layer.WMS("Vervuiling",
+    vervuiling: new OpenLayers.Layer.WMS("Vervuiling (in de tijd)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_CRM_SM_VV',
+		  layers: 'nieuwegein_sm:vervuiling_sm',
 		  //viewparams:'jaar:2013',
 		  format: "image/png", 
 		  transparent: true
@@ -268,10 +268,10 @@ Heron.ngein.layermap = {
      * GM_SP_CRM_SM_BBB_EMIG_TR 
 	 * vertrekkers
      * ------------------------------ */
-    vertrekkers: new OpenLayers.Layer.WMS("Vertrekkers",
+    vertrekkers: new OpenLayers.Layer.WMS("Vertrekkers (in de tijd)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_CRM_SM_BBB_EMIG_TR',
+		  layers: 'nieuwegein_sm:vertrekkers_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -293,7 +293,7 @@ Heron.ngein.layermap = {
     signaleringsocialekwetsbaarheid: new OpenLayers.Layer.WMS("Signalering sociale kwetsbaarheid",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_SK_SIGN',
+		  layers: 'nieuwegein_sm:signalering_sociale_kwetsbaarheid_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -314,10 +314,10 @@ Heron.ngein.layermap = {
 	* jaar,maand,waarde,value
 	* 2015,1,13,-1, 2015,2,10,-1, 2015,3,8,-1, 2015,4,3,-1
 	**/
-    inkomenenminimabeleid: new OpenLayers.Layer.WMS("Inkomen- en minimabeleid",
+    inkomenenminimabeleid: new OpenLayers.Layer.WMS("Inkomen- en minimabeleid (in de tijd)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_SK_IMB_TR',
+		  layers: 'nieuwegein_sm:inkomen_en_minimabeleid_tr_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -338,10 +338,10 @@ Heron.ngein.layermap = {
 	* jaar,maand,waarde,value
 	* "2015,2,374,1, 2015,3,235,-1"
 	**/
-    wmoverstrekkingen: new OpenLayers.Layer.WMS("Aantal WMO verstrekkingen",
+    wmoverstrekkingen: new OpenLayers.Layer.WMS("WMO verstrekkingen (in de tijd)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_SK_WMO_TR',
+		  layers: 'nieuwegein_sm:wmo_verstrekkingen_tr_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -357,15 +357,15 @@ Heron.ngein.layermap = {
     ),	
 	
 	/**
-	* GM_SP_SM_SK_WMO_TR
+	* GM_SP_SM_SK_SHV_TR
 	* schuldhulpverlening
 	* jaar,maand,waarde,value
 	* "2015,2,374,1, 2015,3,235,-1"
 	**/
-    schuldhulpverlening: new OpenLayers.Layer.WMS("Schuldhulpverlening",
+    schuldhulpverlening: new OpenLayers.Layer.WMS("Schuldhulpverlening (in de tijd)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_SK_SHV_TR',
+		  layers: 'nieuwegein_sm:schuldhulpverlening_tr_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -387,10 +387,10 @@ Heron.ngein.layermap = {
 	* jaar,maand,waarde,value
 	* "2015,2,374,1, 2015,3,235,-1"
 	**/
-    overlastmeldingen: new OpenLayers.Layer.WMS("Jeugdoverlast",
+    overlastmeldingen: new OpenLayers.Layer.WMS("Jeugdoverlast (in de tijd)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_VEO_OV_TR',
+		  layers: 'nieuwegein_sm:jeugdoverlast_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -411,10 +411,10 @@ Heron.ngein.layermap = {
 	 * jaar,maand,waarde,value
 	 * 2016,01,0,N, 2016,02,0,N
      **/
-    autoinbraken: new OpenLayers.Layer.WMS("Autoinbraken",
+    autoinbraken: new OpenLayers.Layer.WMS("Autoinbraken (in de tijd)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_VEO_AI_TR',
+		  layers: 'nieuwegein_sm:auto-inbraken_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -435,10 +435,10 @@ Heron.ngein.layermap = {
 	 * jaar,maand,waarde,value
 	 * 2016,01,0,N, 2016,02,0,N,2016, 03,0,N
      **/	 
-    woninginbraken: new OpenLayers.Layer.WMS("Woninginbraken",
+    woninginbraken: new OpenLayers.Layer.WMS("Woninginbraken (in de tijd)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_VEO_WI_TR',
+		  layers: 'nieuwegein_sm:woninginbraken_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -460,10 +460,10 @@ Heron.ngein.layermap = {
 	* 
 	* 
 	**/
-    parkeeroverlast: new OpenLayers.Layer.WMS("Parkeeroverlast",
+    parkeeroverlast: new OpenLayers.Layer.WMS("Parkeeroverlast (in de tijd)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_VEO_PO_TR',
+		  layers: 'nieuwegein_sm:parkeeroverlast_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -485,8 +485,7 @@ Heron.ngein.layermap = {
     signaleringveiligheidenoverlast: new OpenLayers.Layer.WMS("Signalering veiligheid en overlast",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_VEO_SIGN',
-		  //layers: 'nieuwegein:kaas',
+		  layers: 'nieuwegein_sm:signalering_veiligheid_en_overlast_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -509,7 +508,7 @@ Heron.ngein.layermap = {
     signaleringbetrokkenheidbijbuurt: new OpenLayers.Layer.WMS("Signalering betrokkenheid bij buurt",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_BBB_SIGN',
+		  layers: 'nieuwegein_sm:signalering_betrokkenheid_bij_buurt_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -532,7 +531,7 @@ Heron.ngein.layermap = {
     zwerfafvalpakkers: new OpenLayers.Layer.WMS("Zwerfafvalpakkers",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_IE_BBB_ZAP',
+		  layers: 'nieuwegein_sm:zwerfafvalpakkers_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -556,7 +555,7 @@ Heron.ngein.layermap = {
     zelfbeheergroen: new OpenLayers.Layer.WMS("Zelfbeheergroen",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_IE_BBB_ZBG',
+		  layers: 'nieuwegein_sm:zelfbeheer_groen_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -579,7 +578,7 @@ Heron.ngein.layermap = {
     betrok_inwonersenquete: new OpenLayers.Layer.WMS("Betrok_inwonersenquete",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_BBB_IE',
+		  layers: 'nieuwegein_sm:betrokkenheid_inw_enquete_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -600,7 +599,7 @@ Heron.ngein.layermap = {
     belevingswereld: new OpenLayers.Layer.WMS("Belevingswereld",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:belevingswereld',
+		  layers: 'nieuwegein_sm:leefstijl_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -651,7 +650,7 @@ Heron.ngein.layermap = {
     inwoners_per_wijk: new OpenLayers.Layer.WMS("Inwoners per wijk",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:inwoners_per_wijk',
+		  layers: 'nieuwegein_sm:inwoners_per_wijk_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -661,13 +660,12 @@ Heron.ngein.layermap = {
     ),
 		
 	/*
-     * Leegstand woningen
+     * Leegstand
      * ------------------------------ */
-    leegstand_woningen: new OpenLayers.Layer.WMS("Leegstand woningen",
+    leegstand: new OpenLayers.Layer.WMS("Leegstand (BGHU)",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_DIV_LEEGSTAND,nieuwegein:GM_SP_DIV_LEEGSTAND',
-		  styles: 'leegstand,leegstand_woning_sp',
+		  layers: 'nieuwegein_sm:leegstand_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -675,26 +673,17 @@ Heron.ngein.layermap = {
 		  //,featureInfoFormat: "application/vnd.ogc.gml"
 		  ,metadata:{
 					
-					html: 'Meer informatie over de leegstand woningen vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#leegstand_woningen">hier</a>' // metadata as html (will be place between <p></p>)		   
+					html: 'Meer informatie over de leegstand woningen vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#leegstand">hier</a>' // metadata as html (will be place between <p></p>)		   
 				}
       }
     ),
 			
-	/* ------------------------------------------------
-     * Projectenkaart 2017
-     * ------------------------------------------------ */
-    projectenkaart2017: new OpenLayers.Layer.WMS("Projectenkaart 2017",
-      Heron.PDOK.urls.NGEINGEOSERVER,
-      {layers: "nieuwegein:projectenkaart2017", format: "image/png", transparent: true},
-      {isBaseLayer: false, singleTile: true, 
-       visibility: false, featureInfoFormat: "application/vnd.ogc.gml",
-       legendURL: "//gng-ap532.nieuwegein.nl/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=projectenkaart2017"
-      }
-    ),  
 	
 	/*
      * Oppervlakte per inwoner
-     * ------------------------------ */
+     * ------------------------------ 
+     * TP:18-03-2020 ongedaan gemaakt. komt waarschijnlijk niet meer terug
+     
     oppervlakte_per_inwoner: new OpenLayers.Layer.WMS("Woonoppervlakte per inwoner",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
@@ -710,14 +699,16 @@ Heron.ngein.layermap = {
 				}
       }
     ),	
-	
+	*/
+    
+    
 	/*
      * Veiligheidsgevoel_inwonersenquete
      * ------------------------------ */
     veiligheid_inwonerenquete: new OpenLayers.Layer.WMS("Veiligheid_inwonersenquete",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_SM_VEO_IE',
+		  layers: 'nieuwegein_sm:veiligheid_inwoners_enquete_sm',
 		  format: "image/png", 
 		  transparent: true,
 		  viewparams:'periodestart:1;periodeeind:13;'
@@ -735,10 +726,30 @@ Heron.ngein.layermap = {
 	/*
      * nieuwegein:bevolkingsdichtheid_0_tot_4
      * ------------------------------ */
-    bevolkingsdichtheid_0_tot_4: new OpenLayers.Layer.WMS("Bevolkingsdichtheid 0 tot 4 jaar",
+    bevolkingsdichtheid_0_tot_4: new OpenLayers.Layer.WMS("Aant. 0 tot 4 jaar",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:bevolkingsdichtheid_0_tot_4',
+		  layers: 'nieuwegein_sm:bevolkingsdichtheid_0_tot_4_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  isBaseLayer: false, singleTile: true,  visibility: false
+		  , featureInfoFormat: "application/vnd.ogc.gml"
+		  , diagramgroup:true // only ONE layer per diagram group can generate graphics
+		   ,metadata:{
+					
+					html: 'Meer informatie over de bevolkingsdichtheid vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Bevolkingsdichtheid">hier</a>' // metadata as html (will be place between <p></p>)		   
+				}
+      }
+    ),
+    
+    /*
+     * nieuwegein:bevolkingsdichtheid_0_tot_12
+     * ------------------------------ */
+    bevolkingsdichtheid_0_tot_12: new OpenLayers.Layer.WMS("Aant. 0 tot 12 jaar",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:bevolkingsdichtheid_0_tot_12_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -753,13 +764,14 @@ Heron.ngein.layermap = {
     ),
 	
 	
+	
 	/*
      * nieuwegein:bevolkingsdichtheid_4_tot_12
      * ------------------------------ */
-    bevolkingsdichtheid_4_tot_12: new OpenLayers.Layer.WMS("Bevolkingsdichtheid 4 tot 12 jaar",
+    bevolkingsdichtheid_4_tot_12: new OpenLayers.Layer.WMS("Aant. 4 tot 12 jaar",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:bevolkingsdichtheid_4_tot_12',
+		  layers: 'nieuwegein_sm:bevolkingsdichtheid_4_tot_12_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -776,10 +788,10 @@ Heron.ngein.layermap = {
 	/*
      * nieuwegein:bevolkingsdichtheid_12_tot_18
      * ------------------------------ */
-    bevolkingsdichtheid_12_tot_18: new OpenLayers.Layer.WMS("Bevolkingsdichtheid 12 tot 18 jaar",
+    bevolkingsdichtheid_12_tot_18: new OpenLayers.Layer.WMS("Aant. 12 tot 18 jaar",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:bevolkingsdichtheid_12_tot_18',
+		  layers: 'nieuwegein_sm:bevolkingsdichtheid_12_tot_18_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -796,10 +808,88 @@ Heron.ngein.layermap = {
 	/*
      * nieuwegein:bevolkingsdichtheid_18_tot_25
      * ------------------------------ */
-    bevolkingsdichtheid_18_tot_25: new OpenLayers.Layer.WMS("Bevolkingsdichtheid 18 tot 25 jaar",
+    bevolkingsdichtheid_18_tot_25: new OpenLayers.Layer.WMS("Aant. 18 tot 25 jaar",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:bevolkingsdichtheid_18_tot_25',
+		  layers: 'nieuwegein_sm:bevolkingsdichtheid_18_tot_25_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  isBaseLayer: false, singleTile: true,  visibility: false
+		  , featureInfoFormat: "application/vnd.ogc.gml"
+		  , diagramgroup:true // only ONE layer per diagram group can generate graphics
+		  ,metadata:{
+					
+					html: 'Meer informatie over de bevolkingsdichtheid vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Bevolkingsdichtheid">hier</a>' // metadata as html (will be place between <p></p>)		   
+				}
+      }
+    ),
+    
+    /*
+     * nieuwegein:bevolkingsdichtheid_25_tot_45
+     * ------------------------------ */
+    bevolkingsdichtheid_25_tot_45: new OpenLayers.Layer.WMS("Aant. 25 tot 45 jaar",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:bevolkingsdichtheid_25_tot_45_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  isBaseLayer: false, singleTile: true,  visibility: false
+		  , featureInfoFormat: "application/vnd.ogc.gml"
+		  , diagramgroup:true // only ONE layer per diagram group can generate graphics
+		  ,metadata:{
+					
+					html: 'Meer informatie over de bevolkingsdichtheid vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Bevolkingsdichtheid">hier</a>' // metadata as html (will be place between <p></p>)		   
+				}
+      }
+    ),
+    
+    /*
+     * nieuwegein:bevolkingsdichtheid_45_tot_65
+     * ------------------------------ */
+    bevolkingsdichtheid_45_tot_65: new OpenLayers.Layer.WMS("Aant. 45 tot 65 jaar",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:bevolkingsdichtheid_45_tot_65_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  isBaseLayer: false, singleTile: true,  visibility: false
+		  , featureInfoFormat: "application/vnd.ogc.gml"
+		  , diagramgroup:true // only ONE layer per diagram group can generate graphics
+		  ,metadata:{
+					
+					html: 'Meer informatie over de bevolkingsdichtheid vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Bevolkingsdichtheid">hier</a>' // metadata as html (will be place between <p></p>)		   
+				}
+      }
+    ),
+    /*
+     * nieuwegein:bevolkingsdichtheid_65_tot_80
+     * ------------------------------ */
+    bevolkingsdichtheid_65_tot_80: new OpenLayers.Layer.WMS("Aant. 65 tot 80 jaar",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:bevolkingsdichtheid_65_tot_80_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  isBaseLayer: false, singleTile: true,  visibility: false
+		  , featureInfoFormat: "application/vnd.ogc.gml"
+		  , diagramgroup:true // only ONE layer per diagram group can generate graphics
+		  ,metadata:{
+					
+					html: 'Meer informatie over de bevolkingsdichtheid vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Bevolkingsdichtheid">hier</a>' // metadata as html (will be place between <p></p>)		   
+				}
+      }
+    ),
+    /*
+     * nieuwegein:bevolkingsdichtheid_65_EN_OUDER
+     * ------------------------------ */
+    bevolkingsdichtheid_65_en_ouder: new OpenLayers.Layer.WMS("Aant. 65 en ouder",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:bevolkingsdichtheid_65_en_ouder_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -816,16 +906,117 @@ Heron.ngein.layermap = {
 	/*
      * nieuwegein:bevolkingsdichtheid_70_EN_OUDER
      * ------------------------------ */
-    bevolkingsdichtheid_70_en_ouder: new OpenLayers.Layer.WMS("Bevolkingsdichtheid 70 en ouder",
+    bevolkingsdichtheid_70_en_ouder: new OpenLayers.Layer.WMS("Aant. 70 en ouder",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:bevolkingsdichtheid_70_en_ouder',
+		  layers: 'nieuwegein_sm:bevolkingsdichtheid_70_en_ouder_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
       {	  isBaseLayer: false, singleTile: true,  visibility: false
 		  , featureInfoFormat: "application/vnd.ogc.gml"
 		  , diagramgroup:true // only ONE layer per diagram group can generate graphics
+		  ,metadata:{
+					
+					html: 'Meer informatie over de bevolkingsdichtheid vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Bevolkingsdichtheid">hier</a>' // metadata as html (will be place between <p></p>)		   
+				}
+      }
+    ),
+    
+    /*
+     * nieuwegein:bevolkingsdichtheid_75_EN_OUDER
+     * ------------------------------ */
+    bevolkingsdichtheid_75_en_ouder: new OpenLayers.Layer.WMS("Aant. 75 en ouder",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:bevolkingsdichtheid_75_en_ouder_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  isBaseLayer: false, singleTile: true,  visibility: false
+		  , featureInfoFormat: "application/vnd.ogc.gml"
+		  , diagramgroup:true // only ONE layer per diagram group can generate graphics
+		  ,metadata:{
+					
+					html: 'Meer informatie over de bevolkingsdichtheid vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Bevolkingsdichtheid">hier</a>' // metadata as html (will be place between <p></p>)		   
+				}
+      }
+    ),
+    
+    
+	/*
+     * nieuwegein:bevolkingsdichtheid_80_EN_OUDER
+     * ------------------------------ */
+    bevolkingsdichtheid_80_en_ouder: new OpenLayers.Layer.WMS("Aant. 80 en ouder",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:bevolkingsdichtheid_80_en_ouder_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  isBaseLayer: false, singleTile: true,  visibility: false
+		  , featureInfoFormat: "application/vnd.ogc.gml"
+		  , diagramgroup:true // only ONE layer per diagram group can generate graphics
+		  ,metadata:{
+					
+					html: 'Meer informatie over de bevolkingsdichtheid vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Bevolkingsdichtheid">hier</a>' // metadata as html (will be place between <p></p>)		   
+				}
+      }
+    ),
+    
+    /*
+     * nieuwegein:heatmap 0 tot 12 
+     * ------------------------------ */
+    heatmap_0_tot_12: new OpenLayers.Layer.WMS("heatmap 0 tot 12",
+    'http://geoappstore.nieuwegein.nl/qgis/qgis_mapserv.fcgi.exe?service=WMS&map=//nieuwegein.nl/shared/GEO/GIS_consultancy/2020/visualisaties_voor_transformatie_agenda_sociaal_domein/QGIS/heatmaps.qgz',
+      {
+		  layers: 'Heatmap_0_tot_12',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  isBaseLayer: false, singleTile: true,  visibility: false
+		  , featureInfoFormat: "application/vnd.ogc.gml"
+		  , diagramgroup:false // only ONE layer per diagram group can generate graphics
+		  ,metadata:{
+					
+					html: 'Meer informatie over de heatmap vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#heatmap">hier</a>' // metadata as html (will be place between <p></p>)		   
+				}
+      }
+    ),
+    
+     /*
+     * nieuwegein:heatmap 0 tot 25 
+     * ------------------------------ */
+    heatmap_0_tot_25: new OpenLayers.Layer.WMS("heatmap 0 tot 25",
+    'http://geoappstore.nieuwegein.nl/qgis/qgis_mapserv.fcgi.exe?service=WMS&map=//nieuwegein.nl/shared/GEO/GIS_consultancy/2020/visualisaties_voor_transformatie_agenda_sociaal_domein/QGIS/heatmaps.qgz',
+      {
+		  layers: 'Heatmap_0_tot_25',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  isBaseLayer: false, singleTile: true,  visibility: false
+		  , featureInfoFormat: "application/vnd.ogc.gml"
+		  , diagramgroup:false // only ONE layer per diagram group can generate graphics
+		  ,metadata:{
+					
+					html: 'Meer informatie over de heatmap vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#heatmap">hier</a>' // metadata as html (will be place between <p></p>)		   
+				}
+      }
+    ),
+    
+    /*
+     * nieuwegein:heatmap 70 plus
+     * ------------------------------ */
+    heatmap_70_plus: new OpenLayers.Layer.WMS("heatmap 70 en ouder",
+    'http://geoappstore.nieuwegein.nl/qgis/qgis_mapserv.fcgi.exe?service=WMS&map=//nieuwegein.nl/shared/GEO/GIS_consultancy/2020/visualisaties_voor_transformatie_agenda_sociaal_domein/QGIS/heatmaps.qgz',
+      {
+		  layers: 'Heatmap_70plus',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  isBaseLayer: false, singleTile: true,  visibility: false
+		  , featureInfoFormat: "application/vnd.ogc.gml"
+		  , diagramgroup:false // only ONE layer per diagram group can generate graphics
 		  ,metadata:{
 					
 					html: 'Meer informatie over de bevolkingsdichtheid vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Bevolkingsdichtheid">hier</a>' // metadata as html (will be place between <p></p>)		   
@@ -839,7 +1030,7 @@ Heron.ngein.layermap = {
     buurten_geo_informatie: new OpenLayers.Layer.WMS("Buurten geo informatie",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:buurten_geo_informatie',
+		  layers: 'nieuwegein_sm:buurten_geo_informatie_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -851,7 +1042,8 @@ Heron.ngein.layermap = {
 	/*
 	 * Sociale huurwoningen: Mitros Juthpaas en Portaal
 	 * Heron.ngein.layermap.socialehuurwoningen
-	 */ 
+     * TP 18-03-2020 vervangen door eigendomwooncorporaties, zie onder
+	 
     socialehuurwoningen: new OpenLayers.Layer.WMS("Sociale huurwoningen",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
@@ -867,14 +1059,56 @@ Heron.ngein.layermap = {
 				}
       }
     ),
+    */ 
+   
+   /*
+	 * Eigndom wooncorporaties: Mitros Juthpaas en Portaal
+	 * Heron.ngein.layermap.eigendomwooncorporaties
+	 */ 
+    eigendomwooncorporaties: new OpenLayers.Layer.WMS("Eigendom wooncorporaties",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:eigendom_wooncorporaties_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  	isBaseLayer: false, singleTile: true,  visibility: false
+			,featureInfoFormat: "application/vnd.ogc.gml"
+            ,gridcolumns: [{
+            featureType: 'eigendom_wooncorporaties_sm',
+            columns: [
+            // LET OP: de dataIndex is case-afhankelijk en moet dezelfde zijn als in de features!!
+            {
+                dataIndex: "KAD_AANDUIDING",
+                header: 'Kadastrale aanduiding',
+                width: 120
+            },
+            {
+                dataIndex: "TYPE_EIGENAAR",
+                header: 'Categorie eigenaar',
+                width: 150
+            },
+            {
+                dataIndex: "EIGENAAR",
+                header: 'Eigenaar',
+                width: 300
+            },
+            ]
+        }]
+			,metadata:{
+					
+					html: 'Meer informatie over de Sociale huurwoningen vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Eigendom_wooncorporaties">hier</a>' // metadata as html (will be place between <p></p>)		   
+				}
+      }
+    ),
 	
 	/*
 	 * WOZ waarden van woningen
 	 */
-	wozwaarden: new OpenLayers.Layer.WMS("WOZ waarden woningen",
+	wozwaarden: new OpenLayers.Layer.WMS("WOZ-waarde woningen",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:woz_gegevens',
+		  layers: 'nieuwegein_sm:woz_waarde_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -891,10 +1125,10 @@ Heron.ngein.layermap = {
 	 * Koop en huurwoningen
 	 * Heron.ngein.layermap.koopenhuurwoningen
 	 */
-	koopenhuurwoningen: new OpenLayers.Layer.WMS("Koop en huurwoningen",
+	koopenhuurwoningen: new OpenLayers.Layer.WMS("Koop- en huurwoningen",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein:GM_SP_KOOP_HUURWONINGEN',
+		  layers: 'nieuwegein_sm:koop_en_huurwoningen_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -906,11 +1140,32 @@ Heron.ngein.layermap = {
 				}
       }
     ),
+    
+    /*
+	 * Woningtypes
+	 * Heron.ngein.layermap.woningtypes_sm
+	 */
+	woningtypes: new OpenLayers.Layer.WMS("Woningtypes",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:woningtypes_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  isBaseLayer: false, singleTile: true,  visibility: false
+		  ,featureInfoFormat: "application/vnd.ogc.gml"
+		   ,metadata:{
+					
+					html: 'Meer informatie over de Woningtypes vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Woningtypes">hier</a>' // metadata as html (will be place between <p></p>)		   
+				}
+      }
+    ),
 	
 	/*
 	 * Woningen van 250m oppervlakte en groter
 	 * Woningen GM_SP_BAG_GEOOBJK_VBO_PLUS >250m opp en GEBRUIK = 'woonfunctie'
-	 */
+     TP:18-03-2020 laag ongedaan gemaakt. 
+	 
 	woningen250eg: new OpenLayers.Layer.WMS("Woningen >250 m2",
       Heron.PDOK.urls.NGEINGEOSERVER,
       {
@@ -926,12 +1181,12 @@ Heron.ngein.layermap = {
 				}
       }
     ),
-    
+    */
     /*
 	 * Supermarkten op basis van provinciaal arbeidsregister
 	 */
 	supermarkten: new OpenLayers.Layer.WMS("Supermarkten",
-      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      Heron.PDOK.urls.NGEINGEOSERVER,
       {
 		  layers: 'nieuwegein_wa:supermarkten_wa',
 		  format: "image/png", 
@@ -946,29 +1201,66 @@ Heron.ngein.layermap = {
     ),
     
      /*
-	 * Buurthuizen uit gemeentegids
+	 * Buurtpleinen uit gemeentegids
 	 */
-	buurthuizen: new OpenLayers.Layer.WMS("Buurthuizen",
-      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+	buurtpleinen: new OpenLayers.Layer.WMS("Buurtpleinen",
+      Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein_wa:buurthuizen_wa',
+		  layers: 'nieuwegein_sm:buurtpleinen_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
       {	    isBaseLayer: false, singleTile: true,  visibility: false
             ,featureInfoFormat: "application/vnd.ogc.gml"
             ,metadata:{		
-					html: 'Meer informatie over de buurthuizen vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Buurthuizen">hier</a>' // metadata as html (will be place between <p></p>)		   
+					html: 'Meer informatie over de buurtpleinen vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Buurtpleinen">hier</a>' // metadata as html (will be place between <p></p>)		   
             }
       }
     ),
+    
+    /*
+	 * Gezondheidscentra en huisartsenpraktijken uit sociale kaart op basis van adres toegevoegd aan pandvlak
+	 */
+	gezondheidscentra: new OpenLayers.Layer.WMS("Gezondheidscentra",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:gezondheidscentra_sm,nieuwegein_sm:huisartsenpraktijken_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de Gezondheidscentra vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Gezondheidscentra">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+    
+     /*
+	 * Zones rond Gezondheidscentra en huisartsenpraktijken 
+	 */
+	zonekaart_gezondheidscentra: new OpenLayers.Layer.WMS("Zones Gezondheidscentra",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:buffer_gezondheidcentra_huisartsenpraktijken_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            //,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de zonekaart vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Zonekaart_Gezondheidscentra">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+    
      /*
 	 * Wijk ontmoetingsplek aangeleverd door SMO
 	 */
 	wijk_ontmoetingsplekken: new OpenLayers.Layer.WMS("Wijk ontmoetingsplek",
-      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein_wa:wijk_ontmoetingsplek_wa',
+		  layers: 'nieuwegein_sm:wijk_ontmoetingsplek_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -983,9 +1275,9 @@ Heron.ngein.layermap = {
 	 * Huisartsen op basis van gemeentegids
 	 */
 	huisartsen: new OpenLayers.Layer.WMS("Huisartsen",
-      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein_wa:huisartsen_wa',
+		  layers: 'nieuwegein_sm:huisartsen_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -997,12 +1289,12 @@ Heron.ngein.layermap = {
       }
     ), 
      /*
-	 * Huisartsen op basis van gemeentegids
+	 * Fysiotherapie op basis van par
 	 */
 	fysiotherapie: new OpenLayers.Layer.WMS("Fysiotherapie",
-      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein_wa:fysiotherapie_wa',
+		  layers: 'nieuwegein_sm:fysiotherapie_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -1013,13 +1305,88 @@ Heron.ngein.layermap = {
             }
       }
     ),
+    
+     /*
+	 * Apotheken op basis van par
+	 */
+	apotheken: new OpenLayers.Layer.WMS("Apotheken",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:apotheken_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over Apotheken vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Apotheken">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+    
+      /*
+	 * Tandartsen op basis van par
+	 */
+	tandartsen: new OpenLayers.Layer.WMS("Tandartsen",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:tandartsen_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over Tandartsen vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Tandartsen">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+    
+       /*
+	 * Bushaltes op basis van provinciale service
+     * https://services.geodata-utrecht.nl/geoserver/v01_1_1_1_Openbaar_vervoer/wfs
+	 */
+	bushaltes: new OpenLayers.Layer.WMS("Bushaltes",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:bushaltes_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over Bushaltes vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Bushaltes">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+    
+      /*
+	 * Tramhaltes op basis van provinciale service
+     * https://services.geodata-utrecht.nl/geoserver/v01_1_1_1_Openbaar_vervoer/wfs
+	 */
+	tramhaltes: new OpenLayers.Layer.WMS("Tramhaltes",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:tramhaltes_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over Tramhaltes vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Tramhaltes">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+    
        /*
 	 * Ziekenhuis op basis van gemeentegids
 	 */
 	ziekenhuis: new OpenLayers.Layer.WMS("Ziekenhuis",
-      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein_wa:ziekenhuis_wa',
+		  layers: 'nieuwegein_sm:ziekenhuis_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -1034,9 +1401,9 @@ Heron.ngein.layermap = {
 	 * Basisscholen op basis van DUO
 	 */
 	basisscholen: new OpenLayers.Layer.WMS("Basisschool",
-      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein_wa:basisscholen_wa',
+		  layers: 'nieuwegein_sm:basisscholen_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -1051,9 +1418,9 @@ Heron.ngein.layermap = {
 	 * Middelbare scholen op basis van DUO
 	 */
 	middelbare_scholen: new OpenLayers.Layer.WMS("Middelbare school",
-      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein_wa:middelbare_scholen_wa',
+		  layers: 'nieuwegein_sm:middelbare_scholen_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -1068,9 +1435,9 @@ Heron.ngein.layermap = {
 	 * Buitenschoolse opvang op basis van landelijk register kinderopvang LRK
 	 */
 	buitenschoolse_opvang: new OpenLayers.Layer.WMS("Buitenschoolse Opvang",
-      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein_wa:buitenschoolse_opvang_bso_wa',
+		  layers: 'nieuwegein_sm:buitenschoolse_opvang_bso_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -1085,9 +1452,9 @@ Heron.ngein.layermap = {
 	 * Kinderdagverblijven op basis van landelijk register kinderopvang LRK
 	 */
 	kinderdagverblijven: new OpenLayers.Layer.WMS("Kinderdagverblijf",
-      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein_wa:kinderdagverblijf_kdv_wa',
+		  layers: 'nieuwegein_sm:kinderdagverblijf_kdv_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -1102,9 +1469,9 @@ Heron.ngein.layermap = {
 	 * Gastouder opvang op basis van landelijk register kinderopvang LRK
 	 */
 	gastouder_opvang: new OpenLayers.Layer.WMS("Gastouder opvang",
-      Heron.PDOK.urls.NGEINGEOSERVERNEW,
+      Heron.PDOK.urls.NGEINGEOSERVER,
       {
-		  layers: 'nieuwegein_wa:gastouder_opvang_vgo_wa',
+		  layers: 'nieuwegein_sm:gastouder_opvang_vgo_sm',
 		  format: "image/png", 
 		  transparent: true
 	  },
@@ -1218,6 +1585,8 @@ Heron.options.map.gridcolumns = [
 Heron.options.map.layers = [
 
     // The baselayers.
+    // met de bovenste laag opent de viewer
+    Heron.ngein.layermap.ngein_kaart_zw,
     Heron.ngein.layermap.openbasiskaart_osm,
     Heron.ngein.layermap.pdok_brtachtergrondkaart,
     Heron.ngein.layermap.pdok_brtachtergrondkaart_pastel,
@@ -1235,35 +1604,52 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.lufo2015,
 	
     // polygonen
-	//Heron.ngein.layermap.wijken,
+	Heron.ngein.layermap.wijken,
     //Heron.ngein.layermap.pc4,
     //Heron.ngein.layermap.pc6,
 	
-	Heron.ngein.layermap.socialehuurwoningen,
+	//Heron.ngein.layermap.socialehuurwoningen,
+    Heron.ngein.layermap.eigendomwooncorporaties,
 	Heron.ngein.layermap.wozwaarden,
 	Heron.ngein.layermap.koopenhuurwoningen,
-	Heron.ngein.layermap.woningen250eg,
-	Heron.ngein.layermap.oppervlakte_per_inwoner,
-	Heron.ngein.layermap.leegstand_woningen,
-	Heron.ngein.layermap.projectenkaart2017,	
+    Heron.ngein.layermap.woningtypes,
+	//Heron.ngein.layermap.woningen250eg,
+	//Heron.ngein.layermap.oppervlakte_per_inwoner,
+	Heron.ngein.layermap.leegstand,
 	Heron.ngein.layermap.bevolkingsdichtheid_0_tot_4,
+    Heron.ngein.layermap.bevolkingsdichtheid_0_tot_12,
 	Heron.ngein.layermap.bevolkingsdichtheid_4_tot_12,
 	Heron.ngein.layermap.bevolkingsdichtheid_12_tot_18,
 	Heron.ngein.layermap.bevolkingsdichtheid_18_tot_25,
+    Heron.ngein.layermap.bevolkingsdichtheid_25_tot_45,
+    Heron.ngein.layermap.bevolkingsdichtheid_45_tot_65,
+    Heron.ngein.layermap.bevolkingsdichtheid_65_tot_80,
+    Heron.ngein.layermap.bevolkingsdichtheid_65_en_ouder,
 	Heron.ngein.layermap.bevolkingsdichtheid_70_en_ouder,
+    Heron.ngein.layermap.bevolkingsdichtheid_75_en_ouder,
+    Heron.ngein.layermap.bevolkingsdichtheid_80_en_ouder,
+    Heron.ngein.layermap.heatmap_0_tot_12,
+    Heron.ngein.layermap.heatmap_0_tot_25,
+    Heron.ngein.layermap.heatmap_70_plus,
     
     //Voorzieningen
     Heron.ngein.layermap.supermarkten,
-    Heron.ngein.layermap.buurthuizen,
+    Heron.ngein.layermap.buurtpleinen,
+    Heron.ngein.layermap.gezondheidscentra,
+    Heron.ngein.layermap.zonekaart_gezondheidscentra,
     Heron.ngein.layermap.wijk_ontmoetingsplekken,
     Heron.ngein.layermap.huisartsen,
+    Heron.ngein.layermap.apotheken,
     Heron.ngein.layermap.fysiotherapie,
+    Heron.ngein.layermap.tandartsen,
     Heron.ngein.layermap.ziekenhuis,
     Heron.ngein.layermap.basisscholen,
     Heron.ngein.layermap.middelbare_scholen,
     Heron.ngein.layermap.buitenschoolse_opvang,
     Heron.ngein.layermap.kinderdagverblijven,
     Heron.ngein.layermap.gastouder_opvang,
+    Heron.ngein.layermap.bushaltes,
+    Heron.ngein.layermap.tramhaltes,
 	
 	// Vervuiling
 	Heron.ngein.layermap.vervuiling,
@@ -1323,6 +1709,7 @@ var treeTheme = [
         text:'Achtergrondlagen', expanded: false, children:
             [
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.ngein_kaart.name },
+                {nodeType: "gx_layer", layer: Heron.ngein.layermap.ngein_kaart_zw.name },
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.ngein_luchtfoto.name },
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.pdok_brtachtergrondkaart.name },
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.pdok_brtachtergrondkaart_pastel.name },
@@ -1337,32 +1724,65 @@ var treeTheme = [
                 {
                     text:'Algemeen', expanded: true, children:
                         [
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.socialehuurwoningen.name },
+							//{nodeType: "gx_layer", layer: Heron.ngein.layermap.socialehuurwoningen.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.eigendomwooncorporaties.name },
 							{nodeType: "gx_layer", layer: Heron.ngein.layermap.wozwaarden.name },
 							{nodeType: "gx_layer", layer: Heron.ngein.layermap.koopenhuurwoningen.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.woningen250eg.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_0_tot_4.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_4_tot_12.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_12_tot_18.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_18_tot_25.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_70_en_ouder.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.oppervlakte_per_inwoner.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.leegstand_woningen.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.projectenkaart2017.name },
+                            {nodeType: "gx_layer", layer: Heron.ngein.layermap.woningtypes.name },
+							//{nodeType: "gx_layer", layer: Heron.ngein.layermap.woningen250eg.name },
+							//{nodeType: "gx_layer", layer: Heron.ngein.layermap.oppervlakte_per_inwoner.name },
+							{nodeType: "gx_layer", layer: Heron.ngein.layermap.leegstand.name },
+                                
+                                {
+                                    text:'Wijken en buurten', expanded: true, children:
+                                    [
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.wijken.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.buurten_geo_informatie.name }
+                                        
+                                    ]
+                                }
+                                ,                                
+                                {
+                                    text:'Demografie', expanded: true, children:
+                                    [
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_0_tot_4.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_0_tot_12.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_4_tot_12.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_12_tot_18.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_18_tot_25.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_25_tot_45.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_45_tot_65.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_65_tot_80.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_65_en_ouder.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_70_en_ouder.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_75_en_ouder.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bevolkingsdichtheid_80_en_ouder.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.heatmap_0_tot_12.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.heatmap_0_tot_25.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.heatmap_70_plus.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.inwoners_per_wijk.name }
+                                    ]
+                                },
                                 {
                                     text:'Voorzieningen', expanded: true, children:
                                     [
-                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.supermarkten.name },
-                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.buurthuizen.name }, 
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.buurtpleinen.name }, 
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.wijk_ontmoetingsplekken.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.gezondheidscentra.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.zonekaart_gezondheidscentra.name },
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.huisartsen.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.apotheken.name },
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.fysiotherapie.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.tandartsen.name },
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.ziekenhuis.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.supermarkten.name },
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.basisscholen.name },
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.middelbare_scholen.name },
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.buitenschoolse_opvang.name },
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.kinderdagverblijven.name },
-                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.gastouder_opvang.name }
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.gastouder_opvang.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.bushaltes.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.tramhaltes.name }
                                     ]
                                 }
                                 
@@ -1423,14 +1843,9 @@ var treeTheme = [
 							{nodeType: "gx_layer", layer: Heron.ngein.layermap.belevingswereldpergemwijkbuurt.name }
                         ]
                 }                
-				,				
-                {
-                    text:'Wijken en buurten', expanded: false, children:
-                        [
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.inwoners_per_wijk.name },
-							{nodeType: "gx_layer", layer: Heron.ngein.layermap.buurten_geo_informatie.name }
-                        ]
-                }				
+							
+           
+/* 24-03-2020 TP: groep uitgeschakeld, indien nodig opnieuw configuren onder achtergrondlagen                
                 ,
                 {
                     text:"Luchtfoto's", expanded: false, children:
@@ -1442,6 +1857,7 @@ var treeTheme = [
                             {nodeType: "gx_layer", layer: Heron.ngein.layermap.lufo2011.name}
                         ]
                 }
+                */
             ]
     }
 ];

@@ -45,11 +45,12 @@ OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 
 Heron.ngein.urls = {
     //TP 29-01-2020: tijdelijk de stadmonitor in test laten verwijzen naar productie nieuwe lagen naar NGEINNEW totdat alle layers over zijn
-    //NGEIN: 'http://' + location.hostname,
-    //NGEIN_BASE: 'http://' + location.hostname,
-    NGEINNEW: 'http://' + location.hostname,
-    NGEIN: 'http://geoappstore.nieuwegein.nl',
-    NGEIN_BASE: 'http://geoappstore.nieuwegein.nl',
+    //TP 18-3-2020: NGEINNEW weer ongedaan gemaakt
+    NGEIN: 'http://' + location.hostname,
+    NGEIN_BASE: 'http://' + location.hostname,
+    //NGEINNEW: 'http://' + location.hostname,
+    //NGEIN: 'http://geoappstore.nieuwegein.nl',
+    //NGEIN_BASE: 'http://geoappstore.nieuwegein.nl',
 	NGEINLINUX: 'http://gng-ap855.linux.nieuwegein.nl',
     PDOK : 'http://geodata.nationaalgeoregister.nl',
     OPENBASISKAART_TMS: 'http://openbasiskaart.nl/mapcache/tms'
@@ -59,7 +60,8 @@ Heron.ngein.urls = {
 Heron.PDOK.urls = {
     NGEINGEOSERVER: Heron.ngein.urls.NGEIN + '/geoserver/wms',
     //TP: tijdelijn NIEUWEGEINGEOSERVERNEW OM LOKAAL TE VERWIJZEN
-    NGEINGEOSERVERNEW: Heron.ngein.urls.NGEINNEW + '/geoserver/wms',
+    //TP: 18-03-2020 NGEINGEOSERVERNEW weer ongedaan gemaakt
+    //NGEINGEOSERVERNEW: Heron.ngein.urls.NGEINNEW + '/geoserver/wms',
 	NGEINLINUXGEOSERVER: Heron.ngein.urls.NGEINLINUX + '/geoserver/wms',
 	NGEINGEOSERVERWFS: Heron.ngein.urls.NGEIN + '/geoserver/wfs',
     NGEINMAPPROXY: Heron.ngein.urls.NGEIN + '/mapproxy/service',
@@ -203,6 +205,16 @@ Heron.ngein.baselayers = {
     ngein_kaart: new OpenLayers.Layer.WMS("Nieuwegein Kaart",
             Heron.PDOK.urls.NGEINMAPPROXY,
             {'layers': 'basistopo', 'format': 'image/jpeg', transparent: false},
+            {'isBaseLayer': true, singleTile: false,
+             visibility: true
+    }),
+    
+    /* ------------------------------
+     * Nieuwegein zwarte achtergrond
+     * ------------------------------ */
+    ngein_kaart_zw: new OpenLayers.Layer.WMS("Nieuwegein Kaart (zwart)",
+            Heron.PDOK.urls.NGEINMAPPROXY,
+            {'layers': 'basiskaart_zwart_nieuwegein', 'format': 'image/jpeg', transparent: false},
             {'isBaseLayer': true, singleTile: false,
              visibility: true
     }),
@@ -828,6 +840,53 @@ Heron.options.map.toolbar = [
                 tooltip: "Open cyclorama",
                 group: "cyclomedia",
                 control: new CyclomediaControl()
+            });
+        }
+    },
+    // Streetsmart
+    {
+        create: function (mapPanel, options) {
+            var map = mapPanel.getMap();
+
+            StreetsmartControl = OpenLayers.Class(OpenLayers.Control, {
+                defaultHandlerOptions: {
+                    'single': true,
+                    'double': false,
+                    'pixelTolerance': 0,
+                    'stopSingle': false,
+                    'stopDouble': false
+                },
+
+                initialize: function(options) {
+                    this.handlerOptions = OpenLayers.Util.extend(
+                        {}, this.defaultHandlerOptions
+                    );
+                    OpenLayers.Control.prototype.initialize.apply(
+                        this, arguments
+                    );
+                    this.handler = new OpenLayers.Handler.Click(
+                        this, {
+                            'click': this.trigger
+                        }, this.handlerOptions
+                    );
+                },
+
+                trigger: function(e) {
+                    var position = map.getLonLatFromPixel(e.xy);
+                    //var cwindow = window.open("http://gng-ap527.nieuwegein.nl/globespotter/3.1/viewer/index.html?posx="+position.lon.toFixed(0)+"&posy="+position.lat.toFixed()+"&yaw=0&pitch=0", "globespotter");
+                    var cwindow = window.open("http://gng-ap527.nieuwegein.nl/streetsmart/v18.7/application/streetsmart?q="+position.lon.toFixed(0)+";"+position.lat.toFixed()+";EPSG:28992", "Streetsmart");
+                    cwindow.focus();
+                }
+            });
+
+            return new GeoExt.Action({
+                text: "Streetsmart",
+                map: map,
+                toggleGroup: "toolGroup",
+                allowDepress: false,
+                tooltip: "Open streetsmart",
+                group: "streetsmart",
+                control: new StreetsmartControl()
             });
         }
     },

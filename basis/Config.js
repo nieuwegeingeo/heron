@@ -243,7 +243,7 @@ Heron.ngein.baselayers = {
     
     blanco: new OpenLayers.Layer.WMS("Blanco",
       Heron.PDOK.urls.NGEINGEOSERVER,
-      {layers: "nieuwegein:blanco", format: "image/png", transparent: true},
+      {layers: "nieuwegein_wa:blanco_wa", format: "image/png", transparent: true},
       { isBaseLayer: true, 
         singleTile: true, 
         visibility: false,
