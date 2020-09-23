@@ -65,6 +65,8 @@ Heron.ngein.urls = {
 // Define the PDOK urls for the layers, based
 Heron.PDOK.urls = {
     NGEINGEOSERVER: Heron.ngein.urls.NGEIN + '/geoserver/wms',
+	// de oude geoserver 2.13.1 om Active directory te laten werken:
+	NGEINGEOSERVER_AD: Heron.ngein.urls.NGEIN + '/geoserverAD/wms',
     //NGEINGEOSERVER: 'http://gng-ap713.nieuwegein.nl/geoserver/wms',
 	NGEINLINUXGEOSERVER: Heron.ngein.urls.NGEINLINUX + '/geoserver/wms',
 	NGEINGEOSERVERWFS: Heron.ngein.urls.NGEIN + '/geoserver/wfs',
@@ -300,8 +302,8 @@ Heron.options.searchPanelConfig = {
                 header: false,
                 protocol: new OpenLayers.Protocol.WFS({
                     version: "1.1.0",
+                    url: "http://"+location.hostname+"/proxy/proxy.py?url=" + Heron.PDOK.urls.NGEINGEOSERVERWFS+'?', // Heron.PDOK.urls.NGEINGEOSERVERWFS, 
                     //url: "http://webatlas.nieuwegein.nl/proxy/proxy.py?url=" + Heron.PDOK.urls.NGEINGEOSERVERWFS, //Heron.PDOK.urls.NGEINGEOSERVERWFS, 
-                    url: "http://"+location.hostname+"/proxy/proxy.py?url=" + Heron.PDOK.urls.NGEINGEOSERVERWFS, //Heron.PDOK.urls.NGEINGEOSERVERWFS, 
                     srsName: "EPSG:28992",
                     featureType: "MOR_GEOCODER",
                     // featureNS: "http://www.nieuwegein.nl"
@@ -370,9 +372,9 @@ Heron.options.searchPanelConfig = {
                     version: "1.1.0",
 					url: Heron.PDOK.urls.NGEINGEOSERVERWFS,
                     srsName: "EPSG:28992",
-                    featureType: "pc6esri2015r1",
+                    featureType:  "pc6esri2015r1_wa", // "pc6esri2015r1",
                     // featureNS: "http://www.nieuwegein.nl"
-                    featurePrefix: 'nieuwegein'
+                    featurePrefix: 'nieuwegein_wa'
                 }),
                 downloadFormats: [
                      {
@@ -844,7 +846,8 @@ Heron.options.map.toolbar = [
         , mapPreviewAutoHeight: true // Adapt height of preview map automatically, if false mapPreviewHeight is used.
         // , mapPreviewHeight: 400
     }}, 
-    // Cyclomedia
+    // Cyclomedia4
+    /*
     {
         create: function (mapPanel, options) {
             var map = mapPanel.getMap();
@@ -890,6 +893,7 @@ Heron.options.map.toolbar = [
             });
         }
     },
+    */
     // Streetsmart
     {
         create: function (mapPanel, options) {
@@ -921,7 +925,7 @@ Heron.options.map.toolbar = [
                 trigger: function(e) {
                     var position = map.getLonLatFromPixel(e.xy);
                     //var cwindow = window.open("http://gng-ap527.nieuwegein.nl/globespotter/3.1/viewer/index.html?posx="+position.lon.toFixed(0)+"&posy="+position.lat.toFixed()+"&yaw=0&pitch=0", "globespotter");
-                    var cwindow = window.open("http://gng-ap527.nieuwegein.nl/streetsmart/v18.7/application/streetsmart?q="+position.lon.toFixed(0)+";"+position.lat.toFixed()+";EPSG:28992", "Streetsmart");
+                    var cwindow = window.open("https://streetsmart.nieuwegein.nl/streetsmart/v20.5/application/streetsmart?q="+position.lon.toFixed(0)+";"+position.lat.toFixed()+";EPSG:28992", "Streetsmart");
                     cwindow.focus();
                 }
             });

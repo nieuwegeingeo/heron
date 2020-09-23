@@ -263,7 +263,7 @@ Heron.ngein.layermap = {
    * BRK Eigenaren (beveiligd)
    * ------------------------------ */
   brk_secure: new OpenLayers.Layer.WMS("Perceeleigenaren (beveiligd)",
-    Heron.PDOK.urls.NGEINGEOSERVER, {
+    Heron.PDOK.urls.NGEINGEOSERVER_AD, {
       //layers: "nieuwegein:GM_SP_BRK_WA",
       layers: "nieuwegein_wa:brk_perceeleigenaren_wa",
       format: "image/png",
@@ -362,7 +362,7 @@ Heron.ngein.layermap = {
    * BRK Appartementsrechten (beveiligd)
    * ------------------------------ */
   brk_appartementsrecht: new OpenLayers.Layer.WMS("Appartementsrechten (beveiligd)",
-    Heron.PDOK.urls.NGEINGEOSERVER, {
+    Heron.PDOK.urls.NGEINGEOSERVER_AD, {
       layers: "nieuwegein_wa:brk_appartementsrechten_wa",
       format: "image/png",
       transparent: true
@@ -584,9 +584,9 @@ Heron.ngein.layermap = {
   ),
 
   /* ------------------------------
-   * Verblijfsobjecten
-   * ------------------------------ */
-  verblijfsobjecten: new OpenLayers.Layer.WMS("Verblijfsobjecten",
+   * Verblijfsobjecten oud
+   * ------------------------------ 
+  verblijfsobjecten_oud: new OpenLayers.Layer.WMS("Verblijfsobjecten",
     Heron.PDOK.urls.NGEINGEOSERVER, {
       layers: "nieuwegein_wa:verblijfsobjecten_wa",
       format: "image/png",
@@ -606,8 +606,8 @@ Heron.ngein.layermap = {
       }
 
     }
-  ),
-   verblijfsobjecten_nieuw: new OpenLayers.Layer.WMS("Verblijfsobjecten_nieuw",
+  ),*/
+   verblijfsobjecten: new OpenLayers.Layer.WMS("Verblijfsobjecten",
     Heron.PDOK.urls.NGEINGEOSERVER, {
       layers: "nieuwegein_wa:verblijfsobject_plus_wa",
       format: "image/png",
@@ -1262,7 +1262,7 @@ Heron.ngein.layermap = {
    * Begraafplaatsen
    * ------------------------------*/
   begraafplaatsen: new OpenLayers.Layer.WMS("Begraafplaatsen",
-    Heron.PDOK.urls.NGEINGEOSERVER, // "http://gng-ap532.nieuwegein.nl/geoserver/wms",
+    Heron.PDOK.urls.NGEINGEOSERVER_AD, // "http://gng-ap532.nieuwegein.nl/geoserver/wms",
     {
       layers: "nieuwegein_wa:begraafplaatsen_wa",
       format: "image/png",
@@ -1525,7 +1525,7 @@ Heron.ngein.layermap = {
             header: 'Omschrijving',
             width: 300
           },
-          //{ dataIndex: "ZAAKID", header: 'Zaak-ID', width: 0 }
+          { dataIndex: "ZAAKID", header: 'Zaak-ID', width: 0 }
         ]
       }]
 
@@ -1726,9 +1726,9 @@ Heron.ngein.layermap = {
   ),
 
   /* ------------------------------------------------
-   * Energielabels (jan/mei/jun 2018)
+   * Energielabels (jan/mei/jun 2018) OUD
    * ------------------------------------------------ */
-  energielabels: new OpenLayers.Layer.WMS("Energielabels (jan/mei/jun 2018)",
+  energielabels: new OpenLayers.Layer.WMS("Energielabels panden VEROUDERD",
     Heron.PDOK.urls.NGEINGEOSERVER, {
       layers: "nieuwegein_wa:energielabels_panden_wa",
       format: "image/png",
@@ -1741,6 +1741,47 @@ Heron.ngein.layermap = {
       //legendURL: Heron.PDOK.urls.NGEINGEOSERVER+"?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=energielabels_style"
       gridcolumns: [{
         featureType: 'energielabels_panden_wa',
+        columns: [{
+            dataIndex: "ADRES",
+            header: 'Adres',
+            width: 150
+          },
+          {
+            dataIndex: "POSTCODE",
+            header: 'Postcode',
+            width: 150
+          },
+          {
+            dataIndex: "LABEL",
+            header: 'Label',
+            width: 150
+          },
+          {
+            dataIndex: "LABEL_DATUM",
+            header: 'Label datum',
+            width: 150
+          },
+        ]
+      }]
+    }
+  ), 
+  
+  /* ------------------------------------------------
+   * Energielabels Verblijfsobjecten
+   * ------------------------------------------------ */
+  energielabels_vbo: new OpenLayers.Layer.WMS("Energielabels Verblijfsobjecten",
+    Heron.PDOK.urls.NGEINGEOSERVER, {
+      layers: "nieuwegein_wa:energielabels_vbo_wa",
+      format: "image/png",
+      transparent: true
+    }, {
+      isBaseLayer: false,
+      singleTile: true,
+      visibility: false,
+      featureInfoFormat: "application/vnd.ogc.gml",
+      //legendURL: Heron.PDOK.urls.NGEINGEOSERVER+"?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=energielabels_style"
+      gridcolumns: [{
+        featureType: 'energielabels_vbo_wa',
         columns: [{
             dataIndex: "ADRES",
             header: 'Adres',
@@ -1851,6 +1892,21 @@ Heron.ngein.layermap = {
     }
   ),
 
+  /* ------------------------------
+   * Lufo 2020
+   * ------------------------------ */
+  lufo2020: new OpenLayers.Layer.WMS("Luchtfoto 2020",
+    Heron.PDOK.urls.NGEINGEOSERVER, {
+      layers: "nieuwegein_wa:luchtfoto_2020_wa,nieuwegein_wa:straatnamen_wa",
+      format: "image/png",
+      transparent: true
+    }, {
+      isBaseLayer: true,
+      singleTile: true,
+      visibility: false
+    }
+  ),
+  
   /* ------------------------------
    * Lufo 2019
    * ------------------------------ */
@@ -2440,6 +2496,7 @@ Heron.options.map.layers = [
   Heron.ngein.layermap.blanco,
   Heron.ngein.layermap.ngein_luchtfoto,
   Heron.ngein.layermap.ahn3_pdok,
+  Heron.ngein.layermap.lufo2020,
   Heron.ngein.layermap.lufo2019,
   Heron.ngein.layermap.lufo2018,
   Heron.ngein.layermap.lufo2017,
@@ -2469,8 +2526,8 @@ Heron.options.map.layers = [
   Heron.ngein.layermap.wkpbbeperkingen,
   Heron.ngein.layermap.grondgebruik,
   Heron.ngein.layermap.grondverhuur,
+  //Heron.ngein.layermap.verblijfsobjecten_oud,
   Heron.ngein.layermap.verblijfsobjecten,
-  Heron.ngein.layermap.verblijfsobjecten_nieuw,
   Heron.ngein.layermap.standplaatsen,
   Heron.ngein.layermap.ligplaatsen,
   Heron.ngein.layermap.hoofdgebouw,
@@ -2485,6 +2542,7 @@ Heron.options.map.layers = [
   Heron.ngein.layermap.grondwaterbeschermingszones,
   Heron.ngein.layermap.opsporingsgebied_aardwarmte,
   Heron.ngein.layermap.energielabels,
+  Heron.ngein.layermap.energielabels_vbo,
   Heron.ngein.layermap.warmte_gasaansluiting,
   Heron.ngein.layermap.zonnekaart,
   Heron.ngein.layermap.zonnepanelen,
@@ -2573,11 +2631,15 @@ var treeTheme = [{
       },
       {
         nodeType: "gx_layer",
+        layer: Heron.ngein.layermap.lufo2020.name
+      },
+      {
+        nodeType: "gx_layer",
         layer: Heron.ngein.layermap.lufo2019.name
       },
       {
         nodeType: "gx_layer",
-        layer: Heron.ngein.layermap.ngein_luchtfoto.name
+        layer: Heron.ngein.layermap.lufo2018.name
       },
       //{nodeType: "gx_layer", layer: Heron.ngein.layermap.lufo2018.name},
       {
@@ -2616,13 +2678,13 @@ var treeTheme = [{
     children: [{
         text: 'Adressen',
         expanded: true,
-        children: [{
+        children: [/*{
             nodeType: "gx_layer",
-            layer: Heron.ngein.layermap.verblijfsobjecten.name
-          },
+            layer: Heron.ngein.layermap.verblijfsobjecten_oud.name
+          },*/
           {
             nodeType: "gx_layer",
-            layer: Heron.ngein.layermap.verblijfsobjecten_nieuw.name
+            layer: Heron.ngein.layermap.verblijfsobjecten.name
           },
           {
             nodeType: "gx_layer",
@@ -2900,6 +2962,10 @@ var treeTheme = [{
       {
         nodeType: "gx_layer",
         layer: Heron.ngein.layermap.energielabels.name
+      },
+      {
+        nodeType: "gx_layer",
+        layer: Heron.ngein.layermap.energielabels_vbo.name
       },
       {
         nodeType: "gx_layer",

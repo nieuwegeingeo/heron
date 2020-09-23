@@ -1182,6 +1182,9 @@ Heron.ngein.layermap = {
       }
     ),
     */
+	 /*----------------
+     * Voorzieningen
+     ----------------- */
     /*
 	 * Supermarkten op basis van provinciaal arbeidsregister
 	 */
@@ -1481,9 +1484,44 @@ Heron.ngein.layermap = {
 					html: 'Meer informatie over de kinderdagverblijven opvang vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Gastouder_opvang">hier</a>' // metadata as html (will be place between <p></p>)		   
             }
       }
+    ),
+	 /*----------------
+     * Loopafstanden tot voorzieningen
+     ----------------- */
+     /*
+	 * loopafstand tot gezondheidscentra
+	 */
+    loopafstand_gezondheidscentra: new OpenLayers.Layer.WMS("Loopafstand gezondheidscentra",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:loopafstand_gezondheidscentra_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de loopafstanden opvang vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Loopafstanden">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
+    ),
+     /*
+	 * loopafstand tot gezondheidscentra apotheek en supermarkt
+	 */
+    loopafstand_ghc_apo_superm: new OpenLayers.Layer.WMS("ghc_apothk_superm",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:loopafst_ghc_apo_spm_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	    isBaseLayer: false, singleTile: true,  visibility: false
+            ,featureInfoFormat: "application/vnd.ogc.gml"
+            ,metadata:{		
+					html: 'Meer informatie over de loopafstanden opvang vind je: <a target="nwwindow" href="./metadata/Metadata_Stadsmonitor.htm#Loopafstanden">hier</a>' // metadata as html (will be place between <p></p>)		   
+            }
+      }
     )
-    
-    
     
 };
 
@@ -1586,11 +1624,11 @@ Heron.options.map.layers = [
 
     // The baselayers.
     // met de bovenste laag opent de viewer
-    Heron.ngein.layermap.ngein_kaart_zw,
     Heron.ngein.layermap.openbasiskaart_osm,
+    Heron.ngein.layermap.ngein_kaart_zw,
     Heron.ngein.layermap.pdok_brtachtergrondkaart,
     Heron.ngein.layermap.pdok_brtachtergrondkaart_pastel,
-	Heron.ngein.layermap.opentopoachtergrondkaart,
+    Heron.ngein.layermap.opentopoachtergrondkaart,
     Heron.ngein.layermap.ngein_luchtfoto,
     Heron.ngein.layermap.ngein_kaart,
     Heron.ngein.layermap.blanco,
@@ -1651,6 +1689,11 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.bushaltes,
     Heron.ngein.layermap.tramhaltes,
 	
+	 // Loopafstanden
+    Heron.ngein.layermap.loopafstand_gezondheidscentra,
+    Heron.ngein.layermap.loopafstand_ghc_apo_superm,
+	
+	
 	// Vervuiling
 	Heron.ngein.layermap.vervuiling,
 	
@@ -1709,12 +1752,12 @@ var treeTheme = [
         text:'Achtergrondlagen', expanded: false, children:
             [
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.ngein_kaart.name },
+		{nodeType: "gx_layer", layer: Heron.ngein.layermap.opentopoachtergrondkaart.name },
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.ngein_kaart_zw.name },
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.ngein_luchtfoto.name },
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.pdok_brtachtergrondkaart.name },
                 {nodeType: "gx_layer", layer: Heron.ngein.layermap.pdok_brtachtergrondkaart_pastel.name },
-                {nodeType: "gx_layer", layer: Heron.ngein.layermap.openbasiskaart_osm.name },
-				{nodeType: "gx_layer", layer: Heron.ngein.layermap.opentopoachtergrondkaart.name },				
+                {nodeType: "gx_layer", layer: Heron.ngein.layermap.openbasiskaart_osm.name },				
 				{nodeType: "gx_layer", layer: Heron.ngein.layermap.blanco.name }
             ]
     },
@@ -1782,7 +1825,14 @@ var treeTheme = [
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.kinderdagverblijven.name },
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.gastouder_opvang.name },
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.bushaltes.name },
-                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.tramhaltes.name }
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.tramhaltes.name },
+                                        {
+                                            text:'Loopafstand tot', expanded: false, children:
+                                            [
+                                                {nodeType: "gx_layer", layer: Heron.ngein.layermap.loopafstand_gezondheidscentra.name },
+                                                {nodeType: "gx_layer", layer: Heron.ngein.layermap.loopafstand_ghc_apo_superm.name }
+                                            ]
+                                        }
                                     ]
                                 }
                                 

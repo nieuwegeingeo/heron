@@ -165,7 +165,7 @@ Heron.ngein.baselayers = {
             Heron.PDOK.urls.NGEINMAPPROXY,
             {'layers': 'opentopo', 'format': 'image/png', transparent: false},
             {'isBaseLayer': true, singleTile: false,
-             visibility: false
+             visibility: true
     }),	  
 
     /* ------------------------------
@@ -216,7 +216,7 @@ Heron.ngein.baselayers = {
             Heron.PDOK.urls.NGEINMAPPROXY,
             {'layers': 'basiskaart_zwart_nieuwegein', 'format': 'image/jpeg', transparent: false},
             {'isBaseLayer': true, singleTile: false,
-             visibility: true
+             visibility: false
     }),
 
     /* ------------------------------
