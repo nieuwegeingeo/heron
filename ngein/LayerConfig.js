@@ -1296,7 +1296,7 @@ Heron.ngein.layermap = {
    * Begraafplaatsen
    * ------------------------------*/
   begraafplaatsen: new OpenLayers.Layer.WMS("Begraafplaatsen",
-    Heron.PDOK.urls.NGEINGEOSERVER, // "http://gng-ap532.nieuwegein.nl/geoserver/wms",
+    Heron.PDOK.urls.NGEINGEOSERVER_AD, // "http://gng-ap532.nieuwegein.nl/geoserver/wms",
     {
       layers: "nieuwegein_wa:begraafplaatsen_wa",
       format: "image/png",
