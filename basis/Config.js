@@ -303,12 +303,11 @@ Heron.options.searchPanelConfig = {
                 protocol: new OpenLayers.Protocol.WFS({
                     version: "1.1.0",
                     url: "http://"+location.hostname+"/proxy/proxy.py?url=" + Heron.PDOK.urls.NGEINGEOSERVERWFS+'?', // Heron.PDOK.urls.NGEINGEOSERVERWFS, 
-                    url: Heron.PDOK.urls.NGEINGEOSERVERWFS+'?', // Heron.PDOK.urls.NGEINGEOSERVERWFS, 
                     //url: "http://webatlas.nieuwegein.nl/proxy/proxy.py?url=" + Heron.PDOK.urls.NGEINGEOSERVERWFS, //Heron.PDOK.urls.NGEINGEOSERVERWFS, 
                     srsName: "EPSG:28992",
-                    featureType: "mor_geocoder_wa",
+                    featureType: "MOR_GEOCODER",
                     // featureNS: "http://www.nieuwegein.nl"
-                    featurePrefix: 'nieuwegein_wa'
+                    featurePrefix: 'nieuwegein'
                 }),
                 downloadFormats: [
                      {
@@ -360,7 +359,6 @@ Heron.options.searchPanelConfig = {
                     zoomDoDataExtent: false
                 }
             }
-           
         }
 	
         // Zoeken op Postcode 6
@@ -535,9 +533,9 @@ Heron.options.searchPanelConfig = {
                     version: "1.1.0",
                     url: Heron.PDOK.urls.NGEINGEOSERVERWFS,
                     srsName: "EPSG:28992",
-                    featureType: "grondpercelen_wa",
+                    featureType: "GM_SP_KAD_GRONDPERCEEL",
                     // featureNS: "http://www.nieuwegein.nl"
-                    featurePrefix: 'nieuwegein_wa'
+                    featurePrefix: 'nieuwegein'
                 }),
                 downloadFormats: [
                      {
