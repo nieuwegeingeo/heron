@@ -1023,6 +1023,21 @@ Heron.ngein.layermap = {
 				}
       }
     ),
+    
+    /*
+     * prognose toename 70 plus 2025
+     * ------------------------------ */
+    prognose_toename_70plus_2025: new OpenLayers.Layer.WMS("progn toen 70plus 2025",
+      Heron.PDOK.urls.NGEINGEOSERVER,
+      {
+		  layers: 'nieuwegein_sm:prognose_70plus_2025_sm',
+		  format: "image/png", 
+		  transparent: true
+	  },
+      {	  isBaseLayer: false, singleTile: true,  visibility: false
+		  ,featureInfoFormat: "application/vnd.ogc.gml"
+      }
+    ),
 	
 	/*
      * Buurten geo informatie
@@ -1669,6 +1684,7 @@ Heron.options.map.layers = [
     Heron.ngein.layermap.heatmap_0_tot_12,
     Heron.ngein.layermap.heatmap_0_tot_25,
     Heron.ngein.layermap.heatmap_70_plus,
+    Heron.ngein.layermap.prognose_toename_70plus_2025,
     
     //Voorzieningen
     Heron.ngein.layermap.supermarkten,
@@ -1803,6 +1819,7 @@ var treeTheme = [
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.heatmap_0_tot_12.name },
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.heatmap_0_tot_25.name },
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.heatmap_70_plus.name },
+                                        {nodeType: "gx_layer", layer: Heron.ngein.layermap.prognose_toename_70plus_2025},
                                         {nodeType: "gx_layer", layer: Heron.ngein.layermap.inwoners_per_wijk.name }
                                     ]
                                 },
